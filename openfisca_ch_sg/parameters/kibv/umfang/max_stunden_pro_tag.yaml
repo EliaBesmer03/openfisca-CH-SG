@@ -1,0 +1,15 @@
+description: Ein Betreuungstag umfasst je Kind höchstens zwölf subventionierte Betreuungsstunden
+values:
+  2028-08-01:
+    value: 12
+metadata:
+  short_label: Max. Stunden pro Tag
+  label_en: Maximum subsidised hours per day
+  unit: hour
+  regel_id: KiBV-14.4
+  quellentyp: VERORDNUNG_ENTWURF
+  last_value_still_valid_on: "2026-11-07"
+  reference:
+    2028-08-01:
+      title: Art. 14 Abs. 4 KiBV (Entwurf RRB 2026/733, Vernehmlassung bis 15.11.2026)
+      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html

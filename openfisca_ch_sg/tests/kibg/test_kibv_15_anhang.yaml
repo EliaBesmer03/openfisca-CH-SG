@@ -1,0 +1,175 @@
+# Ausgangslage aller Tests: Grundfamilie F1 (Teil A, A8). Jeder Test variiert nur die geprüfte Angabe.
+- name: 'KiBV-15.1 KiBV-Anh KiBV-13.1 KiBG-6.1 Grenzfall: ME genau 40 000 → Faktor 1, maximaler Beitrag CHF 650'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 40000}
+      vater: {erwerbspensum: 60, me_veranlagung: 0}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    einkommensfaktor: 1
+    beitrag_pro_stunde_total: [0, 0, 7.5]
+    beitrag_total_kind: [0, 0, 650]
+- name: 'KiBV-15.1 KiBV-Anh Grenzfall: ME 39 999 → Faktor bleibt 1 (nicht über 1)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 39999}
+      vater: {erwerbspensum: 60, me_veranlagung: 0}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    einkommensfaktor: 1
+    beitrag_total_kind: [0, 0, 650]
+- name: 'F1 KiBV-Anh KiBV-13.1 KiBG-6.1 KiBG-20.1 Normalfall: ME 97 000 → Faktor 0.5, CHF 3.75 pro Stunde'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    einkommensfaktor: 0.5
+    beitrag_pro_stunde_mindest: [0, 0, 3.75]
+    beitrag_total_kind: [0, 0, 325]
+- name: 'KiBV-15.2 KiBV-Anh KiBG-6.1 KiBG-5.2 Grenzfall: ME genau 154 000 → Faktor 0, Beitrag 0'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 154000}
+      vater: {erwerbspensum: 60, me_veranlagung: 0}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    einkommensfaktor: 0
+    beitrag_total_kind: [0, 0, 0]
+    flag_me_ueber_maxme: false
+- name: 'KiBV-15.2 KiBV-Anh Grenzfall: ME 154 001 → Faktor 0, Beitrag 0, über MaxmE'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 154001}
+      vater: {erwerbspensum: 60, me_veranlagung: 0}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    einkommensfaktor: 0
+    beitrag_total_kind: [0, 0, 0]
+    flag_me_ueber_maxme: true
+- name: 'F15 KiBV-Anh KiBV-24.1 KiBG-20.2 KiBG-20.1 Normalfall: Z1 = 1.00, Z2 = 0.50 → B = (7.50 + 1) × 0.5 + 0.5 = 4.75'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        zusatzbeitrag_z1_pro_stunde: 1.0
+        zusatzbeitrag_z2_pro_stunde: 0.5
+  output:
+    beitrag_pro_stunde_total: [0, 0, 4.75]
+    beitrag_mindest_kind: [0, 0, 325]
+    beitrag_total_kind: [0, 0, 411.67]
+    zusatzbeitrag_kind: [0, 0, 86.67]
+- name: 'KiBV-15.2 KiBV-Anh KiBV-24.1 KiBG-20.2 KiBG-20.1 Grenzfall: ME über MaxmE → kein Beitrag, auch kein Z2 (A-10)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 160000}
+      vater: {erwerbspensum: 60, me_veranlagung: 0}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        zusatzbeitrag_z2_pro_stunde: 0.5
+  output:
+    beitrag_mindest_kind: [0, 0, 0]
+    beitrag_total_kind: [0, 0, 0]
+    zusatzbeitrag_kind: [0, 0, 0]
+    flag_me_ueber_maxme: true
+- name: 'KiBG-18.1 Normalfall: Kanton und Gemeinde tragen den Mindestbeitrag je zur Hälfte'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    anteil_kanton_kind: [0, 0, 162.5]
+    anteil_gemeinde_kind: [0, 0, 162.5]
+- name: 'KiBV-15.2 KiBV-Anh Grenzfall: ME genau 154 000 → nicht „über“ MaxmE, Z2 = 0.50 wird ausgerichtet (A-10)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 154000}
+      vater: {erwerbspensum: 60, me_veranlagung: 0}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        zusatzbeitrag_z2_pro_stunde: 0.5
+  output:
+    beitrag_mindest_kind: [0, 0, 0]
+    beitrag_total_kind: [0, 0, 43.33]

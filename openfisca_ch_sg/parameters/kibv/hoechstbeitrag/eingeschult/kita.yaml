@@ -1,0 +1,15 @@
+description: Höchster Beitrag je Kind und Betreuungsstunde, eingeschulte Kinder bis Ende Primarstufe, Kindertagesstätten
+values:
+  2028-08-01:
+    value: 7.5
+metadata:
+  short_label: MaxV Kita eingeschult
+  label_en: Maximum hourly contribution, daycare, school children
+  unit: currency-CHF
+  regel_id: KiBV-14.3.a
+  quellentyp: VERORDNUNG_ENTWURF
+  last_value_still_valid_on: "2026-11-07"
+  reference:
+    2028-08-01:
+      title: Art. 14 Abs. 3 lit. a KiBV (Entwurf RRB 2026/733, Vernehmlassung bis 15.11.2026)
+      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html

@@ -13,5 +13,5 @@ def parse(file_name):
         return json.loads(file.read())
 
 
-single = parse("single.json")
-couple = parse("couple.json")
+# Demo-Familie F1 aus Teil A, A8 (identisch mit contract/fixtures/F01_standardfamilie.request.json)
+f01_standardfamilie = parse("f01_standardfamilie.json")

@@ -1,0 +1,15 @@
+description: Ein Monat hat 52 / 12 Wochen
+values:
+  2028-08-01:
+    value: 4.333333333
+metadata:
+  short_label: Wochen pro Monat
+  label_en: Weeks per month
+  unit: /1
+  regel_id: AN-01
+  quellentyp: ANNAHME_TEAM
+  last_value_still_valid_on: "2026-11-07"
+  reference:
+    2028-08-01:
+      title: Annahme AN-01 – Annahme des Teams, keine Normgrundlage
+      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html

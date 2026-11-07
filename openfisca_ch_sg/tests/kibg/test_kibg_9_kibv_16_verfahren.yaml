@@ -1,0 +1,310 @@
+# Ausgangslage aller Tests: Grundfamilie F1 (Teil A, A8). Jeder Test variiert nur die geprüfte Angabe.
+- name: 'F1 KiBG-9.1 KiBG-9.2 Normalfall: Gesuch nach 15 Tagen → rückwirkend ab Betreuungsbeginn'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2028-08-15']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, false]
+- name: 'KiBG-9.2 Normalfall: Gesuch am 1.11.2028, 61 Tage nach Beginn → ab Gesuch, keine Übergangsregel (Rechtsteam)'
+  period: 2028-11
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-09-01'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-11-01'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2028-11-01']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, true]
+- name: 'KiBG-9.2 Normalfall: Gesuch am 2.11.2028, 62 Tage nach Beginn → ab Gesuch'
+  period: 2028-11
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-09-01'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-11-02'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2028-11-02']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, true]
+- name: 'F12b KiBG-9.2 Normalfall: Beginn 1.8.2028, Gesuch 20.10.2028 (80 Tage) → ab Gesuch, keine Übergangsregel'
+  period: 2028-10
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-01'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-10-20'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2028-10-20']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, true]
+- name: 'KiBG-9.2 KiBG-IV.1 Grenzfall: Betreuung ab 15.7.2028, Gesuch nach 21 Tagen → rückwirkend, aber erst ab Vollzugsbeginn 1.8.2028'
+  period: 2028-08
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-07-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-05'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2028-08-01']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, false]
+- name: 'KiBG-9.2 Grenzfall: Gesuch nach genau 30 Tagen → rückwirkend'
+  period: 2029-02
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2029-01-10'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2029-02-09'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2029-01-10']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, false]
+- name: 'KiBG-9.1 KiBG-9.2 Grenzfall: Gesuch nach 31 Tagen → ab Gesuch'
+  period: 2029-02
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2029-01-10'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2029-02-10'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2029-02-10']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, true]
+- name: 'F12 KiBG-9.2 Normalfall: Gesuch 45 Tage nach Beginn → ab Gesuchsdatum'
+  period: 2029-03
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2029-01-10'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2029-02-24'
+  output:
+    beitrag_ab_datum: ['1970-01-01', '1970-01-01', '2029-02-24']
+    flag_uebergangsregel: [false, false, false]
+    flag_gesuch_verspaetet: [false, false, true]
+- name: 'KiBG-11.2 KiBV-16.1 Normalfall: Kita vor der Einschulung → Verfügung 12 Monate'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    verfuegung_dauer_monate: [0, 0, 12]
+- name: 'KiBG-11.2 KiBV-16.2 Grenzfall: eingeschultes Kind, Berechnung im Juli → noch 1 Monat bis Schuljahresende'
+  period: 2029-07
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 84, schulstufe: PRIMARSCHULE, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    verfuegung_dauer_monate: [0, 0, 1]
+- name: 'KiBG-11.2 KiBV-16.2 Grenzfall: eingeschultes Kind, Berechnung im August → ganzes Schuljahr, 12 Monate'
+  period: 2028-08
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 84, schulstufe: PRIMARSCHULE, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    verfuegung_dauer_monate: [0, 0, 12]
+- name: 'KiBV-16.1 KiBV-16.2 Grenzfall: Kindergartenkind in der Kita gilt als eingeschult → Schuljahr statt 12 Monate (A-04, A-13)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 60, schulstufe: KINDERGARTEN, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    verfuegung_dauer_monate: [0, 0, 11]
+- name: 'KiBV-16.2 Normalfall: eingeschultes Kind, Berechnung im September → bis Ende Schuljahr Juli, 11 Monate (A-13)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 84, schulstufe: PRIMARSCHULE, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    verfuegung_dauer_monate: [0, 0, 11]
+- name: 'KiBV-16.1 Normalfall: Kita, Kind wird 2029 schulpflichtig, Verfügung im März 2029 → bis Schuljahresbeginn, 5 Monate (A-13, AN-06)'
+  period: 2029-03
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {geburtsdatum: '2025-05-10', schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    jahr_schulpflicht: [0, 0, 2029]
+    verfuegung_dauer_monate: [0, 0, 5]
+- name: 'KiBV-16.1 Grenzfall: Kita, Kind wird 2029 schulpflichtig, Verfügung im September 2028 (Vorjahr) → 12 Monate (A-13)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {geburtsdatum: '2025-05-10', schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    jahr_schulpflicht: [0, 0, 2029]
+    verfuegung_dauer_monate: [0, 0, 12]
+- name: 'KiBV-16.1 Grenzfall: Kind wird am 31.7.2029 vier Jahre alt → 2029 schulpflichtig, Verfügung März 2029 → 5 Monate (AN-06)'
+  period: 2029-03
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {geburtsdatum: '2025-07-31', schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    jahr_schulpflicht: [0, 0, 2029]
+    verfuegung_dauer_monate: [0, 0, 5]
+- name: 'KiBV-16.1 Grenzfall: Kind wird am 1.8.2029 vier Jahre alt → erst 2030 schulpflichtig, Verfügung März 2029 → 12 Monate (AN-06)'
+  period: 2029-03
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {geburtsdatum: '2025-08-01', schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    jahr_schulpflicht: [0, 0, 2030]
+    verfuegung_dauer_monate: [0, 0, 12]
