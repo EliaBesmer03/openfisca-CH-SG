@@ -1,5 +1,4 @@
-# OpenFisca CH SG
-
+# OpenFisca model for Sankt Gallen Canton (Switzerland)
 
 The country whose law is modelled here has a very simple tax and benefit
 system.
