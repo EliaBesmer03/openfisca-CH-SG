@@ -1,0 +1,2428 @@
+[
+  {
+    "id": "KiBG-1.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 1 Abs. 1 KiBG",
+    "artikel_titel": "Zweck",
+    "wortlaut": "Zur Stärkung der Vereinbarkeit von Familie und Erwerbstätigkeit gewähren der Kanton und die politischen Gemeinden Erziehungsberechtigten Beiträge an die Kosten der familien- und schulergänzenden Kinderbetreuung.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Kanton und Gemeinden zahlen Beiträge an die Kinderbetreuung, damit Eltern Familie und Beruf besser vereinbaren können.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Zweckartikel ohne Rechengehalt; erscheint in der Einleitung des Rechners."
+  },
+  {
+    "id": "KiBG-2.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 2 Abs. 1 KiBG",
+    "artikel_titel": "Begriffe",
+    "wortlaut": "Erziehungsberechtigte im Sinn dieses Erlasses sind Personen, die für ein in ihrer Obhut stehendes Kind Beiträge an die Kosten der familien- und schulergänzenden Kinderbetreuung geltend machen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "Entität",
+    "kurztext": "Erziehungsberechtigt ist, wer ein Kind in seiner Obhut hat und für dieses Kind Beiträge beantragt.",
+    "variablen": [
+      "ist_erziehungsberechtigt",
+      "ist_kind",
+      "ist_partner"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-2.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 2 Abs. 2 KiBG",
+    "artikel_titel": "Begriffe",
+    "wortlaut": "Tagesfamilienorganisationen im Sinn dieses Erlasses koordinieren und vermitteln die Betreuung in Tagesfamilien.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Tagesfamilienorganisationen vermitteln und koordinieren Tagesfamilien.",
+    "variablen": [
+      "angebot_typ"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-3.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 3 Abs. 1 KiBG",
+    "artikel_titel": "Unterstützte Betreuungsangebote",
+    "wortlaut": "Beiträge werden für die Kinderbetreuung in einer anerkannten und angemeldeten Einrichtung ausgerichtet.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Beiträge gibt es nur für Betreuung in einer anerkannten und beim Kanton angemeldeten Einrichtung.",
+    "variablen": [
+      "angebot_erfuellt",
+      "anspruch_kind"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-3.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 3 Abs. 2 KiBG",
+    "artikel_titel": "Unterstützte Betreuungsangebote",
+    "wortlaut": "Als anerkannte Einrichtungen gelten: a) Kindertagesstätten, die über eine Bewilligung nach Art. 13 ff. der eidgenössischen Verordnung über die Aufnahme von Pflegekindern vom 19. Oktober 1977 verfügen; b) Tagesfamilienorganisationen, deren angeschlossene Tagesfamilien nach Art. 12 der eidgenössischen Verordnung über die Aufnahme von Pflegekindern vom 19. Oktober 1977 gemeldet sind; c) Einrichtungen für schulergänzende Betreuung des Volksschulträgers sowie durch Volksschulträger oder politische Gemeinde beauftragte private Trägerschaften, die über ein Qualitätskonzept nach Art. 19ter Abs. 2 des Volksschulgesetzes vom 13. Januar 1983 verfügen; d) anerkannte private Sonderschulen, wenn die schulergänzende Betreuung in der Leistungsvereinbarung nach Art. 40bis des Volksschulgesetzes vom 13. Januar 1983 enthalten ist.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Anerkannt sind Kitas, Tagesfamilien, schulergänzende Betreuung und Betreuung an privaten Sonderschulen.",
+    "variablen": [
+      "angebot_typ"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-3.2.a",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 3 Abs. 2 lit. a KiBG",
+    "artikel_titel": "Unterstützte Betreuungsangebote",
+    "wortlaut": "Als anerkannte Einrichtungen gelten: a) Kindertagesstätten, die über eine Bewilligung nach Art. 13 ff. der eidgenössischen Verordnung über die Aufnahme von Pflegekindern vom 19. Oktober 1977 verfügen;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Kitas mit Bewilligung nach der eidgenössischen Pflegekinderverordnung sind anerkannt.",
+    "variablen": [
+      "angebot_typ"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-3.2.b",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 3 Abs. 2 lit. b KiBG",
+    "artikel_titel": "Unterstützte Betreuungsangebote",
+    "wortlaut": "Als anerkannte Einrichtungen gelten: b) Tagesfamilienorganisationen, deren angeschlossene Tagesfamilien nach Art. 12 der eidgenössischen Verordnung über die Aufnahme von Pflegekindern vom 19. Oktober 1977 gemeldet sind;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Tagesfamilien sind anerkannt, wenn sie über eine Tagesfamilienorganisation gemeldet sind.",
+    "variablen": [
+      "angebot_typ"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-3.2.c",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 3 Abs. 2 lit. c KiBG",
+    "artikel_titel": "Unterstützte Betreuungsangebote",
+    "wortlaut": "Als anerkannte Einrichtungen gelten: c) Einrichtungen für schulergänzende Betreuung des Volksschulträgers sowie durch Volksschulträger oder politische Gemeinde beauftragte private Trägerschaften, die über ein Qualitätskonzept nach Art. 19ter Abs. 2 des Volksschulgesetzes vom 13. Januar 1983 verfügen;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Horte, Mittagstische und ähnliche schulergänzende Angebote der Schule oder von ihr beauftragter Träger sind anerkannt.",
+    "variablen": [
+      "angebot_typ"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-3.2.d",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 3 Abs. 2 lit. d KiBG",
+    "artikel_titel": "Unterstützte Betreuungsangebote",
+    "wortlaut": "Als anerkannte Einrichtungen gelten: d) anerkannte private Sonderschulen, wenn die schulergänzende Betreuung in der Leistungsvereinbarung nach Art. 40bis des Volksschulgesetzes vom 13. Januar 1983 enthalten ist.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Die schulergänzende Betreuung privater Sonderschulen ist anerkannt, wenn sie in der Leistungsvereinbarung steht.",
+    "variablen": [
+      "angebot_typ"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-09"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-3.3",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 3 Abs. 3 KiBG",
+    "artikel_titel": "Unterstützte Betreuungsangebote",
+    "wortlaut": "Als angemeldete Einrichtungen gelten Einrichtungen nach Abs. 2 dieser Bestimmung, die sich bei der zuständigen kantonalen Stelle für die Mitwirkung am Vollzug dieses Erlasses angemeldet haben.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Angemeldet ist eine Einrichtung, die sich beim Kanton für das Beitragssystem angemeldet hat.",
+    "variablen": [
+      "angebot_angemeldet",
+      "angebot_erfuellt"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-12"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-4.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 4 Abs. 1 KiBG",
+    "artikel_titel": "Anspruchsberechtigung",
+    "wortlaut": "Anspruch auf Beiträge haben Erziehungsberechtigte mit zivilrechtlichem Wohnsitz im Kanton, die eine selbständige oder unselbständige Erwerbstätigkeit ausüben, mit einem Beschäftigungsgrad von: a) wenigstens 20 Prozent; b) zusammen wenigstens 120 Prozent, wenn sie einen gemeinsamen Haushalt führen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Anspruch haben Eltern mit Wohnsitz im Kanton St.Gallen, die erwerbstätig sind.",
+    "variablen": [
+      "wohngemeinde",
+      "wohnsitz_sg",
+      "wohnsitz_erfuellt",
+      "erwerbspensum_bekannt",
+      "voraussetzung_erziehungsberechtigte_erfuellt",
+      "anspruch_kind"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-14"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-4.1.a",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 4 Abs. 1 lit. a KiBG",
+    "artikel_titel": "Anspruchsberechtigung",
+    "wortlaut": "Anspruch auf Beiträge haben Erziehungsberechtigte mit zivilrechtlichem Wohnsitz im Kanton, die eine selbständige oder unselbständige Erwerbstätigkeit ausüben, mit einem Beschäftigungsgrad von: a) wenigstens 20 Prozent;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V, P",
+    "kurztext": "Wer allein ein Gesuch stellt, muss mindestens 20 Prozent arbeiten.",
+    "variablen": [
+      "erwerbspensum",
+      "erwerbspensum_erfuellt"
+    ],
+    "parameter": [
+      "kibg.anspruch.mindestpensum_einzeln"
+    ],
+    "ambiguitaeten": [
+      "A-03"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-4.1.b",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 4 Abs. 1 lit. b KiBG",
+    "artikel_titel": "Anspruchsberechtigung",
+    "wortlaut": "Anspruch auf Beiträge haben Erziehungsberechtigte mit zivilrechtlichem Wohnsitz im Kanton, die eine selbständige oder unselbständige Erwerbstätigkeit ausüben, mit einem Beschäftigungsgrad von: b) zusammen wenigstens 120 Prozent, wenn sie einen gemeinsamen Haushalt führen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V, P",
+    "kurztext": "Leben beide Eltern zusammen, müssen sie zusammen mindestens 120 Prozent arbeiten.",
+    "variablen": [
+      "haushalt_form",
+      "auslegung_kibg_4_1",
+      "erwerbspensum_erfuellt"
+    ],
+    "parameter": [
+      "kibg.anspruch.mindestpensum_gemeinsam"
+    ],
+    "ambiguitaeten": [
+      "A-03"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-4.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 4 Abs. 2 KiBG",
+    "artikel_titel": "Anspruchsberechtigung",
+    "wortlaut": "Die zuständige kommunale Stelle kann Erziehungsberechtigte in begründeten Ausnahmefällen vom Erfordernis des minimalen Beschäftigungsgrads entbinden.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "H",
+    "kurztext": "Die Gemeinde kann in begründeten Fällen auf das Mindestpensum verzichten. Das entscheidet sie selbst.",
+    "variablen": [
+      "ausnahmegrund",
+      "ausnahme_entscheid",
+      "ausnahme_pensum_gewaehrt"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-01"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-4.3",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 4 Abs. 3 KiBG",
+    "artikel_titel": "Anspruchsberechtigung",
+    "wortlaut": "Beiträge werden für die Betreuung von Kindern im Alter ab drei Monaten bis zum Abschluss der Primarschule ausgerichtet.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V, P",
+    "kurztext": "Beiträge gibt es für Kinder ab 3 Monaten bis zum Ende der Primarschule.",
+    "variablen": [
+      "alter_monate",
+      "schulstufe",
+      "alter_kind_erfuellt"
+    ],
+    "parameter": [
+      "kibg.anspruch.mindestalter_monate"
+    ],
+    "ambiguitaeten": [
+      "A-04"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-5.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 5 Abs. 1 KiBG",
+    "artikel_titel": "Beitragsbemessung – a) massgebendes Einkommen",
+    "wortlaut": "Die Beiträge richten sich nach der wirtschaftlichen Leistungsfähigkeit der Erziehungsberechtigten.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Wie hoch der Beitrag ist, hängt von der finanziellen Lage der Eltern ab.",
+    "variablen": [
+      "me_massgebend"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-5.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 5 Abs. 2 KiBG",
+    "artikel_titel": "Beitragsbemessung – a) massgebendes Einkommen",
+    "wortlaut": "Die wirtschaftliche Leistungsfähigkeit bestimmt sich nach dem massgebenden Einkommen und Vermögen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Die finanzielle Lage wird aus dem massgebenden Einkommen und Vermögen bestimmt.",
+    "variablen": [
+      "me_massgebend"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-5.3",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 5 Abs. 3 KiBG",
+    "artikel_titel": "Beitragsbemessung – a) massgebendes Einkommen",
+    "wortlaut": "Grundlage für die Bestimmung des massgebenden Einkommens und Vermögens bildet in der Regel die letzte definitive Steuerveranlagung der Kantons- und Gemeindesteuern.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Grundlage ist normalerweise die letzte definitive Steuerveranlagung.",
+    "variablen": [
+      "me_veranlagung",
+      "me_bekannt"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-5.4",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 5 Abs. 4 KiBG",
+    "artikel_titel": "Beitragsbemessung – a) massgebendes Einkommen",
+    "wortlaut": "Haben sich das massgebende Einkommen und Vermögen im Vergleich zur letzten definitiven Steuerveranlagung wesentlich verändert, werden das massgebende Einkommen und Vermögen aufgrund aktueller Gegebenheiten bestimmt.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Hat sich die finanzielle Lage seit der Veranlagung stark verändert, zählen die aktuellen Verhältnisse.",
+    "variablen": [
+      "me_aktuell",
+      "me_massgebend"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-05"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-6.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 6 Abs. 1 KiBG",
+    "artikel_titel": "b) Höhe der Beiträge",
+    "wortlaut": "Die Höhe der Beiträge wird nach einem linearen Modell berechnet.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Der Beitrag wird nach einem linearen Modell berechnet: je höher das Einkommen, desto tiefer der Beitrag.",
+    "variablen": [
+      "beitrag_pro_stunde_mindest",
+      "beitrag_mindest_kind"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-6.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 6 Abs. 2 KiBG",
+    "artikel_titel": "b) Höhe der Beiträge",
+    "wortlaut": "Ein Beitrag darf die Kosten der Erziehungsberechtigten für das in Anspruch genommene Betreuungsangebot nicht übersteigen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Der Beitrag ist nie höher als das, was die Betreuung die Eltern kostet.",
+    "variablen": [
+      "kosten_pro_stunde",
+      "kosten_monat",
+      "beitrag_mindest_kind"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-06"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-7.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 7 Abs. 1 KiBG",
+    "artikel_titel": "Betrieb",
+    "wortlaut": "Der Kanton und die politischen Gemeinden betreiben gemeinsam elektronisch eine Plattform für die Ausrichtung der Beiträge an die Kosten der familien- und schulergänzenden Kinderbetreuung.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Kanton und Gemeinden betreiben gemeinsam eine elektronische Plattform für die Beiträge.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Infrastruktur ohne Rechengehalt."
+  },
+  {
+    "id": "KiBG-8.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 8 Abs. 1 KiBG",
+    "artikel_titel": "Datenbearbeitung und Datenbekanntgabe",
+    "wortlaut": "Die zuständigen kantonalen und kommunalen Stellen können über die Plattform Personendaten, einschliesslich besonders schützenswerter Personendaten und Persönlichkeitsprofile, bearbeiten und einander sowie den Einrichtungen bekanntgeben, soweit dies für den Vollzug dieses Erlasses erforderlich ist.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Behörden dürfen über die Plattform die nötigen Personendaten bearbeiten und austauschen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Datenschutz; der Rechner speichert keine Daten."
+  },
+  {
+    "id": "KiBG-8.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 8 Abs. 2 KiBG",
+    "artikel_titel": "Datenbearbeitung und Datenbekanntgabe",
+    "wortlaut": "Die Datenbearbeitung und Datenbekanntgabe umfasst folgende Personendaten: a) Angaben und Unterlagen, die im Verfahren nach Art. 9 ff. dieses Erlasses von den Erziehungsberechtigten und den Einrichtungen erfasst werden; b) weitere erforderliche Angaben, die nach Art. 15 des Datenschutzgesetzes vom 20. Januar 2009 von der kantonalen Einwohnerdatenplattform und aus den Steuerdaten elektronisch abgerufen werden können.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Bearbeitet werden die Angaben aus dem Gesuch sowie Daten aus dem Einwohnerregister und den Steuerdaten.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Datenschutz; der Rechner ruft keine Daten ab."
+  },
+  {
+    "id": "KiBG-8.2.a",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 8 Abs. 2 lit. a KiBG",
+    "artikel_titel": "Datenbearbeitung und Datenbekanntgabe",
+    "wortlaut": "Die Datenbearbeitung und Datenbekanntgabe umfasst folgende Personendaten: a) Angaben und Unterlagen, die im Verfahren nach Art. 9 ff. dieses Erlasses von den Erziehungsberechtigten und den Einrichtungen erfasst werden;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Angaben und Unterlagen aus dem Gesuchsverfahren.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Datenschutz; der Rechner ruft keine Daten ab."
+  },
+  {
+    "id": "KiBG-8.2.b",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 8 Abs. 2 lit. b KiBG",
+    "artikel_titel": "Datenbearbeitung und Datenbekanntgabe",
+    "wortlaut": "Die Datenbearbeitung und Datenbekanntgabe umfasst folgende Personendaten: b) weitere erforderliche Angaben, die nach Art. 15 des Datenschutzgesetzes vom 20. Januar 2009 von der kantonalen Einwohnerdatenplattform und aus den Steuerdaten elektronisch abgerufen werden können.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Daten aus dem Einwohnerregister und den Steuerdaten, die elektronisch abgerufen werden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Datenschutz; der Rechner ruft keine Daten ab."
+  },
+  {
+    "id": "KiBG-9.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 9 Abs. 1 KiBG",
+    "artikel_titel": "Gesuch",
+    "wortlaut": "Beiträge an die Kosten der familien- und schulergänzenden Kinderbetreuung werden auf Gesuch der Erziehungsberechtigten an die zuständige kommunale Stelle hin gewährt.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "E",
+    "kurztext": "Beiträge gibt es nur auf Gesuch bei der Gemeinde.",
+    "variablen": [
+      "gesuchsdatum"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-9.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 9 Abs. 2 KiBG",
+    "artikel_titel": "Gesuch",
+    "wortlaut": "Die Beiträge werden rückwirkend bis zum Datum der Inanspruchnahme des Betreuungsangebots ausgerichtet, wenn das Gesuch innert 30 Tagen seit Inanspruchnahme des Betreuungsangebots eingereicht wird. Für später eingereichte Gesuche erfolgt die Beitragsausrichtung ab dem Zeitpunkt der Gesuchstellung.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V, P",
+    "kurztext": "Wer das Gesuch innert 30 Tagen nach Betreuungsbeginn stellt, erhält Beiträge rückwirkend; sonst erst ab dem Gesuch.",
+    "variablen": [
+      "betreuungsbeginn",
+      "beitrag_ab_datum"
+    ],
+    "parameter": [
+      "kibg.verfahren.frist_rueckwirkung_tage"
+    ],
+    "ambiguitaeten": [
+      "A-07"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-10.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 10 Abs. 1 KiBG",
+    "artikel_titel": "Bestätigung des Betreuungsverhältnisses",
+    "wortlaut": "Die Einrichtung bestätigt das Betreuungsverhältnis des Kindes über die Plattform.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Einrichtung bestätigt das Betreuungsverhältnis über die Plattform.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahrensschritt der Einrichtung; Hinweis im Rechner."
+  },
+  {
+    "id": "KiBG-11.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 11 Abs. 1 KiBG",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Die zuständige kommunale Stelle prüft die Anspruchsberechtigung und verfügt die Höhe des Beitrags.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Gemeinde prüft den Anspruch und verfügt den Beitrag.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren; der Rechner ist keine Verfügung."
+  },
+  {
+    "id": "KiBG-11.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 11 Abs. 2 KiBG",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Der Beitrag wird in der Regel für die Dauer von zwölf Monaten verfügt.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V, P",
+    "kurztext": "Der Beitrag wird in der Regel für 12 Monate verfügt.",
+    "variablen": [
+      "verfuegung_dauer_monate"
+    ],
+    "parameter": [
+      "kibg.verfahren.verfuegung_dauer_monate"
+    ],
+    "ambiguitaeten": [
+      "A-13"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-11.3",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 11 Abs. 3 KiBG",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Die Beitragsverfügung wird angepasst bei einer Änderung: a) der Berechnung der Beiträge nach Art. 6 Abs. 1 dieses Erlasses; b) der rechtlichen Verhältnisse.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Ändern sich die Berechnungsgrundlagen oder die rechtlichen Verhältnisse, wird die Verfügung angepasst.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verlauf über mehrere Monate; der Rechner berechnet einen einzelnen Monat."
+  },
+  {
+    "id": "KiBG-11.3.a",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 11 Abs. 3 lit. a KiBG",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Die Beitragsverfügung wird angepasst bei einer Änderung: a) der Berechnung der Beiträge nach Art. 6 Abs. 1 dieses Erlasses;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Anpassung, wenn sich die Berechnung der Beiträge ändert.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verlauf über mehrere Monate; der Rechner berechnet einen einzelnen Monat."
+  },
+  {
+    "id": "KiBG-11.3.b",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 11 Abs. 3 lit. b KiBG",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Die Beitragsverfügung wird angepasst bei einer Änderung: b) der rechtlichen Verhältnisse.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Anpassung, wenn sich die rechtlichen Verhältnisse ändern.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verlauf über mehrere Monate; der Rechner berechnet einen einzelnen Monat."
+  },
+  {
+    "id": "KiBG-12.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 12 Abs. 1 KiBG",
+    "artikel_titel": "Beitragsauszahlung",
+    "wortlaut": "Die zuständige kommunale Stelle zahlt die Beiträge an die Einrichtung aus.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Gemeinde zahlt die Beiträge an die Einrichtung aus.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Zahlungsfluss ohne Einfluss auf die Höhe."
+  },
+  {
+    "id": "KiBG-12.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 12 Abs. 2 KiBG",
+    "artikel_titel": "Beitragsauszahlung",
+    "wortlaut": "Die Einrichtung weist auf den Rechnungen an die Erziehungsberechtigten den entsprechenden Beitrag aus und zieht diesen vom Rechnungsbetrag ab.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Einrichtung zieht den Beitrag direkt von der Rechnung der Eltern ab.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Zahlungsfluss; Hinweis im Rechner."
+  },
+  {
+    "id": "KiBG-12.3",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 12 Abs. 3 KiBG",
+    "artikel_titel": "Beitragsauszahlung",
+    "wortlaut": "Die zuständige kantonale Stelle zahlt den Kostenanteil des Kantons an die politischen Gemeinden aus.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Der Kanton zahlt seinen Kostenanteil an die Gemeinden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Zahlungsfluss zwischen Kanton und Gemeinden."
+  },
+  {
+    "id": "KiBG-13.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 13 Abs. 1 KiBG",
+    "artikel_titel": "Rückerstattungspflicht",
+    "wortlaut": "Unrechtmässig bezogene Beiträge können durch die zuständige kommunale Stelle innert fünf Jahren seit Rechtskraft der Beitragsverfügung zurückgefordert oder mit weiteren Beiträgen verrechnet werden.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Zu Unrecht bezogene Beiträge kann die Gemeinde innert fünf Jahren zurückfordern.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren."
+  },
+  {
+    "id": "KiBG-14.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 14 Abs. 1 KiBG",
+    "artikel_titel": "Mitwirkungspflicht der Erziehungsberechtigten",
+    "wortlaut": "Die Erziehungsberechtigten stellen der zuständigen kommunalen Stelle die für den Vollzug dieses Erlasses erforderlichen Angaben und Unterlagen zur Verfügung.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Eltern müssen der Gemeinde die nötigen Angaben und Unterlagen liefern.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Pflicht der Eltern im Verfahren."
+  },
+  {
+    "id": "KiBG-14.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 14 Abs. 2 KiBG",
+    "artikel_titel": "Mitwirkungspflicht der Erziehungsberechtigten",
+    "wortlaut": "Sie teilen der zuständigen kommunalen Stelle Änderungen der rechtlichen Verhältnisse umgehend mit.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Eltern müssen Änderungen sofort melden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Pflicht der Eltern im Verfahren; Hinweis im Rechner."
+  },
+  {
+    "id": "KiBG-15.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 15 Abs. 1 KiBG",
+    "artikel_titel": "Mitwirkungspflicht der Einrichtungen",
+    "wortlaut": "Die Einrichtungen stellen den zuständigen kantonalen und kommunalen Stellen die für den Vollzug dieses Erlasses erforderlichen Angaben und Unterlagen über die Plattform zur Verfügung.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Einrichtungen liefern die nötigen Angaben über die Plattform.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Pflicht der Einrichtungen."
+  },
+  {
+    "id": "KiBG-15.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 15 Abs. 2 KiBG",
+    "artikel_titel": "Mitwirkungspflicht der Einrichtungen",
+    "wortlaut": "Sie geben der zuständigen kommunalen Stelle über die Plattform Änderungen bei der Inanspruchnahme der Kinderbetreuung durch die Erziehungsberechtigten bekannt.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Einrichtungen melden Änderungen bei der Betreuung über die Plattform.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Pflicht der Einrichtungen."
+  },
+  {
+    "id": "KiBG-16.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 16 Abs. 1 KiBG",
+    "artikel_titel": "Controlling und Monitoring",
+    "wortlaut": "Die zuständige kantonale Stelle stellt Controlling und Monitoring der Beiträge nach diesem Erlass sicher. Hierfür kann sie über die Plattform Stichproben durchführen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Der Kanton überwacht die Beiträge und kann Stichproben machen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verwaltungsaufgabe des Kantons."
+  },
+  {
+    "id": "KiBG-16.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 16 Abs. 2 KiBG",
+    "artikel_titel": "Controlling und Monitoring",
+    "wortlaut": "Die zuständige kantonale Stelle überprüft die Berechnungsgrundlagen des linearen Modells nach Art. 6 Abs. 1 dieses Erlasses regelmässig unter Berücksichtigung der nach Art. 17 dieses Erlasses zur Verfügung stehenden Mittel.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Der Kanton überprüft regelmässig die Werte des linearen Modells.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verwaltungsaufgabe des Kantons."
+  },
+  {
+    "id": "KiBG-17.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 17 Abs. 1 KiBG",
+    "artikel_titel": "Gesamtvolumen der Beiträge",
+    "wortlaut": "Für die Beiträge nach Art. 6 dieses Erlasses stehen je Jahr 20 Mio. Franken zur Verfügung.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Für die Beiträge stehen jährlich 20 Millionen Franken zur Verfügung.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Gesamtbudget ohne Einfluss auf den Einzelfall."
+  },
+  {
+    "id": "KiBG-17.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 17 Abs. 2 KiBG",
+    "artikel_titel": "Gesamtvolumen der Beiträge",
+    "wortlaut": "Übersteigt oder unterschreitet das Gesamtvolumen der Beiträge die zur Verfügung stehenden Mittel in drei aufeinanderfolgenden Jahren um mehr als Fr. 500'000.– je Beitragsjahr, passt die Regierung die Berechnungsgrundlagen nach Art. 23 Bst. d dieses Erlasses an.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Weicht das Volumen drei Jahre in Folge um mehr als CHF 500 000 ab, passt die Regierung die Berechnungsgrundlagen an.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Steuerung des Gesamtbudgets."
+  },
+  {
+    "id": "KiBG-18.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 18 Abs. 1 KiBG",
+    "artikel_titel": "Finanzierung der Beiträge",
+    "wortlaut": "Der Kanton und die politische Gemeinde, in der die Erziehungsberechtigten ihren zivilrechtlichen Wohnsitz haben, tragen die Kosten für die Beiträge nach Art. 6 und 17 dieses Erlasses hälftig.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V, P",
+    "kurztext": "Kanton und Wohngemeinde bezahlen die Beiträge je zur Hälfte.",
+    "variablen": [
+      "anteil_kanton_kind",
+      "anteil_gemeinde_kind"
+    ],
+    "parameter": [
+      "kibg.finanzierung.anteil_kanton"
+    ],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-18.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 18 Abs. 2 KiBG",
+    "artikel_titel": "Finanzierung der Beiträge",
+    "wortlaut": "Der Kostenanteil der politischen Gemeinde nach Abs. 1 dieser Bestimmung gilt als gebundene Ausgabe.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Der Anteil der Gemeinde ist eine gebundene Ausgabe.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Finanzrecht der Gemeinde."
+  },
+  {
+    "id": "KiBG-19.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 19 Abs. 1 KiBG",
+    "artikel_titel": "Vollzugskosten",
+    "wortlaut": "Die Kosten für den Vollzug gehen nicht zulasten der Mittel nach Art. 17 Abs. 1 und Art. 18 Abs. 1 dieses Erlasses.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Kosten für den Vollzug gehen nicht zulasten des Beitragsbudgets.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Finanzrecht."
+  },
+  {
+    "id": "KiBG-20.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 20 Abs. 1 KiBG",
+    "artikel_titel": "Zusatzbeiträge",
+    "wortlaut": "Die Beiträge nach Art. 6, 17 und 18 dieses Erlasses gelten als Mindestbeiträge.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Die Beiträge nach Gesetz sind Mindestbeiträge.",
+    "variablen": [
+      "beitrag_mindest_kind"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-20.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 20 Abs. 2 KiBG",
+    "artikel_titel": "Zusatzbeiträge",
+    "wortlaut": "Die politische Gemeinde kann die Mindestbeiträge über ihren Kostenanteil nach Art. 18 Abs. 1 dieses Erlasses hinaus aus eigenen Mitteln mit Zusatzbeiträgen aufstocken.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V, P",
+    "kurztext": "Die Gemeinde kann aus eigenen Mitteln zusätzliche Beiträge zahlen.",
+    "variablen": [
+      "wohngemeinde",
+      "zusatzbeitrag_z1_pro_stunde",
+      "zusatzbeitrag_z2_pro_stunde",
+      "zusatzbeitrag_kind",
+      "beitrag_total_kind"
+    ],
+    "parameter": [
+      "gemeinden.zusatzbeitrag_z1",
+      "gemeinden.zusatzbeitrag_z2"
+    ],
+    "ambiguitaeten": [
+      "A-15"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-20.3",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 20 Abs. 3 KiBG",
+    "artikel_titel": "Zusatzbeiträge",
+    "wortlaut": "Die Summe aus einem Mindestbeitrag und einem allfälligen Zusatzbeitrag darf die Kosten der Erziehungsberechtigten für das in Anspruch genommene Betreuungsangebot nicht übersteigen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Mindestbeitrag und Zusatzbeitrag zusammen dürfen die Kosten der Eltern nicht übersteigen.",
+    "variablen": [
+      "beitrag_total_kind"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-06"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-21.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 21 Abs. 1 KiBG",
+    "artikel_titel": "Anderweitige Unterstützung",
+    "wortlaut": "Die politische Gemeinde kann die familien- und schulergänzende Kinderbetreuung über die Beiträge nach diesem Erlass hinaus anderweitig unterstützen.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Gemeinde kann die Kinderbetreuung auch auf andere Weise unterstützen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Andere Unterstützung ausserhalb der Beitragsrechnung."
+  },
+  {
+    "id": "KiBG-22.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 22 Abs. 1 KiBG",
+    "artikel_titel": "Vollzug",
+    "wortlaut": "Die Regierung bezeichnet die zuständige kantonale Stelle.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Regierung bestimmt die zuständige kantonale Stelle.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Organisation."
+  },
+  {
+    "id": "KiBG-22.2",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 22 Abs. 2 KiBG",
+    "artikel_titel": "Vollzug",
+    "wortlaut": "Die politische Gemeinde bezeichnet die zuständige kommunale Stelle. Sie kann die Erfüllung der Aufgaben nach diesem Erlass ganz oder teilweise durch Vereinbarung mit anderen Gemeinden regeln.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Jede Gemeinde bestimmt ihre zuständige Stelle und kann mit anderen Gemeinden zusammenarbeiten.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Organisation."
+  },
+  {
+    "id": "KiBG-23.1",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 23 Abs. 1 KiBG",
+    "artikel_titel": "Verordnung",
+    "wortlaut": "Die Regierung erlässt durch Verordnung die erforderlichen Ausführungsbestimmungen, insbesondere über: a) die Anmeldung von Einrichtungen für den Vollzug dieses Erlasses; b) die Anspruchsberechtigung je nach Regelung der Obhut und die Ausnahmeregelung; c) die Bemessung des massgebenden Einkommens; d) das lineare Berechnungsmodell; e) die Plattform, insbesondere die Datenbearbeitung und Datenbekanntgabe; f) das Verfahren für die Ausrichtung von Beiträgen, insbesondere wenn die Kinderbetreuung in einer ausserkantonalen Einrichtung erfolgt.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Die Regierung regelt die Einzelheiten in einer Verordnung.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Ermächtigung an die Regierung; umgesetzt durch die Verordnung."
+  },
+  {
+    "id": "KiBG-23.1.a",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 23 Abs. 1 lit. a KiBG",
+    "artikel_titel": "Verordnung",
+    "wortlaut": "Die Regierung erlässt durch Verordnung die erforderlichen Ausführungsbestimmungen, insbesondere über: a) die Anmeldung von Einrichtungen für den Vollzug dieses Erlasses;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Anmeldung der Einrichtungen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Ermächtigung an die Regierung; umgesetzt durch die Verordnung."
+  },
+  {
+    "id": "KiBG-23.1.b",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 23 Abs. 1 lit. b KiBG",
+    "artikel_titel": "Verordnung",
+    "wortlaut": "Die Regierung erlässt durch Verordnung die erforderlichen Ausführungsbestimmungen, insbesondere über: b) die Anspruchsberechtigung je nach Regelung der Obhut und die Ausnahmeregelung;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Anspruch je nach Regelung der Obhut und Ausnahmen vom Mindestpensum.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Ermächtigung an die Regierung; umgesetzt durch die Verordnung."
+  },
+  {
+    "id": "KiBG-23.1.c",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 23 Abs. 1 lit. c KiBG",
+    "artikel_titel": "Verordnung",
+    "wortlaut": "Die Regierung erlässt durch Verordnung die erforderlichen Ausführungsbestimmungen, insbesondere über: c) die Bemessung des massgebenden Einkommens;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Bemessung des massgebenden Einkommens.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Ermächtigung an die Regierung; umgesetzt durch die Verordnung."
+  },
+  {
+    "id": "KiBG-23.1.d",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 23 Abs. 1 lit. d KiBG",
+    "artikel_titel": "Verordnung",
+    "wortlaut": "Die Regierung erlässt durch Verordnung die erforderlichen Ausführungsbestimmungen, insbesondere über: d) das lineare Berechnungsmodell;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Das lineare Berechnungsmodell.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Ermächtigung an die Regierung; umgesetzt durch die Verordnung."
+  },
+  {
+    "id": "KiBG-23.1.e",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 23 Abs. 1 lit. e KiBG",
+    "artikel_titel": "Verordnung",
+    "wortlaut": "Die Regierung erlässt durch Verordnung die erforderlichen Ausführungsbestimmungen, insbesondere über: e) die Plattform, insbesondere die Datenbearbeitung und Datenbekanntgabe;",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Plattform, Datenbearbeitung und Datenbekanntgabe.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Ermächtigung an die Regierung; umgesetzt durch die Verordnung."
+  },
+  {
+    "id": "KiBG-23.1.f",
+    "erlass": "KiBG",
+    "fundstelle": "Art. 23 Abs. 1 lit. f KiBG",
+    "artikel_titel": "Verordnung",
+    "wortlaut": "Die Regierung erlässt durch Verordnung die erforderlichen Ausführungsbestimmungen, insbesondere über: f) das Verfahren für die Ausrichtung von Beiträgen, insbesondere wenn die Kinderbetreuung in einer ausserkantonalen Einrichtung erfolgt.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Verfahren, besonders bei Betreuung ausserhalb des Kantons.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Ermächtigung an die Regierung; umgesetzt durch die Verordnung."
+  },
+  {
+    "id": "KiBG-III",
+    "erlass": "KiBG",
+    "fundstelle": "Ziff. III KiBG",
+    "artikel_titel": "Aufhebung bisherigen Rechts",
+    "wortlaut": "Der Erlass «Gesetz über Beiträge für familien- und schulergänzende Kinderbetreuung vom 29. November 2020» wird aufgehoben.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Das bisherige Gesetz vom 29. November 2020 wird aufgehoben.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Rechtsstand: Vor Vollzugsbeginn gilt das alte Gesetz, das keinen Anspruch der Eltern kennt; der Rechner meldet NICHT_IN_KRAFT."
+  },
+  {
+    "id": "KiBG-IV.1",
+    "erlass": "KiBG",
+    "fundstelle": "Ziff. IV Abs. 1 KiBG",
+    "artikel_titel": "Vollzugsbeginn",
+    "wortlaut": "Die Regierung bestimmt den Vollzugsbeginn dieses Erlasses.",
+    "quellentyp": "ERLAEUTERUNG",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "V",
+    "kurztext": "Die Regierung bestimmt, ab wann das Gesetz gilt. Angekündigt ist der 1. August 2028; alle Formeln gelten erst ab diesem Datum.",
+    "variablen": [
+      "pruefstatus",
+      "beitrag_ab_datum"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBG-IV.2",
+    "erlass": "KiBG",
+    "fundstelle": "Ziff. IV Abs. 2 KiBG",
+    "artikel_titel": "Referendum",
+    "wortlaut": "Dieser Erlass untersteht dem fakultativen Gesetzesreferendum.",
+    "quellentyp": "GESETZ",
+    "url": "https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf",
+    "umsetzung": "–",
+    "kurztext": "Das Gesetz untersteht dem fakultativen Referendum.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Rechtsstand; das Gesetz wurde in der Volksabstimmung angenommen."
+  },
+  {
+    "id": "KiBV-1.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 1 Abs. 1 KiBV",
+    "artikel_titel": "Zuständige kantonale Stelle",
+    "wortlaut": "Die zuständige kantonale Stelle ist das Amt für Soziales.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Zuständig beim Kanton ist das Amt für Soziales.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Organisation."
+  },
+  {
+    "id": "KiBV-2.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 2 Abs. 1 KiBV",
+    "artikel_titel": "Zuständige politische Gemeinde",
+    "wortlaut": "Zuständig für die Prüfung der Gesuche, die anteilsmässige Finanzierung der Beiträge und die Finanzierung von allfälligen Zusatzbeiträgen nach Art. 18 und 20 des Gesetzes über Beiträge für familien- und schulergänzende Kinderbetreuung vom 14. Juni 2026 ist die politische Gemeinde am zivilrechtlichen Wohnsitz der anspruchsberechtigten Erziehungsberechtigten.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Zuständig für das Gesuch ist die Gemeinde, in der die Eltern wohnen.",
+    "variablen": [
+      "wohngemeinde"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-3.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 3 Abs. 1 KiBV",
+    "artikel_titel": "Anmeldepflicht",
+    "wortlaut": "Inner- und ausserkantonale Einrichtungen nach Art. 3 Abs. 2 KiBG melden sich einmalig beim Amt für Soziales über ein elektronisches Formular für die Teilnahme an der Ausrichtung von Beiträgen für die familien- und schulergänzende Kinderbetreuung an.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Einrichtungen müssen sich einmal beim Amt für Soziales anmelden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Pflicht der Einrichtung; das Ergebnis fliesst als Eingabe angebot_angemeldet ein."
+  },
+  {
+    "id": "KiBV-4.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 4 Abs. 1 KiBV",
+    "artikel_titel": "Inhalt",
+    "wortlaut": "Die Anmeldung umfasst: a) Kontaktdaten der Einrichtung und Mitarbeitenden mit Zugriff auf die Plattform nach Art. 7 ff. KiBG; b) Kontodaten der Einrichtung für die Auszahlung der Beiträge; c) Nachweise über die Erfüllung der Voraussetzungen nach Art. 3 Abs. 2 KiBG je Einrichtungsstandort; d) weitere Angaben, die für den Vollzug erforderlich sind.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Anmeldung enthält Kontakt- und Kontodaten, Nachweise der Anerkennung und weitere Angaben.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Inhalt der Anmeldung; liefert die Eingabe angebot_angemeldet."
+  },
+  {
+    "id": "KiBV-4.1.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 4 Abs. 1 lit. a KiBV",
+    "artikel_titel": "Inhalt",
+    "wortlaut": "Die Anmeldung umfasst: a) Kontaktdaten der Einrichtung und Mitarbeitenden mit Zugriff auf die Plattform nach Art. 7 ff. KiBG;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Kontaktdaten der Einrichtung und der Mitarbeitenden mit Zugang zur Plattform.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Inhalt der Anmeldung; liefert die Eingabe angebot_angemeldet."
+  },
+  {
+    "id": "KiBV-4.1.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 4 Abs. 1 lit. b KiBV",
+    "artikel_titel": "Inhalt",
+    "wortlaut": "Die Anmeldung umfasst: b) Kontodaten der Einrichtung für die Auszahlung der Beiträge;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Kontodaten für die Auszahlung der Beiträge.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Inhalt der Anmeldung; liefert die Eingabe angebot_angemeldet."
+  },
+  {
+    "id": "KiBV-4.1.c",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 4 Abs. 1 lit. c KiBV",
+    "artikel_titel": "Inhalt",
+    "wortlaut": "Die Anmeldung umfasst: c) Nachweise über die Erfüllung der Voraussetzungen nach Art. 3 Abs. 2 KiBG je Einrichtungsstandort;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Nachweise je Standort, dass die Einrichtung anerkannt ist.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Inhalt der Anmeldung; liefert die Eingabe angebot_angemeldet."
+  },
+  {
+    "id": "KiBV-4.1.d",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 4 Abs. 1 lit. d KiBV",
+    "artikel_titel": "Inhalt",
+    "wortlaut": "Die Anmeldung umfasst: d) weitere Angaben, die für den Vollzug erforderlich sind.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Weitere Angaben, die für den Vollzug nötig sind.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Inhalt der Anmeldung; liefert die Eingabe angebot_angemeldet."
+  },
+  {
+    "id": "KiBV-4.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 4 Abs. 2 KiBV",
+    "artikel_titel": "Inhalt",
+    "wortlaut": "Vom Nachweis nach Abs. 1 Bst. c dieser Bestimmung ausgenommen sind Einrichtungen der schulergänzenden Betreuung, sofern sie öffentliche Organe sind.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Öffentliche Einrichtungen der schulergänzenden Betreuung müssen keine Nachweise einreichen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Inhalt der Anmeldung."
+  },
+  {
+    "id": "KiBV-5.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 5 Abs. 1 KiBV",
+    "artikel_titel": "Prüfung und Bestätigung",
+    "wortlaut": "Das Amt für Soziales prüft die Anmeldung auf Vollständigkeit und Erfüllung der gesetzlichen Voraussetzungen.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Das Amt für Soziales prüft die Anmeldung.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren des Kantons."
+  },
+  {
+    "id": "KiBV-5.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 5 Abs. 2 KiBV",
+    "artikel_titel": "Prüfung und Bestätigung",
+    "wortlaut": "Sind die Voraussetzungen erfüllt, bestätigt sie die Teilnahme der Einrichtung.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Sind die Voraussetzungen erfüllt, bestätigt das Amt die Teilnahme.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren des Kantons; liefert die Eingabe angebot_angemeldet."
+  },
+  {
+    "id": "KiBV-5.3",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 5 Abs. 3 KiBV",
+    "artikel_titel": "Prüfung und Bestätigung",
+    "wortlaut": "Liegen die Nachweise nach Art. 4 Bst. c dieses Erlasses zum Zeitpunkt der Anmeldung noch nicht vor, kann das Amt für Soziales die Teilnahme auf begründetes Gesuch hin provisorisch bestätigen. Das Amt für Soziales bestätigt die Teilnahme definitiv, wenn die betreffende Einrichtung die fehlenden Nachweise innert einem Monat nachreicht.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Fehlen Nachweise noch, kann das Amt die Teilnahme vorläufig bestätigen.",
+    "variablen": [
+      "angebot_angemeldet"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-12"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-6.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 6 Abs. 1 KiBV",
+    "artikel_titel": "Teilnahmebeginn",
+    "wortlaut": "Die Teilnahme beginnt am ersten Tag des Folgemonats, nachdem das Amt für Soziales diese bestätigt hat.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Teilnahme beginnt am ersten Tag des Monats nach der Bestätigung.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Datum der Bestätigung wird nicht abgefragt (mögliche Erweiterung)."
+  },
+  {
+    "id": "KiBV-7.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 7 Abs. 1 KiBV",
+    "artikel_titel": "Anspruchsberechtigung",
+    "wortlaut": "Anspruch auf Beiträge haben Erziehungsberechtigte für die Tage, an denen sie die Obhut für das betreute Kind faktisch wahrnehmen und sie familien- oder schulergänzende Betreuung in Anspruch nehmen.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Beiträge gibt es nur für Tage, an denen das Kind tatsächlich in Ihrer Obhut ist und betreut wird.",
+    "variablen": [
+      "betreuungstage_pro_woche"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-8.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 8 Abs. 1 KiBV",
+    "artikel_titel": "Massgebendes Einkommen und Vermögen – a) Grundsatz",
+    "wortlaut": "Zur Festlegung des massgebenden Einkommens und Vermögens gelten: a) bei gemeinsamem Haushalt der Erziehungsberechtigten: die massgebenden Einkommen und Vermögen beider Erziehungsberechtigter; b) bei getrenntem Haushalt der Erziehungsberechtigten: das massgebende Einkommen und Vermögen der oder des antragstellenden Erziehungsberechtigten sowie das massgebende Einkommen und Vermögen einer Partnerin oder eines Partners im gleichen Haushalt, mit der sie oder er eine gefestigte Lebensgemeinschaft bildet, die oder der gegenüber dem Kind nicht erziehungsberechtigt ist.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Welches Einkommen zählt, hängt davon ab, ob die Eltern zusammen oder getrennt leben.",
+    "variablen": [
+      "me_veranlagung_familie"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-8.1.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 8 Abs. 1 lit. a KiBV",
+    "artikel_titel": "Massgebendes Einkommen und Vermögen – a) Grundsatz",
+    "wortlaut": "Zur Festlegung des massgebenden Einkommens und Vermögens gelten: a) bei gemeinsamem Haushalt der Erziehungsberechtigten: die massgebenden Einkommen und Vermögen beider Erziehungsberechtigter;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Leben die Eltern zusammen, zählen Einkommen und Vermögen beider.",
+    "variablen": [
+      "me_veranlagung_familie"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-8.1.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 8 Abs. 1 lit. b KiBV",
+    "artikel_titel": "Massgebendes Einkommen und Vermögen – a) Grundsatz",
+    "wortlaut": "Zur Festlegung des massgebenden Einkommens und Vermögens gelten: b) bei getrenntem Haushalt der Erziehungsberechtigten: das massgebende Einkommen und Vermögen der oder des antragstellenden Erziehungsberechtigten sowie das massgebende Einkommen und Vermögen einer Partnerin oder eines Partners im gleichen Haushalt, mit der sie oder er eine gefestigte Lebensgemeinschaft bildet, die oder der gegenüber dem Kind nicht erziehungsberechtigt ist.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Leben die Eltern getrennt, zählt das Einkommen des Elternteils, der das Gesuch stellt, und einer neuen Partnerin oder eines neuen Partners in fester Beziehung.",
+    "variablen": [
+      "ist_partner",
+      "partner_gefestigt",
+      "me_veranlagung_familie"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-8.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 8 Abs. 2 KiBV",
+    "artikel_titel": "Massgebendes Einkommen und Vermögen – a) Grundsatz",
+    "wortlaut": "Eine Lebensgemeinschaft gilt als gefestigt: a) bei Ehe oder eingetragener Partnerschaft oder b) wenn seit wenigstens zwei Jahren ein gemeinsamer Haushalt besteht (Konkubinat).",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Eine Beziehung gilt als fest bei Ehe, eingetragener Partnerschaft oder mindestens zwei Jahren Zusammenleben.",
+    "variablen": [
+      "partner_gefestigt"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-8.2.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 8 Abs. 2 lit. a KiBV",
+    "artikel_titel": "Massgebendes Einkommen und Vermögen – a) Grundsatz",
+    "wortlaut": "Eine Lebensgemeinschaft gilt als gefestigt: a) bei Ehe oder eingetragener Partnerschaft oder",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Ehe oder eingetragene Partnerschaft gelten immer als feste Beziehung.",
+    "variablen": [
+      "partnerschaft",
+      "partner_gefestigt"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-8.2.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 8 Abs. 2 lit. b KiBV",
+    "artikel_titel": "Massgebendes Einkommen und Vermögen – a) Grundsatz",
+    "wortlaut": "Eine Lebensgemeinschaft gilt als gefestigt: b) wenn seit wenigstens zwei Jahren ein gemeinsamer Haushalt besteht (Konkubinat).",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V, P",
+    "kurztext": "Ein Konkubinat gilt als feste Beziehung, wenn das Paar seit mindestens zwei Jahren zusammenlebt.",
+    "variablen": [
+      "partnerschaft",
+      "konkubinat_jahre",
+      "partner_gefestigt"
+    ],
+    "parameter": [
+      "kibv.einkommen.konkubinat_mindestjahre"
+    ],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-9.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 9 Abs. 1 KiBV",
+    "artikel_titel": "b) bei ordentlich besteuerten Personen",
+    "wortlaut": "Das massgebende Einkommen und Vermögen bemisst sich nach dem massgebenden Einkommen nach Art. 12 Abs. 2 der Verordnung zum Einführungsgesetz zur Bundesgesetzgebung über die Krankenversicherung vom 12. Dezember 1995.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Das massgebende Einkommen berechnet sich wie bei der Prämienverbilligung.",
+    "variablen": [
+      "me_veranlagung"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-10.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 10 Abs. 1 KiBV",
+    "artikel_titel": "c) Ausnahmen",
+    "wortlaut": "Bei Personen, die dem ordentlichen Steuerveranlagungsverfahren nicht unterliegen (quellenbesteuerte Personen) oder bei denen keine rechtskräftige Steuerveranlagung vorliegt, entspricht das massgebende Einkommen und Vermögen sachgemäss dem massgebenden Einkommen gemäss Art. 12bis der Verordnung zum Einführungsgesetz zur Bundesgesetzgebung über die Krankenversicherung vom 12. Dezember 1995.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Bei Quellensteuer oder ohne Veranlagung gilt die entsprechende Regel der Prämienverbilligung.",
+    "variablen": [
+      "me_veranlagung"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-10.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 10 Abs. 2 KiBV",
+    "artikel_titel": "c) Ausnahmen",
+    "wortlaut": "Wenn keine ordentliche Steuerveranlagung vorhanden, sind von den gesuchstellenden Erziehungsberechtigten entsprechende Einkommens- und Vermögensnachweise einzureichen.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Ohne Veranlagung müssen die Eltern Einkommens- und Vermögensnachweise einreichen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren; Nachweise werden nicht geprüft."
+  },
+  {
+    "id": "KiBV-11.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 11 Abs. 1 KiBV",
+    "artikel_titel": "d) aufgrund aktueller Gegebenheiten",
+    "wortlaut": "Die Bemessung des massgebenden Einkommens und Vermögens aufgrund aktueller Gegebenheiten nach Art. 5 Abs. 4 KiBG erfolgt auf Antrag der Gesuchstellenden.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Mit den aktuellen Verhältnissen wird nur gerechnet, wenn die Eltern das beantragen.",
+    "variablen": [
+      "antrag_aktuelle_gegebenheiten",
+      "me_massgebend"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-11.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 11 Abs. 2 KiBV",
+    "artikel_titel": "d) aufgrund aktueller Gegebenheiten",
+    "wortlaut": "Die Abweichung muss zum Zeitpunkt der Gesuchstellung wenigstens 25 Prozent des massgebenden Einkommens und Vermögens betragen.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V, P",
+    "kurztext": "Die Abweichung muss beim Gesuch mindestens 25 Prozent betragen.",
+    "variablen": [
+      "me_aktuell",
+      "me_massgebend"
+    ],
+    "parameter": [
+      "kibv.einkommen.schwelle_abweichung"
+    ],
+    "ambiguitaeten": [
+      "A-05"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-11.3",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 11 Abs. 3 KiBV",
+    "artikel_titel": "d) aufgrund aktueller Gegebenheiten",
+    "wortlaut": "Verändert sich die wirtschaftliche Leistungsfähigkeit der anspruchsberechtigten Erziehungsberechtigten während einer laufenden Verfügung um wenigstens 25 Prozent, können diese bei der zuständigen kommunalen Stelle eine Neubestimmung des massgebenden Einkommens und Vermögens beantragen. Beiträge, die aufgrund der Neubestimmung festgelegt werden, gelten in der Regel ab dem ersten Tag des Folgemonats nach Einreichung des Antrags und für die verbleibende Dauer der ursprünglichen Beitragsverfügung.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Ändert sich die finanzielle Lage während der Verfügung um mindestens 25 Prozent, kann eine Neuberechnung beantragt werden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Neubestimmung während einer laufenden Verfügung; der Rechner berechnet einen einzelnen Monat."
+  },
+  {
+    "id": "KiBV-12.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 12 Abs. 1 KiBV",
+    "artikel_titel": "Entbindung des Erfordernisses des minimalen Beschäftigungsgrads in begründeten Aus- nahmefällen",
+    "wortlaut": "Als begründete Ausnahmefälle nach Art. 4 Abs. 2 KiBG gelten: a) berufliche Integration, namentlich Stellensuche, Aus- und Weiterbildung oder Integrationsmassnahmen für ausländische Staatsangehörige; b) familiäre Belastungen wie gesundheitliche Beeinträchtigungen oder Überforderung der Erziehungsberechtigten; c) Entwicklungs- oder Verhaltensauffälligkeiten des Kindes oder eine sprachliche Indikation.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "H",
+    "kurztext": "Die Verordnung nennt drei Gründe, aus denen die Gemeinde auf das Mindestpensum verzichten kann.",
+    "variablen": [
+      "ausnahmegrund",
+      "ausnahme_pensum_gewaehrt"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-01"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-12.1.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 12 Abs. 1 lit. a KiBV",
+    "artikel_titel": "Entbindung des Erfordernisses des minimalen Beschäftigungsgrads in begründeten Aus- nahmefällen",
+    "wortlaut": "Als begründete Ausnahmefälle nach Art. 4 Abs. 2 KiBG gelten: a) berufliche Integration, namentlich Stellensuche, Aus- und Weiterbildung oder Integrationsmassnahmen für ausländische Staatsangehörige;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Grund 1: berufliche Integration, etwa Stellensuche, Ausbildung oder Integrationsmassnahmen.",
+    "variablen": [
+      "ausnahmegrund"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-01"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-12.1.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 12 Abs. 1 lit. b KiBV",
+    "artikel_titel": "Entbindung des Erfordernisses des minimalen Beschäftigungsgrads in begründeten Aus- nahmefällen",
+    "wortlaut": "Als begründete Ausnahmefälle nach Art. 4 Abs. 2 KiBG gelten: b) familiäre Belastungen wie gesundheitliche Beeinträchtigungen oder Überforderung der Erziehungsberechtigten;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Grund 2: familiäre Belastung, etwa gesundheitliche Probleme oder Überforderung der Eltern.",
+    "variablen": [
+      "ausnahmegrund"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-01"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-12.1.c",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 12 Abs. 1 lit. c KiBV",
+    "artikel_titel": "Entbindung des Erfordernisses des minimalen Beschäftigungsgrads in begründeten Aus- nahmefällen",
+    "wortlaut": "Als begründete Ausnahmefälle nach Art. 4 Abs. 2 KiBG gelten: c) Entwicklungs- oder Verhaltensauffälligkeiten des Kindes oder eine sprachliche Indikation.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "E",
+    "kurztext": "Grund 3: das Kind hat Entwicklungs-, Verhaltens- oder Sprachauffälligkeiten.",
+    "variablen": [
+      "ausnahmegrund"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-01"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-13.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 13 Abs. 1 KiBV",
+    "artikel_titel": "Berechnungsformel",
+    "wortlaut": "Die lineare Berechnung der Höhe der Beiträge erfolgt gemäss Formel im Anhang zu diesem Erlass.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Der Beitrag wird mit der Formel im Anhang der Verordnung berechnet.",
+    "variablen": [
+      "einkommensfaktor",
+      "beitrag_pro_stunde_mindest",
+      "beitrag_pro_stunde_total"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 1 KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für Kinder unter 18 Monaten liegt bei: a) Fr. 11.00 je Kind und Betreuungsstunde in Kindertagesstätten; b) Fr. 8.30 je Kind und Betreuungsstunde in Tagesfamilien.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Für Kinder unter 18 Monaten beträgt der Höchstbeitrag pro Stunde CHF 11.00 in der Kita und CHF 8.30 in der Tagesfamilie.",
+    "variablen": [
+      "altersstufe",
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-08",
+      "A-11"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.1.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 1 lit. a KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für Kinder unter 18 Monaten liegt bei: a) Fr. 11.00 je Kind und Betreuungsstunde in Kindertagesstätten;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Unter 18 Monaten, Kita: höchstens CHF 11.00 pro Stunde.",
+    "variablen": [
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [
+      "kibv.hoechstbeitrag.unter_18_monate.kita"
+    ],
+    "ambiguitaeten": [
+      "A-08"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.1.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 1 lit. b KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für Kinder unter 18 Monaten liegt bei: b) Fr. 8.30 je Kind und Betreuungsstunde in Tagesfamilien.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Unter 18 Monaten, Tagesfamilie: höchstens CHF 8.30 pro Stunde.",
+    "variablen": [
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [
+      "kibv.hoechstbeitrag.unter_18_monate.tagesfamilie"
+    ],
+    "ambiguitaeten": [
+      "A-08"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 2 KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für Kinder über 18 Monaten bis zur Einschulung liegt bei: a) Fr. 7.50 je Kind und Betreuungsstunde in Kindertagesstätten; b) Fr. 5.50 je Kind und Betreuungsstunde in Tagesfamilien.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Ab 18 Monaten bis zur Einschulung beträgt der Höchstbeitrag CHF 7.50 in der Kita und CHF 5.50 in der Tagesfamilie.",
+    "variablen": [
+      "altersstufe",
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-04",
+      "A-08",
+      "A-11"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.2.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 2 lit. a KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für Kinder über 18 Monaten bis zur Einschulung liegt bei: a) Fr. 7.50 je Kind und Betreuungsstunde in Kindertagesstätten;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Ab 18 Monaten bis zur Einschulung, Kita: höchstens CHF 7.50 pro Stunde.",
+    "variablen": [
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [
+      "kibv.hoechstbeitrag.ab_18_monate.kita"
+    ],
+    "ambiguitaeten": [
+      "A-08"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.2.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 2 lit. b KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für Kinder über 18 Monaten bis zur Einschulung liegt bei: b) Fr. 5.50 je Kind und Betreuungsstunde in Tagesfamilien.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Ab 18 Monaten bis zur Einschulung, Tagesfamilie: höchstens CHF 5.50 pro Stunde.",
+    "variablen": [
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [
+      "kibv.hoechstbeitrag.ab_18_monate.tagesfamilie"
+    ],
+    "ambiguitaeten": [
+      "A-08"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.3",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 3 KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für eingeschulte Kinder bis zum Ende der Primarstufe liegt bei: a) Fr. 7.50 je Kind und Betreuungsstunde in Kindertagesstätten; b) Fr. 5.50 je Kind und Betreuungsstunde in Einrichtungen für schulergänzende Betreuung; c) Fr. 5.50 je Kind und Betreuungsstunde in Tagesfamilien.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Für eingeschulte Kinder bis Ende Primarschule beträgt der Höchstbeitrag CHF 7.50 in der Kita und CHF 5.50 in Hort und Tagesfamilie.",
+    "variablen": [
+      "altersstufe",
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-04"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.3.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 3 lit. a KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für eingeschulte Kinder bis zum Ende der Primarstufe liegt bei: a) Fr. 7.50 je Kind und Betreuungsstunde in Kindertagesstätten;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Eingeschult, Kita: höchstens CHF 7.50 pro Stunde.",
+    "variablen": [
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [
+      "kibv.hoechstbeitrag.eingeschult.kita"
+    ],
+    "ambiguitaeten": [
+      "A-04"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.3.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 3 lit. b KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für eingeschulte Kinder bis zum Ende der Primarstufe liegt bei: b) Fr. 5.50 je Kind und Betreuungsstunde in Einrichtungen für schulergänzende Betreuung;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Eingeschult, schulergänzende Betreuung: höchstens CHF 5.50 pro Stunde.",
+    "variablen": [
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [
+      "kibv.hoechstbeitrag.eingeschult.schulergaenzend"
+    ],
+    "ambiguitaeten": [
+      "A-04",
+      "A-09"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.3.c",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 3 lit. c KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Der höchste Beitrag für eingeschulte Kinder bis zum Ende der Primarstufe liegt bei: c) Fr. 5.50 je Kind und Betreuungsstunde in Tagesfamilien.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Eingeschult, Tagesfamilie: höchstens CHF 5.50 pro Stunde.",
+    "variablen": [
+      "hoechstbeitrag_maxv"
+    ],
+    "parameter": [
+      "kibv.hoechstbeitrag.eingeschult.tagesfamilie"
+    ],
+    "ambiguitaeten": [
+      "A-04"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.4",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 4 KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Ein Betreuungstag umfasst je Kind höchstens zwölf subventionierte Betreuungsstunden. Eine Betreuungswoche umfasst höchstens fünf Betreuungstage.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V, P",
+    "kurztext": "Pro Kind zählen höchstens 12 Stunden pro Tag und 5 Tage pro Woche.",
+    "variablen": [
+      "betreuungstage_pro_woche",
+      "betreuungsstunden_pro_tag",
+      "subventionierte_stunden_monat"
+    ],
+    "parameter": [
+      "kibv.umfang.max_stunden_pro_tag",
+      "kibv.umfang.max_tage_pro_woche"
+    ],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-14.5",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 14 Abs. 5 KiBV",
+    "artikel_titel": "Werte der Berechnungsparameter – a) Höhe des Höchstbeitrags",
+    "wortlaut": "Das Amt für Soziales kann den Umgang mit Betreuungsmodulen und Monatspauschalen mittels Richtlinien regeln.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Das Amt für Soziales kann regeln, wie Module und Monatspauschalen umgerechnet werden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Es gibt noch keine Richtlinie des Amts für Soziales."
+  },
+  {
+    "id": "KiBV-15.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 15 Abs. 1 KiBV",
+    "artikel_titel": "b) kleinstes und höchstes massgebendes Einkommen und Vermögen",
+    "wortlaut": "Das kleinste massgebende Einkommen und Vermögen liegt bei Fr. 40'000.–. Erziehungsberechtigte mit einem massgebenden Einkommen und Vermögen bis Fr. 40'000.– erhalten den maximalen Beitrag.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Bis zu einem massgebenden Einkommen und Vermögen von CHF 40 000 gibt es den vollen Beitrag.",
+    "variablen": [
+      "einkommensfaktor"
+    ],
+    "parameter": [
+      "kibv.einkommen.min_me"
+    ],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-15.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 15 Abs. 2 KiBV",
+    "artikel_titel": "b) kleinstes und höchstes massgebendes Einkommen und Vermögen",
+    "wortlaut": "Das höchste massgebende Einkommen und Vermögen liegt bei Fr. 154'000.–. Erziehungsberechtigte mit einem massgebenden Einkommen und Vermögen über Fr. 154'000.– erhalten keinen Beitrag.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "P",
+    "kurztext": "Über CHF 154 000 gibt es keinen Beitrag mehr.",
+    "variablen": [
+      "einkommensfaktor"
+    ],
+    "parameter": [
+      "kibv.einkommen.max_me"
+    ],
+    "ambiguitaeten": [
+      "A-10"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-16.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 16 Abs. 1 KiBV",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Für familienergänzende Betreuung in Kindertagesstätten und Tagesfamilien gilt die Beitragsverfügung in der Regel für zwölf Monate. Erfolgt die Beitragsverfügung während des laufenden Kalenderjahres, in dem das Kind schulpflichtig wird, gilt sie bis zu Beginn des Schuljahres in diesem Kalenderjahr.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Für Kita und Tagesfamilie gilt die Verfügung in der Regel 12 Monate, im Jahr des Schuleintritts nur bis Schulbeginn.",
+    "variablen": [
+      "verfuegung_dauer_monate"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-13"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-16.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 16 Abs. 2 KiBV",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Für die Betreuung von eingeschulten Kindern gilt die Beitragsverfügung in der Regel für ein Schuljahr. Erfolgt die Beitragsverfügung während des laufenden Schuljahres, gilt sie bis zu dessen Ende.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V",
+    "kurztext": "Für eingeschulte Kinder gilt die Verfügung für ein Schuljahr bzw. bis zu dessen Ende.",
+    "variablen": [
+      "verfuegung_dauer_monate"
+    ],
+    "parameter": [],
+    "ambiguitaeten": [
+      "A-13"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-16.3",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 16 Abs. 3 KiBV",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Änderungen nach Art. 11 Abs. 3 Bst. a KiBG werden nach Ablauf einer laufenden Beitragsverfügung mit der nächsten Beitragsverfügung wirksam, wenn sie eine Senkung der Beiträge zur Folge haben.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Senkungen wegen geänderter Berechnung gelten erst ab der nächsten Verfügung.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verlauf über mehrere Verfügungen."
+  },
+  {
+    "id": "KiBV-16.4",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 16 Abs. 4 KiBV",
+    "artikel_titel": "Beitragsverfügung",
+    "wortlaut": "Erziehungsberechtigte werden rechtzeitig über auslaufende Verfügungen informiert und bei Bedarf an die erneute Gesuchstellung erinnert.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Eltern werden rechtzeitig über auslaufende Verfügungen informiert.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren; Hinweis im Rechner."
+  },
+  {
+    "id": "KiBV-17.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 17 Abs. 1 KiBV",
+    "artikel_titel": "Beitragsauszahlung",
+    "wortlaut": "Die Einrichtungen erfassen bis zum 15. des Folgemonats den Betreuungsumfang.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Einrichtungen melden den Betreuungsumfang bis zum 15. des Folgemonats.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Zahlungsfluss."
+  },
+  {
+    "id": "KiBV-17.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 17 Abs. 2 KiBV",
+    "artikel_titel": "Beitragsauszahlung",
+    "wortlaut": "Die Auszahlung der Beiträge der politischen Gemeinden an die Einrichtungen erfolgt wenigstens quartalsweise.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Gemeinden zahlen die Beiträge mindestens vierteljährlich an die Einrichtungen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Zahlungsfluss."
+  },
+  {
+    "id": "KiBV-17.3",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 17 Abs. 3 KiBV",
+    "artikel_titel": "Beitragsauszahlung",
+    "wortlaut": "Die Auszahlung des Kostenanteils des Kantons an die politischen Gemeinden erfolgt halbjährlich.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Der Kanton zahlt seinen Anteil halbjährlich an die Gemeinden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Zahlungsfluss."
+  },
+  {
+    "id": "KiBV-18.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 18 Abs. 1 KiBV",
+    "artikel_titel": "Rückerstattung",
+    "wortlaut": "Erziehungsberechtigte haben nach Art. 13 KiBG zu Unrecht Beiträge bezogen, wenn die Anspruchsvoraussetzungen nicht erfüllt waren.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Zu Unrecht bezogen sind Beiträge, wenn die Voraussetzungen nicht erfüllt waren.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren."
+  },
+  {
+    "id": "KiBV-18.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 18 Abs. 2 KiBV",
+    "artikel_titel": "Rückerstattung",
+    "wortlaut": "Der Rückerstattungsanspruch richtet sich gegen die Erziehungsberechtigten.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Zurückfordern kann die Gemeinde bei den Eltern.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verfahren."
+  },
+  {
+    "id": "KiBV-19.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 19 Abs. 1 KiBV",
+    "artikel_titel": "Zuständigkeiten",
+    "wortlaut": "Für den Betrieb und die Wahrung der Informationssicherheit der Plattform nach Art. 7 KiBG ist E-Government St.Gallen zuständig.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "E-Government St.Gallen betreibt die Plattform und sorgt für die Informationssicherheit.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-19.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 19 Abs. 2 KiBV",
+    "artikel_titel": "Zuständigkeiten",
+    "wortlaut": "Für die Einhaltung des Datenschutzes sind im Rahmen ihrer Zuständigkeiten das Amt für Soziales, die jeweiligen zuständigen kommunalen Stellen nach Art. 8 KiBG und E-Government St.Gallen verantwortlich.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Für den Datenschutz sind das Amt für Soziales, die Gemeinden und E-Government St.Gallen verantwortlich.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-20.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 20 Abs. 1 KiBV",
+    "artikel_titel": "Zugang",
+    "wortlaut": "Zugang auf die Plattform haben: a) mittels elektronischer Authentifizierung von wenigstens Vertrauensstufe 1 nach Art. 4 Abs. 4 der Verordnung über das E-Login vom 27. November 2025: 1. Erziehungsberechtigte; 2. angemeldete Einrichtungen; b) mittels Behördenlogin: 1. Amt für Soziales; 2. zuständige kommunale Stellen; 3. angemeldete Einrichtungen, sofern sie öffentliche Organe sind.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Eltern und Einrichtungen melden sich mit E-Login an, Behörden mit Behördenlogin.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-20.1.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 20 Abs. 1 lit. a KiBV",
+    "artikel_titel": "Zugang",
+    "wortlaut": "Zugang auf die Plattform haben: a) mittels elektronischer Authentifizierung von wenigstens Vertrauensstufe 1 nach Art. 4 Abs. 4 der Verordnung über das E-Login vom 27. November 2025: 1. Erziehungsberechtigte; 2. angemeldete Einrichtungen;",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Eltern und angemeldete Einrichtungen melden sich mit E-Login an.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-20.1.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 20 Abs. 1 lit. b KiBV",
+    "artikel_titel": "Zugang",
+    "wortlaut": "Zugang auf die Plattform haben: b) mittels Behördenlogin: 1. Amt für Soziales; 2. zuständige kommunale Stellen; 3. angemeldete Einrichtungen, sofern sie öffentliche Organe sind.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Amt für Soziales, Gemeinden und öffentliche Einrichtungen nutzen das Behördenlogin.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-21.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 21 Abs. 1 KiBV",
+    "artikel_titel": "Datenbearbeitung – a) Datenkategorien",
+    "wortlaut": "Auf der Plattform werden folgende Daten nach Art. 8 KiBG bearbeitet: a) zum Zweck der Ermittlung des Anspruchs und der wirtschaftlichen Leistungsfähigkeit von Erziehungsberechtigten sowie der Partnerin oder des Partners, welche mit der oder dem Erziehungsberechtigten in einer gefestigten Lebensgemeinschaft lebt, durch die zuständige kommunale Stelle nach Art. 7 ff. dieses Erlasses: 1. Name und Vorname; 2. Wohnort und Aufenthaltsort; 3. Kontaktdaten wie Telefonnummer und E-Mail-Adresse; 4. Zivilstand; 5. AHV-Versichertennummer; 6. Steuerdaten der letzten definitiven Steuerveranlagung und aktuelle Einkommens- und Vermögensnachweise nach Art. 8 ff. dieses Erlasses; 7. Leistungen und Massnahmen der sozialen Hilfe, soweit diese zur Ermittlung der Einkommens- und Vermögensverhältnisse notwendig sind; 8. Angaben zu Anstellungsverhältnis und Beschäftigungsgrad; 9. Name und Vorname des betreuten Kindes; 10. Geburtsdatum des betreuten Kindes; 11. Personalien allfälliger Partnerinnen und Partner, die mit dem/der Erziehungsberechtigten in einer gefestigten Lebensgemeinschaft leben; 12. Metadaten für die automatische Protokollierung nach Art. 23 Abs. 1 dieses Erlasses; 13. [Daten werden im Rahmen der Konzeptphase von IT-KiBG weiter spezifiziert]. b) zum Zweck der Ausrichtung der Beiträge nach Art. 16 ff. dieses Erlasses durch die Einrichtung und die zuständige kommunale Stelle: 1. Name und Vorname des betreuten Kindes; 2. Angaben zur Art des genutzten Betreuungsangebots; 3. Betreuungsumfang; 4. Metadaten für die automatische Protokollierung nach Art. 23 Abs. 1 dieses Erlasses; 5. [Daten werden im Rahmen der Konzeptphase von IT-KiBG weiter spezifiziert]. c) zum Zweck von Controlling und Monitoring durch das Amt für Soziales: die Daten nach Bst. a und b dieser Bestimmung.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Verordnung zählt auf, welche Daten auf der Plattform bearbeitet werden.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-21.1.a",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 21 Abs. 1 lit. a KiBV",
+    "artikel_titel": "Datenbearbeitung – a) Datenkategorien",
+    "wortlaut": "Auf der Plattform werden folgende Daten nach Art. 8 KiBG bearbeitet: a) zum Zweck der Ermittlung des Anspruchs und der wirtschaftlichen Leistungsfähigkeit von Erziehungsberechtigten sowie der Partnerin oder des Partners, welche mit der oder dem Erziehungsberechtigten in einer gefestigten Lebensgemeinschaft lebt, durch die zuständige kommunale Stelle nach Art. 7 ff. dieses Erlasses: 1. Name und Vorname; 2. Wohnort und Aufenthaltsort; 3. Kontaktdaten wie Telefonnummer und E-Mail-Adresse; 4. Zivilstand; 5. AHV-Versichertennummer; 6. Steuerdaten der letzten definitiven Steuerveranlagung und aktuelle Einkommens- und Vermögensnachweise nach Art. 8 ff. dieses Erlasses; 7. Leistungen und Massnahmen der sozialen Hilfe, soweit diese zur Ermittlung der Einkommens- und Vermögensverhältnisse notwendig sind; 8. Angaben zu Anstellungsverhältnis und Beschäftigungsgrad; 9. Name und Vorname des betreuten Kindes; 10. Geburtsdatum des betreuten Kindes; 11. Personalien allfälliger Partnerinnen und Partner, die mit dem/der Erziehungsberechtigten in einer gefestigten Lebensgemeinschaft leben; 12. Metadaten für die automatische Protokollierung nach Art. 23 Abs. 1 dieses Erlasses; 13. [Daten werden im Rahmen der Konzeptphase von IT-KiBG weiter spezifiziert].",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Daten zur Prüfung des Anspruchs und der finanziellen Lage, z. B. Personalien, Steuerdaten, Beschäftigungsgrad.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-21.1.b",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 21 Abs. 1 lit. b KiBV",
+    "artikel_titel": "Datenbearbeitung – a) Datenkategorien",
+    "wortlaut": "Auf der Plattform werden folgende Daten nach Art. 8 KiBG bearbeitet: b) zum Zweck der Ausrichtung der Beiträge nach Art. 16 ff. dieses Erlasses durch die Einrichtung und die zuständige kommunale Stelle: 1. Name und Vorname des betreuten Kindes; 2. Angaben zur Art des genutzten Betreuungsangebots; 3. Betreuungsumfang; 4. Metadaten für die automatische Protokollierung nach Art. 23 Abs. 1 dieses Erlasses; 5. [Daten werden im Rahmen der Konzeptphase von IT-KiBG weiter spezifiziert].",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Daten zur Auszahlung, z. B. Name des Kindes, Art und Umfang der Betreuung.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-21.1.c",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 21 Abs. 1 lit. c KiBV",
+    "artikel_titel": "Datenbearbeitung – a) Datenkategorien",
+    "wortlaut": "Auf der Plattform werden folgende Daten nach Art. 8 KiBG bearbeitet: c) zum Zweck von Controlling und Monitoring durch das Amt für Soziales: die Daten nach Bst. a und b dieser Bestimmung.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Für Controlling und Monitoring darf das Amt für Soziales alle diese Daten nutzen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-22.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 22 Abs. 1 KiBV",
+    "artikel_titel": "b) Zugriff",
+    "wortlaut": "Die Leiterin oder der Leiter des Amtes für Soziales und die Leiterin oder der Leiter der jeweiligen zuständigen kommunalen Stelle bestimmen die Mitarbeitenden oder die Organisationseinheiten, die Daten zur Erfüllung ihrer gesetzlichen Aufgaben nach Art. 8 Abs. 2 KiBG abrufen und an die betroffenen Einrichtungen bekanntgeben können.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Amtsleitungen bestimmen, wer welche Daten abrufen darf.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-22.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 22 Abs. 2 KiBV",
+    "artikel_titel": "b) Zugriff",
+    "wortlaut": "Sie melden die Zugriffsberechtigungen an E-Government St.Gallen sowie an das kantonale Steueramt, soweit dieses nach Art. 77b der Steuerverordnung zuständig ist, und überprüfen diese regelmässig.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Zugriffsrechte werden gemeldet und regelmässig überprüft.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-22.3",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 22 Abs. 3 KiBV",
+    "artikel_titel": "b) Zugriff",
+    "wortlaut": "Erziehungsberechtigte haben nur Zugriff auf Daten, die sie selbst betreffen.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Eltern sehen nur ihre eigenen Daten.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-22.4",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 22 Abs. 4 KiBV",
+    "artikel_titel": "b) Zugriff",
+    "wortlaut": "Angemeldete Einrichtungen haben nur Zugriff auf Daten, die für die Ausrichtung von Beiträgen im Rahmen der von ihnen erbrachten Leistungen erforderlich sind.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Einrichtungen sehen nur die Daten, die sie für ihre Leistungen brauchen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-22.5",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 22 Abs. 5 KiBV",
+    "artikel_titel": "b) Zugriff",
+    "wortlaut": "Die Einzelheiten werden in einem Zugriffs- und Berechtigungskonzept durch E-Government St.Gallen geregelt.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Einzelheiten regelt ein Zugriffskonzept.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-23.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 23 Abs. 1 KiBV",
+    "artikel_titel": "c) Protokollierung und Aufbewahrung",
+    "wortlaut": "Der Abruf von Daten wird automatisch protokolliert. Die Protokolldaten werden während zehn Jahren aufbewahrt und nach Ablauf dieser Frist gelöscht.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Jeder Datenabruf wird protokolliert; die Protokolle werden zehn Jahre aufbewahrt.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-23.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 23 Abs. 2 KiBV",
+    "artikel_titel": "c) Protokollierung und Aufbewahrung",
+    "wortlaut": "Daten nach Art. 21 dieses Erlasses werden zehn Jahre aufbewahrt.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Die Daten werden zehn Jahre aufbewahrt.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Plattform und Datenschutz; der Rechner speichert und ruft keine Daten ab."
+  },
+  {
+    "id": "KiBV-24.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 24 Abs. 1 KiBV",
+    "artikel_titel": "Zusatzbeiträge",
+    "wortlaut": "Die politische Gemeinde kann die Zusatzbeiträge nach Art. 20 KiBG einkommens- und vermögensabhängig oder einkommens- und vermögensunabhängig gewähren.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V, P",
+    "kurztext": "Die Gemeinde kann ihre Zusatzbeiträge abhängig oder unabhängig vom Einkommen gewähren.",
+    "variablen": [
+      "zusatzbeitrag_z1_pro_stunde",
+      "zusatzbeitrag_z2_pro_stunde",
+      "beitrag_pro_stunde_total"
+    ],
+    "parameter": [
+      "gemeinden.zusatzbeitrag_z1",
+      "gemeinden.zusatzbeitrag_z2"
+    ],
+    "ambiguitaeten": [
+      "A-15"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-25.1",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 25 Abs. 1 KiBV",
+    "artikel_titel": "Übergangsbestimmungen",
+    "wortlaut": "Beiträge für Gesuche, die bis spätestens drei Monate nach Vollzugsbeginn dieses Erlasses eingereicht werden, werden rückwirkend ab Vollzugsbeginn dieses Erlasses verfügt.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V, P",
+    "kurztext": "Gesuche in den ersten drei Monaten nach Inkrafttreten wirken rückwirkend ab Inkrafttreten.",
+    "variablen": [
+      "beitrag_ab_datum"
+    ],
+    "parameter": [
+      "kibv.uebergang.monate"
+    ],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-25.2",
+    "erlass": "KiBV",
+    "fundstelle": "Art. 25 Abs. 2 KiBV",
+    "artikel_titel": "Übergangsbestimmungen",
+    "wortlaut": "Für die Beitragsverfügung nach Abs. 1 dieser Bestimmung gelten sachgemäss die Bestimmungen nach Art. 16 dieses Erlasses.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Für diese Verfügungen gelten die normalen Regeln zur Dauer.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Verweis auf die Regeln zur Verfügungsdauer."
+  },
+  {
+    "id": "KiBV-Anh",
+    "erlass": "KiBV",
+    "fundstelle": "Anhang KiBV",
+    "artikel_titel": "Berechnungsformel",
+    "wortlaut": "Die lineare Berechnung der Höhe der Beiträge erfolgt gemäss folgender Formel (Art. 13): B = (MaxV + Z1) × (1 − (ME − MinmE) / (MaxmE − MinmE)) + Z2. B: Beitrag je Kind und Betreuungsstunde; MaxV: höchster Beitrag je Kind und Betreuungsstunde; MinmE: kleinstes massgebendes Einkommen und Vermögen; MaxmE: höchstes massgebendes Einkommen und Vermögen; ME: massgebendes Einkommen und Vermögen; Z1: einkommensabhängiger Zusatzbeitrag der politischen Gemeinde; Z2: einkommensunabhängiger Zusatzbeitrag der politischen Gemeinde.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "V, P",
+    "kurztext": "Beitrag pro Stunde = (Höchstbeitrag + Z1) × (1 − (Einkommen − 40 000) / (154 000 − 40 000)) + Z2.",
+    "variablen": [
+      "einkommensfaktor",
+      "beitrag_pro_stunde_mindest",
+      "beitrag_pro_stunde_total"
+    ],
+    "parameter": [
+      "gemeinden.zusatzbeitrag_z1",
+      "gemeinden.zusatzbeitrag_z2"
+    ],
+    "ambiguitaeten": [
+      "A-10",
+      "A-15"
+    ],
+    "nicht_modelliert_grund": null
+  },
+  {
+    "id": "KiBV-II",
+    "erlass": "KiBV",
+    "fundstelle": "Ziff. II KiBV",
+    "artikel_titel": "Änderung der Delegationsverordnung",
+    "wortlaut": "Der Erlass «Delegationsverordnung vom 4. Januar 2011» wird wie folgt geändert: Anhang 3, Nr. DI.A.38: Amt für Soziales, Bestätigung der Teilnahme am Vergünstigungssystem (Art. 5 KiBV), Leiterin oder Leiter des Stabs des Amtes für Soziales.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Das Amt für Soziales darf die Teilnahme von Einrichtungen bestätigen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Änderung der Delegationsverordnung; Organisation."
+  },
+  {
+    "id": "KiBV-III",
+    "erlass": "KiBV",
+    "fundstelle": "Ziff. III KiBV",
+    "artikel_titel": "Aufhebung bisherigen Rechts",
+    "wortlaut": "[keine Aufhebung anderer Erlasse]",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Es werden keine anderen Erlasse aufgehoben.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Keine Aufhebung anderer Erlasse."
+  },
+  {
+    "id": "KiBV-IV",
+    "erlass": "KiBV",
+    "fundstelle": "Ziff. IV KiBV",
+    "artikel_titel": "Anwendungsbeginn",
+    "wortlaut": "Dieser Erlass wird ab ●● angewendet.",
+    "quellentyp": "VERORDNUNG_ENTWURF",
+    "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
+    "umsetzung": "–",
+    "kurztext": "Das Datum, ab dem die Verordnung gilt, ist im Entwurf noch offen.",
+    "variablen": [],
+    "parameter": [],
+    "ambiguitaeten": [],
+    "nicht_modelliert_grund": "Anwendungsbeginn im Entwurf noch offen; das Modell nimmt den angekündigten Vollzugsbeginn 1.8.2028."
+  }
+]
