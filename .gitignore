@@ -1,0 +1,24 @@
+# Python builds
+__pycache__/
+*.egg-info
+*.pyc
+build
+dist
+.pytest_cache
+.ruff_cache
+.venv
+
+# Editors
+
+.idea
+.project
+.pydevproject
+.python-version
+.settings
+.spyderproject
+.vscode
+
+# OS stuff
+
+.DS_Store
+*~
