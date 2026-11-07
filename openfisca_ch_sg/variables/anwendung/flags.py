@@ -333,9 +333,7 @@ class flag_kein_hoechstbeitrag(Variable):
     entity = Person
     definition_period = MONTH
     label = "Schulergänzende Betreuung, auch einer Sonderschule, gibt es erst ab der Einschulung (Eingabe prüfen)"
-    documentation = (
-        "ANWENDUNG | erklärt KiBV-14.1, A-09, A-11 | nicht Teil des Rechts | Wirkung KEIN"
-    )
+    documentation = "ANWENDUNG | erklärt KiBV-14.1, A-09, A-11 | nicht Teil des Rechts | Wirkung KEIN"
 
     def formula_2028_08_01(person, period, parameters):
         # A-11: schulergänzende Betreuung (auch einer Sonderschule, A-09) vor der Einschulung

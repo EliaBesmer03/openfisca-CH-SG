@@ -240,7 +240,8 @@
       "kibg.anspruch.mindestpensum_gemeinsam"
     ],
     "ambiguitaeten": [
-      "A-03"
+      "A-03",
+      "A-16"
     ],
     "nicht_modelliert_grund": null
   },
@@ -278,7 +279,9 @@
     "variablen": [
       "alter_monate",
       "schulstufe",
-      "alter_kind_erfuellt"
+      "alter_kind_erfuellt",
+      "geburtsdatum",
+      "anteil_monat_ab_mindestalter"
     ],
     "parameter": [
       "kibg.anspruch.mindestalter_monate"
@@ -1384,7 +1387,9 @@
       "partner_gefestigt"
     ],
     "parameter": [],
-    "ambiguitaeten": [],
+    "ambiguitaeten": [
+      "A-16"
+    ],
     "nicht_modelliert_grund": null
   },
   {
@@ -1638,7 +1643,8 @@
     "kurztext": "Für Kinder unter 18 Monaten beträgt der Höchstbeitrag pro Stunde CHF 11.00 in der Kita und CHF 8.30 in der Tagesfamilie.",
     "variablen": [
       "altersstufe",
-      "hoechstbeitrag_maxv"
+      "hoechstbeitrag_maxv",
+      "anteil_monat_ab_18_monate"
     ],
     "parameter": [],
     "ambiguitaeten": [
@@ -1701,7 +1707,8 @@
     "kurztext": "Ab 18 Monaten bis zur Einschulung beträgt der Höchstbeitrag CHF 7.50 in der Kita und CHF 5.50 in der Tagesfamilie.",
     "variablen": [
       "altersstufe",
-      "hoechstbeitrag_maxv"
+      "hoechstbeitrag_maxv",
+      "anteil_monat_ab_18_monate"
     ],
     "parameter": [],
     "ambiguitaeten": [
@@ -1803,7 +1810,7 @@
     "quellentyp": "VERORDNUNG_ENTWURF",
     "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
     "umsetzung": "P",
-    "kurztext": "Eingeschult, schulergänzende Betreuung: höchstens CHF 5.50 pro Stunde.",
+    "kurztext": "Eingeschult, schulergänzende Betreuung (auch einer Sonderschule): höchstens CHF 5.50 pro Stunde.",
     "variablen": [
       "hoechstbeitrag_maxv"
     ],
@@ -1925,7 +1932,8 @@
     "umsetzung": "V",
     "kurztext": "Für Kita und Tagesfamilie gilt die Verfügung in der Regel 12 Monate, im Jahr des Schuleintritts nur bis Schulbeginn.",
     "variablen": [
-      "verfuegung_dauer_monate"
+      "verfuegung_dauer_monate",
+      "jahr_schulpflicht"
     ],
     "parameter": [],
     "ambiguitaeten": [
@@ -2329,16 +2337,12 @@
     "wortlaut": "Beiträge für Gesuche, die bis spätestens drei Monate nach Vollzugsbeginn dieses Erlasses eingereicht werden, werden rückwirkend ab Vollzugsbeginn dieses Erlasses verfügt.",
     "quellentyp": "VERORDNUNG_ENTWURF",
     "url": "https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html",
-    "umsetzung": "V, P",
+    "umsetzung": "–",
     "kurztext": "Gesuche in den ersten drei Monaten nach Inkrafttreten wirken rückwirkend ab Inkrafttreten.",
-    "variablen": [
-      "beitrag_ab_datum"
-    ],
-    "parameter": [
-      "kibv.uebergang.monate"
-    ],
+    "variablen": [],
+    "parameter": [],
     "ambiguitaeten": [],
-    "nicht_modelliert_grund": null
+    "nicht_modelliert_grund": "Übergangsregel vom Rechtsteam ausgeklammert; das Modell rechnet den Regelbetrieb, es gilt immer die 30-Tage-Frist nach Art. 9 Abs. 2 KiBG."
   },
   {
     "id": "KiBV-25.2",
