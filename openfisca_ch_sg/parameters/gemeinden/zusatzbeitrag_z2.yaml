@@ -1,0 +1,395 @@
+description: Einkommensunabhängiger Zusatzbeitrag der politischen Gemeinde je Kind und Betreuungsstunde (Z2), je Wohngemeinde. GENERIERT aus contract/gemeinden.json.
+metadata:
+  regel_id: KiBG-20.2, KiBV-24.1, KiBV-Anh
+  quellentyp: ANNAHME_TEAM
+  platzhalter: true
+  annahme: AN-04 (noch keine Gemeinde hat Zusatzbeiträge beschlossen; Wert 0)
+  unit: currency-CHF
+  reference:
+    - title: Art. 20 Abs. 2 KiBG, Art. 24 Abs. 1 und Anhang (Z2) KiBV (Entwurf RRB 2026/733)
+      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html
+HAEGGENSCHWIL:
+  description: Häggenschwil (BFS 3201)
+  values:
+    2028-08-01:
+      value: 0
+MUOLEN:
+  description: Muolen (BFS 3202)
+  values:
+    2028-08-01:
+      value: 0
+ST_GALLEN:
+  description: St. Gallen (BFS 3203)
+  values:
+    2028-08-01:
+      value: 0
+WITTENBACH:
+  description: Wittenbach (BFS 3204)
+  values:
+    2028-08-01:
+      value: 0
+EGGERSRIET:
+  description: Eggersriet (BFS 3212)
+  values:
+    2028-08-01:
+      value: 0
+ANDWIL_SG:
+  description: Andwil (SG) (BFS 3441)
+  values:
+    2028-08-01:
+      value: 0
+GAISERWALD:
+  description: Gaiserwald (BFS 3442)
+  values:
+    2028-08-01:
+      value: 0
+GOSSAU_SG:
+  description: Gossau (SG) (BFS 3443)
+  values:
+    2028-08-01:
+      value: 0
+WALDKIRCH:
+  description: Waldkirch (BFS 3444)
+  values:
+    2028-08-01:
+      value: 0
+BERG_SG:
+  description: Berg (SG) (BFS 3211)
+  values:
+    2028-08-01:
+      value: 0
+GOLDACH:
+  description: Goldach (BFS 3213)
+  values:
+    2028-08-01:
+      value: 0
+MOERSCHWIL:
+  description: Mörschwil (BFS 3214)
+  values:
+    2028-08-01:
+      value: 0
+RORSCHACH:
+  description: Rorschach (BFS 3215)
+  values:
+    2028-08-01:
+      value: 0
+RORSCHACHERBERG:
+  description: Rorschacherberg (BFS 3216)
+  values:
+    2028-08-01:
+      value: 0
+STEINACH:
+  description: Steinach (BFS 3217)
+  values:
+    2028-08-01:
+      value: 0
+TUEBACH:
+  description: Tübach (BFS 3218)
+  values:
+    2028-08-01:
+      value: 0
+UNTEREGGEN:
+  description: Untereggen (BFS 3219)
+  values:
+    2028-08-01:
+      value: 0
+THAL:
+  description: Thal (BFS 3237)
+  values:
+    2028-08-01:
+      value: 0
+AU_SG:
+  description: Au (SG) (BFS 3231)
+  values:
+    2028-08-01:
+      value: 0
+BALGACH:
+  description: Balgach (BFS 3232)
+  values:
+    2028-08-01:
+      value: 0
+BERNECK:
+  description: Berneck (BFS 3233)
+  values:
+    2028-08-01:
+      value: 0
+DIEPOLDSAU:
+  description: Diepoldsau (BFS 3234)
+  values:
+    2028-08-01:
+      value: 0
+RHEINECK:
+  description: Rheineck (BFS 3235)
+  values:
+    2028-08-01:
+      value: 0
+ST_MARGRETHEN:
+  description: St. Margrethen (BFS 3236)
+  values:
+    2028-08-01:
+      value: 0
+WIDNAU:
+  description: Widnau (BFS 3238)
+  values:
+    2028-08-01:
+      value: 0
+ALTSTAETTEN:
+  description: Altstätten (BFS 3251)
+  values:
+    2028-08-01:
+      value: 0
+EICHBERG:
+  description: Eichberg (BFS 3252)
+  values:
+    2028-08-01:
+      value: 0
+MARBACH_SG:
+  description: Marbach (SG) (BFS 3253)
+  values:
+    2028-08-01:
+      value: 0
+OBERRIET_SG:
+  description: Oberriet (SG) (BFS 3254)
+  values:
+    2028-08-01:
+      value: 0
+REBSTEIN:
+  description: Rebstein (BFS 3255)
+  values:
+    2028-08-01:
+      value: 0
+RUETHI_SG:
+  description: Rüthi (SG) (BFS 3256)
+  values:
+    2028-08-01:
+      value: 0
+BUCHS_SG:
+  description: Buchs (SG) (BFS 3271)
+  values:
+    2028-08-01:
+      value: 0
+GAMS:
+  description: Gams (BFS 3272)
+  values:
+    2028-08-01:
+      value: 0
+GRABS:
+  description: Grabs (BFS 3273)
+  values:
+    2028-08-01:
+      value: 0
+SENNWALD:
+  description: Sennwald (BFS 3274)
+  values:
+    2028-08-01:
+      value: 0
+SEVELEN:
+  description: Sevelen (BFS 3275)
+  values:
+    2028-08-01:
+      value: 0
+WARTAU:
+  description: Wartau (BFS 3276)
+  values:
+    2028-08-01:
+      value: 0
+BAD_RAGAZ:
+  description: Bad Ragaz (BFS 3291)
+  values:
+    2028-08-01:
+      value: 0
+FLUMS:
+  description: Flums (BFS 3292)
+  values:
+    2028-08-01:
+      value: 0
+MELS:
+  description: Mels (BFS 3293)
+  values:
+    2028-08-01:
+      value: 0
+PFAEFERS:
+  description: Pfäfers (BFS 3294)
+  values:
+    2028-08-01:
+      value: 0
+QUARTEN:
+  description: Quarten (BFS 3295)
+  values:
+    2028-08-01:
+      value: 0
+SARGANS:
+  description: Sargans (BFS 3296)
+  values:
+    2028-08-01:
+      value: 0
+VILTERS_WANGS:
+  description: Vilters-Wangs (BFS 3297)
+  values:
+    2028-08-01:
+      value: 0
+WALENSTADT:
+  description: Walenstadt (BFS 3298)
+  values:
+    2028-08-01:
+      value: 0
+AMDEN:
+  description: Amden (BFS 3311)
+  values:
+    2028-08-01:
+      value: 0
+BENKEN_SG:
+  description: Benken (SG) (BFS 3312)
+  values:
+    2028-08-01:
+      value: 0
+KALTBRUNN:
+  description: Kaltbrunn (BFS 3313)
+  values:
+    2028-08-01:
+      value: 0
+SCHAENIS:
+  description: Schänis (BFS 3315)
+  values:
+    2028-08-01:
+      value: 0
+WEESEN:
+  description: Weesen (BFS 3316)
+  values:
+    2028-08-01:
+      value: 0
+SCHMERIKON:
+  description: Schmerikon (BFS 3338)
+  values:
+    2028-08-01:
+      value: 0
+UZNACH:
+  description: Uznach (BFS 3339)
+  values:
+    2028-08-01:
+      value: 0
+RAPPERSWIL_JONA:
+  description: Rapperswil-Jona (BFS 3340)
+  values:
+    2028-08-01:
+      value: 0
+GOMMISWALD:
+  description: Gommiswald (BFS 3341)
+  values:
+    2028-08-01:
+      value: 0
+ESCHENBACH_SG:
+  description: Eschenbach (SG) (BFS 3342)
+  values:
+    2028-08-01:
+      value: 0
+EBNAT_KAPPEL:
+  description: Ebnat-Kappel (BFS 3352)
+  values:
+    2028-08-01:
+      value: 0
+WILDHAUS_ALT_ST_JOHANN:
+  description: Wildhaus-Alt St.Johann (BFS 3359)
+  values:
+    2028-08-01:
+      value: 0
+NESSLAU:
+  description: Nesslau (BFS 3360)
+  values:
+    2028-08-01:
+      value: 0
+LICHTENSTEIG:
+  description: Lichtensteig (BFS 3374)
+  values:
+    2028-08-01:
+      value: 0
+WATTWIL:
+  description: Wattwil (BFS 3379)
+  values:
+    2028-08-01:
+      value: 0
+KIRCHBERG_SG:
+  description: Kirchberg (SG) (BFS 3392)
+  values:
+    2028-08-01:
+      value: 0
+LUETISBURG:
+  description: Lütisburg (BFS 3393)
+  values:
+    2028-08-01:
+      value: 0
+MOSNANG:
+  description: Mosnang (BFS 3394)
+  values:
+    2028-08-01:
+      value: 0
+BUETSCHWIL_GANTERSCHWIL:
+  description: Bütschwil-Ganterschwil (BFS 3395)
+  values:
+    2028-08-01:
+      value: 0
+NECKERTAL:
+  description: Neckertal (BFS 3396)
+  values:
+    2028-08-01:
+      value: 0
+DEGERSHEIM:
+  description: Degersheim (BFS 3401)
+  values:
+    2028-08-01:
+      value: 0
+FLAWIL:
+  description: Flawil (BFS 3402)
+  values:
+    2028-08-01:
+      value: 0
+JONSCHWIL:
+  description: Jonschwil (BFS 3405)
+  values:
+    2028-08-01:
+      value: 0
+OBERUZWIL:
+  description: Oberuzwil (BFS 3407)
+  values:
+    2028-08-01:
+      value: 0
+UZWIL:
+  description: Uzwil (BFS 3408)
+  values:
+    2028-08-01:
+      value: 0
+NIEDERBUEREN:
+  description: Niederbüren (BFS 3422)
+  values:
+    2028-08-01:
+      value: 0
+NIEDERHELFENSCHWIL:
+  description: Niederhelfenschwil (BFS 3423)
+  values:
+    2028-08-01:
+      value: 0
+OBERBUEREN:
+  description: Oberbüren (BFS 3424)
+  values:
+    2028-08-01:
+      value: 0
+ZUZWIL_SG:
+  description: Zuzwil (SG) (BFS 3426)
+  values:
+    2028-08-01:
+      value: 0
+WIL_SG:
+  description: Wil (SG) (BFS 3427)
+  values:
+    2028-08-01:
+      value: 0
+AUSSERKANTONAL:
+  description: Ausserhalb des Kantons St.Gallen
+  values:
+    2028-08-01:
+      value: 0
+UNBEKANNT:
+  description: Unbekannt
+  values:
+    2028-08-01:
+      value: 0

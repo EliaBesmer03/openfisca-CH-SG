@@ -1,0 +1,486 @@
+{
+  "persons": {
+    "mutter": {
+      "erwerbspensum": {
+        "2027-09": 100
+      },
+      "me_veranlagung": {
+        "2027-09": 60000
+      },
+      "alter_kind_erfuellt": {
+        "2027-09": null
+      },
+      "alter_monate": {
+        "2027-09": null
+      },
+      "altersstufe": {
+        "2027-09": null
+      },
+      "angebot_erfuellt": {
+        "2027-09": null
+      },
+      "anspruch_kind": {
+        "2027-09": null
+      },
+      "anteil_gemeinde_kind": {
+        "2027-09": null
+      },
+      "anteil_kanton_kind": {
+        "2027-09": null
+      },
+      "anteil_monat_ab_18_monate": {
+        "2027-09": null
+      },
+      "anteil_monat_ab_mindestalter": {
+        "2027-09": null
+      },
+      "beitrag_ab_datum": {
+        "2027-09": null
+      },
+      "beitrag_mindest_kind": {
+        "2027-09": null
+      },
+      "beitrag_pro_stunde_mindest": {
+        "2027-09": null
+      },
+      "beitrag_pro_stunde_total": {
+        "2027-09": null
+      },
+      "beitrag_total_kind": {
+        "2027-09": null
+      },
+      "flag_angebot_anmeldung_unbekannt": {
+        "2027-09": null
+      },
+      "flag_angebot_nicht_anerkannt": {
+        "2027-09": null
+      },
+      "flag_angebot_nicht_angemeldet": {
+        "2027-09": null
+      },
+      "flag_gesuch_verspaetet": {
+        "2027-09": null
+      },
+      "flag_kein_hoechstbeitrag": {
+        "2027-09": null
+      },
+      "flag_kind_zu_alt": {
+        "2027-09": null
+      },
+      "flag_kind_zu_jung": {
+        "2027-09": null
+      },
+      "flag_kostendeckel_greift": {
+        "2027-09": null
+      },
+      "flag_stunden_gekappt": {
+        "2027-09": null
+      },
+      "flag_uebergangsregel": {
+        "2027-09": null
+      },
+      "hoechstbeitrag_maxv": {
+        "2027-09": null
+      },
+      "ist_erziehungsberechtigt": {
+        "2027-09": null
+      },
+      "ist_kind": {
+        "2027-09": null
+      },
+      "ist_partner": {
+        "2027-09": null
+      },
+      "jahr_schulpflicht": {
+        "2027-09": null
+      },
+      "kosten_monat": {
+        "2027-09": null
+      },
+      "partner_gefestigt": {
+        "2027-09": null
+      },
+      "pruefstatus_kind": {
+        "2027-09": null
+      },
+      "restkosten_kind": {
+        "2027-09": null
+      },
+      "schaetzung_beitrag_total_kind": {
+        "2027-09": null
+      },
+      "subventionierte_stunden_monat": {
+        "2027-09": null
+      },
+      "verfuegung_dauer_monate": {
+        "2027-09": null
+      },
+      "zusatzbeitrag_kind": {
+        "2027-09": null
+      }
+    },
+    "vater": {
+      "erwerbspensum": {
+        "2027-09": 60
+      },
+      "me_veranlagung": {
+        "2027-09": 37000
+      },
+      "alter_kind_erfuellt": {
+        "2027-09": null
+      },
+      "alter_monate": {
+        "2027-09": null
+      },
+      "altersstufe": {
+        "2027-09": null
+      },
+      "angebot_erfuellt": {
+        "2027-09": null
+      },
+      "anspruch_kind": {
+        "2027-09": null
+      },
+      "anteil_gemeinde_kind": {
+        "2027-09": null
+      },
+      "anteil_kanton_kind": {
+        "2027-09": null
+      },
+      "anteil_monat_ab_18_monate": {
+        "2027-09": null
+      },
+      "anteil_monat_ab_mindestalter": {
+        "2027-09": null
+      },
+      "beitrag_ab_datum": {
+        "2027-09": null
+      },
+      "beitrag_mindest_kind": {
+        "2027-09": null
+      },
+      "beitrag_pro_stunde_mindest": {
+        "2027-09": null
+      },
+      "beitrag_pro_stunde_total": {
+        "2027-09": null
+      },
+      "beitrag_total_kind": {
+        "2027-09": null
+      },
+      "flag_angebot_anmeldung_unbekannt": {
+        "2027-09": null
+      },
+      "flag_angebot_nicht_anerkannt": {
+        "2027-09": null
+      },
+      "flag_angebot_nicht_angemeldet": {
+        "2027-09": null
+      },
+      "flag_gesuch_verspaetet": {
+        "2027-09": null
+      },
+      "flag_kein_hoechstbeitrag": {
+        "2027-09": null
+      },
+      "flag_kind_zu_alt": {
+        "2027-09": null
+      },
+      "flag_kind_zu_jung": {
+        "2027-09": null
+      },
+      "flag_kostendeckel_greift": {
+        "2027-09": null
+      },
+      "flag_stunden_gekappt": {
+        "2027-09": null
+      },
+      "flag_uebergangsregel": {
+        "2027-09": null
+      },
+      "hoechstbeitrag_maxv": {
+        "2027-09": null
+      },
+      "ist_erziehungsberechtigt": {
+        "2027-09": null
+      },
+      "ist_kind": {
+        "2027-09": null
+      },
+      "ist_partner": {
+        "2027-09": null
+      },
+      "jahr_schulpflicht": {
+        "2027-09": null
+      },
+      "kosten_monat": {
+        "2027-09": null
+      },
+      "partner_gefestigt": {
+        "2027-09": null
+      },
+      "pruefstatus_kind": {
+        "2027-09": null
+      },
+      "restkosten_kind": {
+        "2027-09": null
+      },
+      "schaetzung_beitrag_total_kind": {
+        "2027-09": null
+      },
+      "subventionierte_stunden_monat": {
+        "2027-09": null
+      },
+      "verfuegung_dauer_monate": {
+        "2027-09": null
+      },
+      "zusatzbeitrag_kind": {
+        "2027-09": null
+      }
+    },
+    "lina": {
+      "alter_monate": {
+        "2027-09": 26
+      },
+      "schulstufe": {
+        "2027-09": "VORSCHULALTER"
+      },
+      "angebot_typ": {
+        "2027-09": "KITA"
+      },
+      "angebot_angemeldet": {
+        "2027-09": "JA"
+      },
+      "betreuungstage_pro_woche": {
+        "2027-09": 2
+      },
+      "betreuungsstunden_pro_tag": {
+        "2027-09": 10
+      },
+      "kosten_pro_stunde": {
+        "2027-09": 12
+      },
+      "betreuungsbeginn": {
+        "2027-09": "2028-08-15"
+      },
+      "alter_kind_erfuellt": {
+        "2027-09": null
+      },
+      "altersstufe": {
+        "2027-09": null
+      },
+      "angebot_erfuellt": {
+        "2027-09": null
+      },
+      "anspruch_kind": {
+        "2027-09": null
+      },
+      "anteil_gemeinde_kind": {
+        "2027-09": null
+      },
+      "anteil_kanton_kind": {
+        "2027-09": null
+      },
+      "anteil_monat_ab_18_monate": {
+        "2027-09": null
+      },
+      "anteil_monat_ab_mindestalter": {
+        "2027-09": null
+      },
+      "beitrag_ab_datum": {
+        "2027-09": null
+      },
+      "beitrag_mindest_kind": {
+        "2027-09": null
+      },
+      "beitrag_pro_stunde_mindest": {
+        "2027-09": null
+      },
+      "beitrag_pro_stunde_total": {
+        "2027-09": null
+      },
+      "beitrag_total_kind": {
+        "2027-09": null
+      },
+      "flag_angebot_anmeldung_unbekannt": {
+        "2027-09": null
+      },
+      "flag_angebot_nicht_anerkannt": {
+        "2027-09": null
+      },
+      "flag_angebot_nicht_angemeldet": {
+        "2027-09": null
+      },
+      "flag_gesuch_verspaetet": {
+        "2027-09": null
+      },
+      "flag_kein_hoechstbeitrag": {
+        "2027-09": null
+      },
+      "flag_kind_zu_alt": {
+        "2027-09": null
+      },
+      "flag_kind_zu_jung": {
+        "2027-09": null
+      },
+      "flag_kostendeckel_greift": {
+        "2027-09": null
+      },
+      "flag_stunden_gekappt": {
+        "2027-09": null
+      },
+      "flag_uebergangsregel": {
+        "2027-09": null
+      },
+      "hoechstbeitrag_maxv": {
+        "2027-09": null
+      },
+      "ist_erziehungsberechtigt": {
+        "2027-09": null
+      },
+      "ist_kind": {
+        "2027-09": null
+      },
+      "ist_partner": {
+        "2027-09": null
+      },
+      "jahr_schulpflicht": {
+        "2027-09": null
+      },
+      "kosten_monat": {
+        "2027-09": null
+      },
+      "partner_gefestigt": {
+        "2027-09": null
+      },
+      "pruefstatus_kind": {
+        "2027-09": null
+      },
+      "restkosten_kind": {
+        "2027-09": null
+      },
+      "schaetzung_beitrag_total_kind": {
+        "2027-09": null
+      },
+      "subventionierte_stunden_monat": {
+        "2027-09": null
+      },
+      "verfuegung_dauer_monate": {
+        "2027-09": null
+      },
+      "zusatzbeitrag_kind": {
+        "2027-09": null
+      }
+    }
+  },
+  "familien": {
+    "familie": {
+      "erziehungsberechtigte": [
+        "mutter",
+        "vater"
+      ],
+      "kinder": [
+        "lina"
+      ],
+      "wohngemeinde": {
+        "2027-09": "ST_GALLEN"
+      },
+      "haushalt_form": {
+        "2027-09": "GEMEINSAMER_HAUSHALT"
+      },
+      "gesuchsdatum": {
+        "2027-09": "2028-08-30"
+      },
+      "ausnahme_pensum_gewaehrt": {
+        "2027-09": null
+      },
+      "beitrag_mindest_familie": {
+        "2027-09": null
+      },
+      "beitrag_total_familie": {
+        "2027-09": null
+      },
+      "einkommensfaktor": {
+        "2027-09": null
+      },
+      "erwerbspensum_erfuellt": {
+        "2027-09": null
+      },
+      "flag_ausnahme_abgelehnt": {
+        "2027-09": null
+      },
+      "flag_ausnahme_kein_grund": {
+        "2027-09": null
+      },
+      "flag_ausnahme_offen": {
+        "2027-09": null
+      },
+      "flag_haushalt_inkonsistent": {
+        "2027-09": null
+      },
+      "flag_me_aktuell_angewendet": {
+        "2027-09": null
+      },
+      "flag_me_aktuell_unter_schwelle": {
+        "2027-09": null
+      },
+      "flag_me_ueber_maxme": {
+        "2027-09": null
+      },
+      "flag_me_unbekannt": {
+        "2027-09": null
+      },
+      "flag_partner_nicht_gefestigt": {
+        "2027-09": null
+      },
+      "flag_pensum_mit_partner": {
+        "2027-09": null
+      },
+      "flag_pensum_unbekannt": {
+        "2027-09": null
+      },
+      "flag_pensum_unter_minimum": {
+        "2027-09": null
+      },
+      "flag_verordnung_entwurf": {
+        "2027-09": null
+      },
+      "flag_wohnsitz_nicht_sg": {
+        "2027-09": null
+      },
+      "flag_wohnsitz_unbekannt": {
+        "2027-09": null
+      },
+      "flag_zusatzbeitrag_platzhalter": {
+        "2027-09": null
+      },
+      "me_massgebend": {
+        "2027-09": null
+      },
+      "me_veranlagung_familie": {
+        "2027-09": null
+      },
+      "pruefstatus": {
+        "2027-09": null
+      },
+      "restkosten_familie": {
+        "2027-09": null
+      },
+      "voraussetzung_erziehungsberechtigte_erfuellt": {
+        "2027-09": null
+      },
+      "wohnsitz_erfuellt": {
+        "2027-09": null
+      },
+      "wohnsitz_sg": {
+        "2027-09": null
+      },
+      "zusatzbeitrag_z1_pro_stunde": {
+        "2027-09": null
+      },
+      "zusatzbeitrag_z2_pro_stunde": {
+        "2027-09": null
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+# Ausgangslage aller Tests: Grundfamilie F1 (Teil A, A8). Jeder Test variiert nur die geprüfte Angabe.
+- name: 'KiBG-18.1 KiBG-6.2 Grenzfall: Deckel greift → Kanton und Gemeinde teilen den gedeckelten Betrag (je 130)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 3, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    beitrag_mindest_kind: [0, 0, 260]
+    anteil_kanton_kind: [0, 0, 130]
+    anteil_gemeinde_kind: [0, 0, 130]
+- name: 'KiBG-18.1 KiBG-20.2 Grenzfall: Zusatzbeitrag zählt nicht zur hälftigen Teilung (nur Mindestbeitrag 325)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        zusatzbeitrag_z1_pro_stunde: 1.0
+        zusatzbeitrag_z2_pro_stunde: 0.5
+  output:
+    anteil_kanton_kind: [0, 0, 162.5]
+    anteil_gemeinde_kind: [0, 0, 162.5]
+    zusatzbeitrag_kind: [0, 0, 86.67]
+- name: 'KiBG-20.3 KiBG-20.2 Grenzfall: Kosten genau CHF 4.75/h = Beitrag total → Deckel greift nicht'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 4.75, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        zusatzbeitrag_z1_pro_stunde: 1.0
+        zusatzbeitrag_z2_pro_stunde: 0.5
+  output:
+    beitrag_total_kind: [0, 0, 411.67]
+    flag_kostendeckel_greift: [false, false, false]
+- name: 'KiBG-6.2 Normalfall: Kosten CHF 3/h (260) kleiner als Beitrag (325) → Deckel auf 260'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 3, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    beitrag_mindest_kind: [0, 0, 260]
+    beitrag_total_kind: [0, 0, 260]
+    restkosten_kind: [0, 0, 0]
+    flag_kostendeckel_greift: [false, false, true]
+- name: 'KiBG-6.2 Grenzfall: Kosten CHF 3.75/h = Beitrag → Deckel greift nicht'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 3.75, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    beitrag_total_kind: [0, 0, 325]
+    flag_kostendeckel_greift: [false, false, false]
+- name: 'KiBG-20.3 KiBG-20.2 Normalfall: mit Zusatzbeitrag, Kosten CHF 4/h (346.67) → Summe gedeckelt, Zusatz gekürzt'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 4, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        zusatzbeitrag_z1_pro_stunde: 1.0
+        zusatzbeitrag_z2_pro_stunde: 0.5
+  output:
+    beitrag_mindest_kind: [0, 0, 325]
+    beitrag_total_kind: [0, 0, 346.67]
+    zusatzbeitrag_kind: [0, 0, 21.67]
+    flag_kostendeckel_greift: [false, false, true]

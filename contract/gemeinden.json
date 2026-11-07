@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "quelle": "Fachstelle für Statistik Kanton St.Gallen, STATPOP-Zeitreihe Wohnbevölkerung nach Wahlkreisen und Gemeinden, Gemeindegebietsstand 01.01.2024 (BFS)",
+    "quelle_url": "https://www.sg.ch/content/dam/sgch/kanton-stgallen/statistik/b01/B01_STATPOP_007_Wohnbevoelkerung-Veraenderung_Zeitreihe_SG-Wahlkreise-Gemeinden.pdf",
+    "annahme": "AN-05: R1 prüft vor Abgabe auf Gemeindefusionen bis Vollzugsbeginn",
+    "anzahl": 75,
+    "zusatzwerte": [
+      {
+        "schluessel": "AUSSERKANTONAL",
+        "name": "Ausserhalb des Kantons St.Gallen"
+      },
+      {
+        "schluessel": "UNBEKANNT",
+        "name": "Unbekannt"
+      }
+    ]
+  },
+  "gemeinden": [
+    {
+      "bfs_nr": 3201,
+      "name": "Häggenschwil",
+      "schluessel": "HAEGGENSCHWIL",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3202,
+      "name": "Muolen",
+      "schluessel": "MUOLEN",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3203,
+      "name": "St. Gallen",
+      "schluessel": "ST_GALLEN",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3204,
+      "name": "Wittenbach",
+      "schluessel": "WITTENBACH",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3212,
+      "name": "Eggersriet",
+      "schluessel": "EGGERSRIET",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3441,
+      "name": "Andwil (SG)",
+      "schluessel": "ANDWIL_SG",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3442,
+      "name": "Gaiserwald",
+      "schluessel": "GAISERWALD",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3443,
+      "name": "Gossau (SG)",
+      "schluessel": "GOSSAU_SG",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3444,
+      "name": "Waldkirch",
+      "schluessel": "WALDKIRCH",
+      "wahlkreis": "St.Gallen"
+    },
+    {
+      "bfs_nr": 3211,
+      "name": "Berg (SG)",
+      "schluessel": "BERG_SG",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3213,
+      "name": "Goldach",
+      "schluessel": "GOLDACH",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3214,
+      "name": "Mörschwil",
+      "schluessel": "MOERSCHWIL",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3215,
+      "name": "Rorschach",
+      "schluessel": "RORSCHACH",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3216,
+      "name": "Rorschacherberg",
+      "schluessel": "RORSCHACHERBERG",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3217,
+      "name": "Steinach",
+      "schluessel": "STEINACH",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3218,
+      "name": "Tübach",
+      "schluessel": "TUEBACH",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3219,
+      "name": "Untereggen",
+      "schluessel": "UNTEREGGEN",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3237,
+      "name": "Thal",
+      "schluessel": "THAL",
+      "wahlkreis": "Rorschach"
+    },
+    {
+      "bfs_nr": 3231,
+      "name": "Au (SG)",
+      "schluessel": "AU_SG",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3232,
+      "name": "Balgach",
+      "schluessel": "BALGACH",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3233,
+      "name": "Berneck",
+      "schluessel": "BERNECK",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3234,
+      "name": "Diepoldsau",
+      "schluessel": "DIEPOLDSAU",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3235,
+      "name": "Rheineck",
+      "schluessel": "RHEINECK",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3236,
+      "name": "St. Margrethen",
+      "schluessel": "ST_MARGRETHEN",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3238,
+      "name": "Widnau",
+      "schluessel": "WIDNAU",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3251,
+      "name": "Altstätten",
+      "schluessel": "ALTSTAETTEN",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3252,
+      "name": "Eichberg",
+      "schluessel": "EICHBERG",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3253,
+      "name": "Marbach (SG)",
+      "schluessel": "MARBACH_SG",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3254,
+      "name": "Oberriet (SG)",
+      "schluessel": "OBERRIET_SG",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3255,
+      "name": "Rebstein",
+      "schluessel": "REBSTEIN",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3256,
+      "name": "Rüthi (SG)",
+      "schluessel": "RUETHI_SG",
+      "wahlkreis": "Rheintal"
+    },
+    {
+      "bfs_nr": 3271,
+      "name": "Buchs (SG)",
+      "schluessel": "BUCHS_SG",
+      "wahlkreis": "Werdenberg"
+    },
+    {
+      "bfs_nr": 3272,
+      "name": "Gams",
+      "schluessel": "GAMS",
+      "wahlkreis": "Werdenberg"
+    },
+    {
+      "bfs_nr": 3273,
+      "name": "Grabs",
+      "schluessel": "GRABS",
+      "wahlkreis": "Werdenberg"
+    },
+    {
+      "bfs_nr": 3274,
+      "name": "Sennwald",
+      "schluessel": "SENNWALD",
+      "wahlkreis": "Werdenberg"
+    },
+    {
+      "bfs_nr": 3275,
+      "name": "Sevelen",
+      "schluessel": "SEVELEN",
+      "wahlkreis": "Werdenberg"
+    },
+    {
+      "bfs_nr": 3276,
+      "name": "Wartau",
+      "schluessel": "WARTAU",
+      "wahlkreis": "Werdenberg"
+    },
+    {
+      "bfs_nr": 3291,
+      "name": "Bad Ragaz",
+      "schluessel": "BAD_RAGAZ",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3292,
+      "name": "Flums",
+      "schluessel": "FLUMS",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3293,
+      "name": "Mels",
+      "schluessel": "MELS",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3294,
+      "name": "Pfäfers",
+      "schluessel": "PFAEFERS",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3295,
+      "name": "Quarten",
+      "schluessel": "QUARTEN",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3296,
+      "name": "Sargans",
+      "schluessel": "SARGANS",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3297,
+      "name": "Vilters-Wangs",
+      "schluessel": "VILTERS_WANGS",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3298,
+      "name": "Walenstadt",
+      "schluessel": "WALENSTADT",
+      "wahlkreis": "Sarganserland"
+    },
+    {
+      "bfs_nr": 3311,
+      "name": "Amden",
+      "schluessel": "AMDEN",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3312,
+      "name": "Benken (SG)",
+      "schluessel": "BENKEN_SG",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3313,
+      "name": "Kaltbrunn",
+      "schluessel": "KALTBRUNN",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3315,
+      "name": "Schänis",
+      "schluessel": "SCHAENIS",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3316,
+      "name": "Weesen",
+      "schluessel": "WEESEN",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3338,
+      "name": "Schmerikon",
+      "schluessel": "SCHMERIKON",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3339,
+      "name": "Uznach",
+      "schluessel": "UZNACH",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3340,
+      "name": "Rapperswil-Jona",
+      "schluessel": "RAPPERSWIL_JONA",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3341,
+      "name": "Gommiswald",
+      "schluessel": "GOMMISWALD",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3342,
+      "name": "Eschenbach (SG)",
+      "schluessel": "ESCHENBACH_SG",
+      "wahlkreis": "See-Gaster"
+    },
+    {
+      "bfs_nr": 3352,
+      "name": "Ebnat-Kappel",
+      "schluessel": "EBNAT_KAPPEL",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3359,
+      "name": "Wildhaus-Alt St.Johann",
+      "schluessel": "WILDHAUS_ALT_ST_JOHANN",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3360,
+      "name": "Nesslau",
+      "schluessel": "NESSLAU",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3374,
+      "name": "Lichtensteig",
+      "schluessel": "LICHTENSTEIG",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3379,
+      "name": "Wattwil",
+      "schluessel": "WATTWIL",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3392,
+      "name": "Kirchberg (SG)",
+      "schluessel": "KIRCHBERG_SG",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3393,
+      "name": "Lütisburg",
+      "schluessel": "LUETISBURG",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3394,
+      "name": "Mosnang",
+      "schluessel": "MOSNANG",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3395,
+      "name": "Bütschwil-Ganterschwil",
+      "schluessel": "BUETSCHWIL_GANTERSCHWIL",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3396,
+      "name": "Neckertal",
+      "schluessel": "NECKERTAL",
+      "wahlkreis": "Toggenburg"
+    },
+    {
+      "bfs_nr": 3401,
+      "name": "Degersheim",
+      "schluessel": "DEGERSHEIM",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3402,
+      "name": "Flawil",
+      "schluessel": "FLAWIL",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3405,
+      "name": "Jonschwil",
+      "schluessel": "JONSCHWIL",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3407,
+      "name": "Oberuzwil",
+      "schluessel": "OBERUZWIL",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3408,
+      "name": "Uzwil",
+      "schluessel": "UZWIL",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3422,
+      "name": "Niederbüren",
+      "schluessel": "NIEDERBUEREN",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3423,
+      "name": "Niederhelfenschwil",
+      "schluessel": "NIEDERHELFENSCHWIL",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3424,
+      "name": "Oberbüren",
+      "schluessel": "OBERBUEREN",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3426,
+      "name": "Zuzwil (SG)",
+      "schluessel": "ZUZWIL_SG",
+      "wahlkreis": "Wil"
+    },
+    {
+      "bfs_nr": 3427,
+      "name": "Wil (SG)",
+      "schluessel": "WIL_SG",
+      "wahlkreis": "Wil"
+    }
+  ]
+}

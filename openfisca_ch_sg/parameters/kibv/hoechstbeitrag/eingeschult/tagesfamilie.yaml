@@ -1,0 +1,15 @@
+description: Höchster Beitrag je Kind und Betreuungsstunde, eingeschulte Kinder bis Ende Primarstufe, Tagesfamilien
+values:
+  2028-08-01:
+    value: 5.5
+metadata:
+  short_label: MaxV Tagesfamilie eingeschult
+  label_en: Maximum hourly contribution, family daycare, school children
+  unit: currency-CHF
+  regel_id: KiBV-14.3.c
+  quellentyp: VERORDNUNG_ENTWURF
+  last_value_still_valid_on: "2026-11-07"
+  reference:
+    2028-08-01:
+      title: Art. 14 Abs. 3 lit. c KiBV (Entwurf RRB 2026/733, Vernehmlassung bis 15.11.2026)
+      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html

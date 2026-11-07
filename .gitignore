@@ -22,3 +22,7 @@ dist
 
 .DS_Store
 *~
+
+# Arbeitsdokumente, nicht im Repository
+docs/
+PLAN_*.md

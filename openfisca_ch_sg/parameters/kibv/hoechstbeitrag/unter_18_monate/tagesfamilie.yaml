@@ -1,0 +1,15 @@
+description: Höchster Beitrag je Kind und Betreuungsstunde, Kinder unter 18 Monaten, Tagesfamilien
+values:
+  2028-08-01:
+    value: 8.3
+metadata:
+  short_label: MaxV Tagesfamilie unter 18 Monaten
+  label_en: Maximum hourly contribution, family daycare, under 18 months
+  unit: currency-CHF
+  regel_id: KiBV-14.1.b
+  quellentyp: VERORDNUNG_ENTWURF
+  last_value_still_valid_on: "2026-11-07"
+  reference:
+    2028-08-01:
+      title: Art. 14 Abs. 1 lit. b KiBV (Entwurf RRB 2026/733, Vernehmlassung bis 15.11.2026)
+      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html

@@ -1,51 +1,47 @@
-"""This file defines the entities needed by our legislation.
+"""Entitäten für das KiBG St.Gallen.
 
-Taxes and benefits can be calculated for different entities: persons, household,
-companies, etc.
+Das Gesetz knüpft an die Erziehungsberechtigten an (Art. 2, Art. 4 KiBG),
+nicht an alle Erwachsenen eines Haushalts. Deshalb eine Gruppen-Entität
+"Familie" mit den Rollen Erziehungsberechtigte, Partner/in und Kinder.
 
-See https://openfisca.org/doc/key-concepts/person,_entities,_role.html
+See https://openfisca.org/doc/coding-the-legislation/50_entities.html
 """
 
 from openfisca_core.entities import build_entity
 
-Household = build_entity(
-    key="household",
-    plural="households",
-    label="All the people in a family or group who live together in the same place.",
+Familie = build_entity(
+    key="familie",
+    plural="familien",
+    label="Gesuchseinheit: Erziehungsberechtigte, ggf. Partner/in und die betreuten Kinder (Art. 2 KiBG, Art. 8 KiBV)",
     doc="""
-    Household is an example of a group entity.
-    A group entity contains one or more individuals.
-    Each individual in a group entity has a role (e.g. parent or children).
-    Some roles can only be held by a limited number of individuals (e.g. a
-    'first_parent' can only be held by one individual), while others can
-    have an unlimited number of individuals (e.g. 'children').
-
-    Example:
-        Housing variables (e.g. housing_tax') are usually defined for a group
-        entity such as 'Household'.
-
-    Usage:
-        Check the number of individuals of a specific role (e.g. check if there
-        is an 'adult' with household.nb_persons(Household.ADULT)).
-        Calculate a variable applied to each individual of the group entity
-        (e.g. calculate the 'salary' of each member of the 'Household' with:
-            salaries = household.members("salary", period = MONTH)
-            sum_salaries = household.sum(salaries)).
-
-    For more information, see: https://openfisca.org/doc/coding-the-legislation/50_entities.html
+    Eine Familie im Sinn des Modells ist eine Gesuchseinheit (Glossar A3):
+    die antragstellende(n) erziehungsberechtigte(n) Person(en), ggf. eine
+    Partnerin oder ein Partner nach Art. 8 Abs. 1 lit. b KiBV und die Kinder,
+    für die Beiträge beantragt werden.
+    Bei getrenntem Haushalt (z. B. Wechselmodell) stellt jede erziehungs-
+    berechtigte Person ihr eigenes Gesuch, also eine eigene Familie (A-14).
+    Eine Person gehört genau einer Familie an.
     """,
     roles=[
         {
-            "key": "adult",
-            "plural": "adults",
-            "label": "Adult",
-            "doc": "The adults of the household.",
+            "key": "erziehungsberechtigter",
+            "plural": "erziehungsberechtigte",
+            "label": "Erziehungsberechtigte Person",
+            "doc": "Person, die für ein Kind in ihrer Obhut Beiträge beansprucht (Art. 2 Abs. 1 KiBG).",
+            "max": 2,
         },
         {
-            "key": "child",
-            "plural": "children",
-            "label": "Child",
-            "doc": "The non-adults of the household.",
+            "key": "partner",
+            "plural": "partnerinnen",
+            "label": "Partnerin oder Partner der antragstellenden EB",
+            "doc": "Nicht erziehungsberechtigt; zählt bei getrenntem Haushalt und gefestigter Lebensgemeinschaft zum Einkommen (Art. 8 KiBV), nie zum Erwerbspensum.",
+            "max": 1,
+        },
+        {
+            "key": "kind",
+            "plural": "kinder",
+            "label": "Kind",
+            "doc": "Betreutes Kind ab 3 Monaten bis Abschluss der Primarschule (Art. 4 Abs. 3 KiBG).",
         },
     ],
 )
@@ -53,18 +49,9 @@ Household = build_entity(
 Person = build_entity(
     key="person",
     plural="persons",
-    label="An individual. The minimal entity on which legislation can be applied.",
-    doc="""
-    Variables like 'salary' and 'income_tax' are usually defined for the entity
-    'Person'.
-
-    Usage:
-        Calculate a variable applied to a 'Person' (e.g. access the 'salary' of
-        a specific month with person("salary", "2017-05")).
-
-    For more information, see: https://openfisca.org/doc/coding-the-legislation/50_entities.html
-    """,
+    label="Eine Person",
+    doc="Einzelne Person: erziehungsberechtigte Person, Partner/in oder Kind.",
     is_person=True,
 )
 
-entities = [Household, Person]
+entities = [Familie, Person]

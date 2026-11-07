@@ -1,0 +1,486 @@
+{
+  "familien": {
+    "familie": {
+      "ausnahme_pensum_gewaehrt": {
+        "2028-09": false
+      },
+      "beitrag_mindest_familie": {
+        "2028-09": 0.0
+      },
+      "beitrag_total_familie": {
+        "2028-09": 0.0
+      },
+      "einkommensfaktor": {
+        "2028-09": 0.5
+      },
+      "erwerbspensum_erfuellt": {
+        "2028-09": true
+      },
+      "erziehungsberechtigte": [
+        "mutter",
+        "vater"
+      ],
+      "flag_ausnahme_abgelehnt": {
+        "2028-09": false
+      },
+      "flag_ausnahme_kein_grund": {
+        "2028-09": false
+      },
+      "flag_ausnahme_offen": {
+        "2028-09": false
+      },
+      "flag_haushalt_inkonsistent": {
+        "2028-09": false
+      },
+      "flag_me_aktuell_angewendet": {
+        "2028-09": false
+      },
+      "flag_me_aktuell_unter_schwelle": {
+        "2028-09": false
+      },
+      "flag_me_ueber_maxme": {
+        "2028-09": false
+      },
+      "flag_me_unbekannt": {
+        "2028-09": false
+      },
+      "flag_partner_nicht_gefestigt": {
+        "2028-09": false
+      },
+      "flag_pensum_mit_partner": {
+        "2028-09": false
+      },
+      "flag_pensum_unbekannt": {
+        "2028-09": false
+      },
+      "flag_pensum_unter_minimum": {
+        "2028-09": false
+      },
+      "flag_verordnung_entwurf": {
+        "2028-09": true
+      },
+      "flag_wohnsitz_nicht_sg": {
+        "2028-09": false
+      },
+      "flag_wohnsitz_unbekannt": {
+        "2028-09": false
+      },
+      "flag_zusatzbeitrag_platzhalter": {
+        "2028-09": true
+      },
+      "gesuchsdatum": {
+        "2028-09": "2028-08-30"
+      },
+      "haushalt_form": {
+        "2028-09": "GEMEINSAMER_HAUSHALT"
+      },
+      "kinder": [
+        "lina"
+      ],
+      "me_massgebend": {
+        "2028-09": 97000.0
+      },
+      "me_veranlagung_familie": {
+        "2028-09": 97000.0
+      },
+      "pruefstatus": {
+        "2028-09": "KEIN_ANSPRUCH"
+      },
+      "restkosten_familie": {
+        "2028-09": 1040.0
+      },
+      "voraussetzung_erziehungsberechtigte_erfuellt": {
+        "2028-09": true
+      },
+      "wohngemeinde": {
+        "2028-09": "ST_GALLEN"
+      },
+      "wohnsitz_erfuellt": {
+        "2028-09": true
+      },
+      "wohnsitz_sg": {
+        "2028-09": "JA"
+      },
+      "zusatzbeitrag_z1_pro_stunde": {
+        "2028-09": 0.0
+      },
+      "zusatzbeitrag_z2_pro_stunde": {
+        "2028-09": 0.0
+      }
+    }
+  },
+  "persons": {
+    "lina": {
+      "alter_kind_erfuellt": {
+        "2028-09": true
+      },
+      "alter_monate": {
+        "2028-09": 26
+      },
+      "altersstufe": {
+        "2028-09": "AB_18_MONATE_BIS_EINSCHULUNG"
+      },
+      "angebot_angemeldet": {
+        "2028-09": "NEIN"
+      },
+      "angebot_erfuellt": {
+        "2028-09": false
+      },
+      "angebot_typ": {
+        "2028-09": "KITA"
+      },
+      "anspruch_kind": {
+        "2028-09": false
+      },
+      "anteil_gemeinde_kind": {
+        "2028-09": 0.0
+      },
+      "anteil_kanton_kind": {
+        "2028-09": 0.0
+      },
+      "anteil_monat_ab_18_monate": {
+        "2028-09": 1.0
+      },
+      "anteil_monat_ab_mindestalter": {
+        "2028-09": 1.0
+      },
+      "beitrag_ab_datum": {
+        "2028-09": "Tue, 15 Aug 2028 00:00:00 GMT"
+      },
+      "beitrag_mindest_kind": {
+        "2028-09": 0.0
+      },
+      "beitrag_pro_stunde_mindest": {
+        "2028-09": 3.75
+      },
+      "beitrag_pro_stunde_total": {
+        "2028-09": 3.75
+      },
+      "beitrag_total_kind": {
+        "2028-09": 0.0
+      },
+      "betreuungsbeginn": {
+        "2028-09": "2028-08-15"
+      },
+      "betreuungsstunden_pro_tag": {
+        "2028-09": 10
+      },
+      "betreuungstage_pro_woche": {
+        "2028-09": 2
+      },
+      "flag_angebot_anmeldung_unbekannt": {
+        "2028-09": false
+      },
+      "flag_angebot_nicht_anerkannt": {
+        "2028-09": false
+      },
+      "flag_angebot_nicht_angemeldet": {
+        "2028-09": true
+      },
+      "flag_gesuch_verspaetet": {
+        "2028-09": false
+      },
+      "flag_kein_hoechstbeitrag": {
+        "2028-09": false
+      },
+      "flag_kind_zu_alt": {
+        "2028-09": false
+      },
+      "flag_kind_zu_jung": {
+        "2028-09": false
+      },
+      "flag_kostendeckel_greift": {
+        "2028-09": false
+      },
+      "flag_stunden_gekappt": {
+        "2028-09": false
+      },
+      "flag_uebergangsregel": {
+        "2028-09": false
+      },
+      "hoechstbeitrag_maxv": {
+        "2028-09": 7.5
+      },
+      "ist_erziehungsberechtigt": {
+        "2028-09": false
+      },
+      "ist_kind": {
+        "2028-09": true
+      },
+      "ist_partner": {
+        "2028-09": false
+      },
+      "jahr_schulpflicht": {
+        "2028-09": 2030
+      },
+      "kosten_monat": {
+        "2028-09": 1040.0
+      },
+      "kosten_pro_stunde": {
+        "2028-09": 12
+      },
+      "partner_gefestigt": {
+        "2028-09": false
+      },
+      "pruefstatus_kind": {
+        "2028-09": "KEIN_ANSPRUCH"
+      },
+      "restkosten_kind": {
+        "2028-09": 1040.0
+      },
+      "schaetzung_beitrag_total_kind": {
+        "2028-09": 0.0
+      },
+      "schulstufe": {
+        "2028-09": "VORSCHULALTER"
+      },
+      "subventionierte_stunden_monat": {
+        "2028-09": 86.66667
+      },
+      "verfuegung_dauer_monate": {
+        "2028-09": 12
+      },
+      "zusatzbeitrag_kind": {
+        "2028-09": 0.0
+      }
+    },
+    "mutter": {
+      "alter_kind_erfuellt": {
+        "2028-09": false
+      },
+      "alter_monate": {
+        "2028-09": 0
+      },
+      "altersstufe": {
+        "2028-09": "UNTER_18_MONATE"
+      },
+      "angebot_erfuellt": {
+        "2028-09": false
+      },
+      "anspruch_kind": {
+        "2028-09": false
+      },
+      "anteil_gemeinde_kind": {
+        "2028-09": 0.0
+      },
+      "anteil_kanton_kind": {
+        "2028-09": 0.0
+      },
+      "anteil_monat_ab_18_monate": {
+        "2028-09": 0.0
+      },
+      "anteil_monat_ab_mindestalter": {
+        "2028-09": 0.0
+      },
+      "beitrag_ab_datum": {
+        "2028-09": "Thu, 01 Jan 1970 00:00:00 GMT"
+      },
+      "beitrag_mindest_kind": {
+        "2028-09": 0.0
+      },
+      "beitrag_pro_stunde_mindest": {
+        "2028-09": 0.0
+      },
+      "beitrag_pro_stunde_total": {
+        "2028-09": 0.0
+      },
+      "beitrag_total_kind": {
+        "2028-09": 0.0
+      },
+      "erwerbspensum": {
+        "2028-09": 100
+      },
+      "flag_angebot_anmeldung_unbekannt": {
+        "2028-09": false
+      },
+      "flag_angebot_nicht_anerkannt": {
+        "2028-09": false
+      },
+      "flag_angebot_nicht_angemeldet": {
+        "2028-09": false
+      },
+      "flag_gesuch_verspaetet": {
+        "2028-09": false
+      },
+      "flag_kein_hoechstbeitrag": {
+        "2028-09": false
+      },
+      "flag_kind_zu_alt": {
+        "2028-09": false
+      },
+      "flag_kind_zu_jung": {
+        "2028-09": false
+      },
+      "flag_kostendeckel_greift": {
+        "2028-09": false
+      },
+      "flag_stunden_gekappt": {
+        "2028-09": false
+      },
+      "flag_uebergangsregel": {
+        "2028-09": false
+      },
+      "hoechstbeitrag_maxv": {
+        "2028-09": 0.0
+      },
+      "ist_erziehungsberechtigt": {
+        "2028-09": true
+      },
+      "ist_kind": {
+        "2028-09": false
+      },
+      "ist_partner": {
+        "2028-09": false
+      },
+      "jahr_schulpflicht": {
+        "2028-09": 0
+      },
+      "kosten_monat": {
+        "2028-09": 0.0
+      },
+      "me_veranlagung": {
+        "2028-09": 60000
+      },
+      "partner_gefestigt": {
+        "2028-09": false
+      },
+      "pruefstatus_kind": {
+        "2028-09": "NICHT_IN_KRAFT"
+      },
+      "restkosten_kind": {
+        "2028-09": 0.0
+      },
+      "schaetzung_beitrag_total_kind": {
+        "2028-09": 0.0
+      },
+      "subventionierte_stunden_monat": {
+        "2028-09": 0.0
+      },
+      "verfuegung_dauer_monate": {
+        "2028-09": 0
+      },
+      "zusatzbeitrag_kind": {
+        "2028-09": 0.0
+      }
+    },
+    "vater": {
+      "alter_kind_erfuellt": {
+        "2028-09": false
+      },
+      "alter_monate": {
+        "2028-09": 0
+      },
+      "altersstufe": {
+        "2028-09": "UNTER_18_MONATE"
+      },
+      "angebot_erfuellt": {
+        "2028-09": false
+      },
+      "anspruch_kind": {
+        "2028-09": false
+      },
+      "anteil_gemeinde_kind": {
+        "2028-09": 0.0
+      },
+      "anteil_kanton_kind": {
+        "2028-09": 0.0
+      },
+      "anteil_monat_ab_18_monate": {
+        "2028-09": 0.0
+      },
+      "anteil_monat_ab_mindestalter": {
+        "2028-09": 0.0
+      },
+      "beitrag_ab_datum": {
+        "2028-09": "Thu, 01 Jan 1970 00:00:00 GMT"
+      },
+      "beitrag_mindest_kind": {
+        "2028-09": 0.0
+      },
+      "beitrag_pro_stunde_mindest": {
+        "2028-09": 0.0
+      },
+      "beitrag_pro_stunde_total": {
+        "2028-09": 0.0
+      },
+      "beitrag_total_kind": {
+        "2028-09": 0.0
+      },
+      "erwerbspensum": {
+        "2028-09": 60
+      },
+      "flag_angebot_anmeldung_unbekannt": {
+        "2028-09": false
+      },
+      "flag_angebot_nicht_anerkannt": {
+        "2028-09": false
+      },
+      "flag_angebot_nicht_angemeldet": {
+        "2028-09": false
+      },
+      "flag_gesuch_verspaetet": {
+        "2028-09": false
+      },
+      "flag_kein_hoechstbeitrag": {
+        "2028-09": false
+      },
+      "flag_kind_zu_alt": {
+        "2028-09": false
+      },
+      "flag_kind_zu_jung": {
+        "2028-09": false
+      },
+      "flag_kostendeckel_greift": {
+        "2028-09": false
+      },
+      "flag_stunden_gekappt": {
+        "2028-09": false
+      },
+      "flag_uebergangsregel": {
+        "2028-09": false
+      },
+      "hoechstbeitrag_maxv": {
+        "2028-09": 0.0
+      },
+      "ist_erziehungsberechtigt": {
+        "2028-09": true
+      },
+      "ist_kind": {
+        "2028-09": false
+      },
+      "ist_partner": {
+        "2028-09": false
+      },
+      "jahr_schulpflicht": {
+        "2028-09": 0
+      },
+      "kosten_monat": {
+        "2028-09": 0.0
+      },
+      "me_veranlagung": {
+        "2028-09": 37000
+      },
+      "partner_gefestigt": {
+        "2028-09": false
+      },
+      "pruefstatus_kind": {
+        "2028-09": "NICHT_IN_KRAFT"
+      },
+      "restkosten_kind": {
+        "2028-09": 0.0
+      },
+      "schaetzung_beitrag_total_kind": {
+        "2028-09": 0.0
+      },
+      "subventionierte_stunden_monat": {
+        "2028-09": 0.0
+      },
+      "verfuegung_dauer_monate": {
+        "2028-09": 0
+      },
+      "zusatzbeitrag_kind": {
+        "2028-09": 0.0
+      }
+    }
+  }
+}
