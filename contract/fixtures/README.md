@@ -4,9 +4,10 @@ Request/Response/Trace der Demo-Familien (PLAN A9). Besitz: R2 (Fall), I1 (Forma
 
 Alle Dateien sind mit dem aktuellen Modell generiert (Stand 7.11.2026):
 
-- **Request:** Eingaben wie im gleichnamigen Fall in `openfisca_ch_sg/tests/kibg/test_demo_familien.yaml`
-  (F1x: wie F1, Periode 2027-09, kein Modelltest). Angefragt werden alle Variablen mit Formel, bei jeder
-  Person und der Familie, ausser sie sind Eingabe.
+- **Request:** Eingaben der Demo-Fälle F1 bis F15 (F1x: wie F1, Periode 2027-09). Sie stammen aus den
+  früheren Modelltests; die Tests in `openfisca_ch_sg/tests/kibg/` hat das Rechtsteam inzwischen neu
+  aufgebaut, dort tragen nur noch F1, F2, F10c und F15 dieselbe Kurzbezeichnung. Angefragt werden alle
+  Variablen mit Formel, bei jeder Person und der Familie, ausser sie sind Eingabe.
 - **Response:** Antwort von `/calculate`, **Trace:** Antwort von `/trace` der OpenFisca-Web-API.
 
 Datumswerte kommen im HTTP-Format (`"Tue, 15 Aug 2028 00:00:00 GMT"`), Beträge als float32
