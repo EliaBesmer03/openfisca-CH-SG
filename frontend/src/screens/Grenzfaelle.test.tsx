@@ -20,7 +20,7 @@ function anfrage(prefix: string): Anfrage | null {
 }
 
 const f05 = anfrage('F05_')
-const f01x = anfrage('F01x_')
+const f02 = anfrage('F02_')
 
 describe('Grenzfälle aus contract/fixtures', () => {
   it.skipIf(!f05)('F05: Anspruch mit CHF 0 → nicht „Sie erhalten CHF 0“', async () => {
@@ -29,8 +29,8 @@ describe('Grenzfälle aus contract/fixtures', () => {
     expect(screen.queryByText(/Sie erhalten voraussichtlich/)).toBeNull()
   })
 
-  it.skipIf(!f01x)('F01x: vor Vollzugsbeginn keine Regelzeilen und keine Rechnung', async () => {
-    render(<Warum anfrage={f01x!} client={client} onZurueck={leer} />)
+  it.skipIf(!f02)('F02: vor Vollzugsbeginn keine Regelzeilen und keine Rechnung', async () => {
+    render(<Warum anfrage={f02!} client={client} onZurueck={leer} />)
     expect(await screen.findByText(/gelten das neue Gesetz und die Verordnung noch nicht/)).toBeTruthy()
     expect(screen.queryByText('nicht erfüllt')).toBeNull()
     expect(screen.queryByText(/Die Rechnung nach dem Anhang/)).toBeNull()
