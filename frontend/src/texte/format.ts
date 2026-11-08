@@ -26,6 +26,8 @@ export function datum(iso: string): string {
 /** Anzeigename einer Person: eingegebener Name, sonst `kind_2` → „Kind 2“, `lina` → „Lina“. */
 export function personName(id: string, namen?: Readonly<Record<string, string>>): string {
   if (namen?.[id]) return namen[id]
+  if (id === ID.eb(1)) return texte.personen.sie
+  if (id === ID.eb(2) || id === ID.partner) return texte.personen.partner
   const nr = /^kind_(\d+)$/.exec(id)
   if (nr && id === ID.kind(Number(nr[1]))) return texte.personen.kind(Number(nr[1]))
   return id.charAt(0).toUpperCase() + id.slice(1)

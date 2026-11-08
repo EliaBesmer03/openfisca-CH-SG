@@ -12,6 +12,7 @@ import { Start } from './screens/Start'
 import { Warum } from './screens/Warum'
 import { texte } from './texte/de'
 import { STANDARD_PERIODE, type Situation } from './vertrag'
+import { familieMeier } from './zustand/beispiele'
 import { leeresFormular, leeresKind, type Formular } from './zustand/formular'
 
 type Ansicht =
@@ -21,11 +22,27 @@ type Ansicht =
   | { art: 'warum'; anfrage: Anfrage; zurueck: { anfragen: Anfrage[]; ausFormular: boolean } }
 
 const heute = () => new Date().toISOString().slice(0, 10)
-const neuesFormular = () => leeresFormular(API_MODUS === 'fixtures' ? DEMO_GESUCHSDATUM : heute())
+const gesuchsdatum = () => (API_MODUS === 'fixtures' ? DEMO_GESUCHSDATUM : heute())
+const neuesFormular = () => leeresFormular(gesuchsdatum())
+
+/** Vorführung per Link: ?demo=meier (Fragebogen) oder ?demo=meier-ergebnis (direkt das Ergebnis). */
+const demoAusLink = () => new URLSearchParams(window.location.search).get('demo')
+
+function anfragenAus(f: Formular, stand: Zwischenstand): Anfrage[] {
+  const bereinigt = bereinige(f, stand)
+  return baueGesuche(bereinigt, undefined, undefined, stand.partnerGefestigt).map(
+    (g): Anfrage => ({ situation: g.situation, periode: g.periode, quelle: 'formular', namen: g.namen }),
+  )
+}
 
 export default function App({ client = standardClient }: { client?: Client }) {
-  const [ansicht, setAnsicht] = useState<Ansicht>({ art: 'start' })
-  const [formular, setFormular] = useState<Formular>(neuesFormular)
+  const [formular, setFormular] = useState<Formular>(() => (demoAusLink()?.startsWith('meier') ? familieMeier(gesuchsdatum()) : neuesFormular()))
+  const [ansicht, setAnsicht] = useState<Ansicht>(() => {
+    const demo = demoAusLink()
+    if (demo === 'meier') return { art: 'fragebogen' }
+    if (demo === 'meier-ergebnis') return { art: 'ergebnis', anfragen: anfragenAus(familieMeier(gesuchsdatum()), LEERER_ZWISCHENSTAND), ausFormular: true }
+    return { art: 'start' }
+  })
   const [stand, setStand] = useState<Zwischenstand>(LEERER_ZWISCHENSTAND)
 
   const zeige = (a: Ansicht) => {
@@ -36,10 +53,15 @@ export default function App({ client = standardClient }: { client?: Client }) {
   const berechne = (f: Formular) => {
     const bereinigt = bereinige(f, stand)
     setFormular(bereinigt)
-    const anfragen = baueGesuche(bereinigt, undefined, undefined, stand.partnerGefestigt).map(
-      (g): Anfrage => ({ situation: g.situation, periode: g.periode, quelle: 'formular', namen: g.namen }),
-    )
-    zeige({ art: 'ergebnis', anfragen, ausFormular: true })
+    zeige({ art: 'ergebnis', anfragen: anfragenAus(bereinigt, stand), ausFormular: true })
+  }
+
+  const beispiel = (direktZumErgebnis: boolean) => {
+    const f = familieMeier(gesuchsdatum())
+    setFormular(f)
+    setStand(LEERER_ZWISCHENSTAND)
+    if (direktZumErgebnis) zeige({ art: 'ergebnis', anfragen: anfragenAus(f, LEERER_ZWISCHENSTAND), ausFormular: true })
+    else zeige({ art: 'fragebogen', frage: 'start-beispiel' })
   }
 
   const weiteresKind = () => {
@@ -70,7 +92,7 @@ export default function App({ client = standardClient }: { client?: Client }) {
         <RechtsstandBanner />
       </header>
       <main>
-        {ansicht.art === 'start' && <Start onStarten={() => zeige({ art: 'fragebogen' })} onDemo={demo} />}
+        {ansicht.art === 'start' && <Start onStarten={() => zeige({ art: 'fragebogen' })} onDemo={demo} onBeispiel={beispiel} />}
         {ansicht.art === 'fragebogen' && (
           <Fragebogen
             key={ansicht.frage ?? 'anfang'}

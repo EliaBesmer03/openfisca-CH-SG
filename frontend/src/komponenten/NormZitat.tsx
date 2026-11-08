@@ -78,11 +78,6 @@ export function NormZitat({ id }: { id: string }) {
             <RegelId id={r.id} /> <span>{r.fundstelle}</span> <QuellenBadge typ={r.quellentyp} />
           </p>
           <p className="norm__kurz">{r.kurztext}</p>
-          {r.ambiguitaeten.length > 0 && (
-            <p className="norm__amb">
-              {texte.frage.mehrdeutig}: {r.ambiguitaeten.join(', ')}
-            </p>
-          )}
           <details>
             <summary>{texte.frage.wortlaut}</summary>
             <blockquote lang="de-CH">{r.wortlaut}</blockquote>
