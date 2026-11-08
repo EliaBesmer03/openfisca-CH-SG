@@ -1,192 +1,180 @@
-# OpenFisca model for Sankt Gallen Canton (Switzerland)
+# Kinderbetreuungsbeiträge St.Gallen – Rules as Code
 
-The country whose law is modelled here has a very simple tax and benefit
-system.
+Ein Rechner, der Familien sagt, ob und wie viel Beitrag sie nach dem neuen St.Galler Kinderbetreuungsgesetz erhalten, und warum. Das Recht ist in OpenFisca modelliert, ein React-Frontend stellt die Fragen in einfacher Sprache.
 
-- It has a flat rate tax whose rates increase every year.
-- On the first of December, 2015, it introduced a basic income for all its
-  citizens of age who have no income.
-- On the first of December, 2016, it removed the income condition, providing
-  all its adult citizens with a basic income.
+Stand: 8. November 2026.
 
-These elements are described in different folders. All the modelling happens
-within the `openfisca_ch_sg` folder.
+## 1. Problem
 
-- The rates are in the `parameters` folder.
-- The formulas are in the `variables` folder.
-- This country package comes also with *reforms* in the `reforms` folder. This
-  is optional: your country may exist without defining any reform.
-  - In this country, there is
-    [a reform project](./openfisca_ch_sg/reforms/modify_social_security_taxation.py)
-    aiming to modify the social security taxation, deleting the first bracket,
-    raising the intermediary ones and adding a new bracket with a higher tax
-    rate of `40 %` for people earning more than `40000`. This reform project
-    would apply starting from `2017-01-01`.
+Ab August 2028 haben Eltern im Kanton St.Gallen erstmals einen **Rechtsanspruch** auf Beiträge an die Kita, die Tagesfamilie oder den Hort. Grundlage sind das totalrevidierte Gesetz (KiBG, Volksabstimmung 14.6.2026) und der Verordnungsentwurf (KiBV, Vernehmlassung bis 15.11.2026).
 
-The files that are outside from the `openfisca_ch_sg` folder are
-used to set up the development environment.
+Für Familien ist die Rechtslage schwer verständlich:
 
-## Packaging your Country Package for Distribution
+- Der Anspruch hängt an mehreren Bedingungen: Wohnsitz, Alter des Kindes, Erwerbspensum (20 % allein, 120 % als Paar), anerkanntes Angebot.
+- Die Höhe ergibt sich aus einer Formel im Anhang der Verordnung, abhängig von Einkommen, Stunden und Alter.
+- Gesetz und Verordnung lassen Fragen offen, und an einer Stelle entscheidet die Gemeinde nach Ermessen.
 
-Country packages are Python distributions. You can choose to distribute your
-package automatically via the predefined continuous deployment system on GitHub
-Actions, or manually.
+Eltern wissen deshalb vor dem Gesuch nicht, ob es sich lohnt, und die Gemeinden müssen dieselben Fragen immer wieder beantworten.
 
-### Automatic continuous deployment on GitHub
+## 2. Lösung
 
-This repository is configured with a continuous deployment system to automate
-the distribution of your package via `uv`.
+Wir haben KiBG und KiBV als ausführbares Modell umgesetzt. Für eine Familie und einen Monat beantwortet es:
 
-#### Setting up continuous deployment
+1. **Anspruch:** ja, nein, Angaben fehlen, oder Prüfung durch die Gemeinde?
+2. **Höhe:** Beitrag pro Kind und Monat, aufgeteilt auf Kanton und Gemeinde.
+3. **Verfahren:** Ab wann wird bezahlt, und wie lange gilt die Verfügung?
 
-To activate the continuous deployment:
+Jedes Ergebnis zeigt die Bestimmungen, auf denen es beruht, mit Originalwortlaut. Der Rechner ist eine unverbindliche Information. Er ersetzt weder das Gesuch noch den Entscheid der Gemeinde.
 
-1. Create an account on [PyPI](https://pypi.org/) if you don't already have
-   one.
-2. Generate a token in your PyPI account. This token will allow GitHub Actions
-   to securely upload new versions of your package to PyPI.
-3. Add this token to your GitHub repository's secrets under the name
-   `PYPI_TOKEN`.
+## 3. Architektur
 
-Once set up, changes to the `main` branch will trigger an automated workflow to
-build and publish your package to PyPI, making it available for `uv`
-installation.
+```
+Frontend (React)  ──JSON──▶  OpenFisca Web-API  ──▶  Erklärungsschicht  ──▶  Rechtsschicht
+Fragebogen, Ergebnis,        /calculate              Status, 26 Hinweise      KiBG/KiBV-Variablen,
+Warum-Ansicht                                                                 Parameter mit Fundstelle
+```
 
-### Manual distribution
+**Grundsatz: Recht wird nur im Modell berechnet, nie im Frontend.** Das Frontend übersetzt Antworten in eine API-Anfrage und zeigt das Ergebnis an.
 
-If you prefer to manually manage the release and distribution of your package,
-follow the guidelines provided by the
-[Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/tutorials/distributing-packages/#packaging-your-project).
+**Rechtsschicht** (`openfisca_ch_sg/variables/kibg/`). Jede Variable entspricht einer Bestimmung, z. B. `erwerbspensum_erfuellt` für Art. 4 Abs. 1 lit. a/b KiBG. Die Formel aus dem Anhang der KiBV steht fast wörtlich im Code:
 
-This involves detailed steps on preparing your package, creating distribution
-files, and uploading them to PyPI.
+> B = (MaxV + Z1) × (1 − (ME − MinmE) / (MaxmE − MinmE)) + Z2
 
-## Install Instructions for Users and Contributors
+Alle Beträge und Grenzen liegen als Parameter mit Fundstelle in `parameters/`. Ändert die Regierung nach der Vernehmlassung einen Wert, ändert sich eine Datei.
 
-This package requires
-[Python 3.11](https://www.python.org/downloads/release/python-390/). More
-recent versions should work, but are not tested.
+**Erklärungsschicht** (`openfisca_ch_sg/variables/anwendung/`). Sie leitet aus der Rechtsschicht einen Status ab (*Anspruch*, *Prüfung durch die Gemeinde*, *Angaben fehlen*, *kein Anspruch*, *noch nicht in Kraft*) und 26 Hinweise, warum dieser Status entsteht (z. B. „Kind jünger als drei Monate“). Sie liest die Rechtsschicht, aber nie umgekehrt. So bleibt der Rechtscode Zeile für Zeile mit dem Gesetz vergleichbar, und die Erklärung für Eltern lässt sich ändern, ohne das Recht anzufassen.
 
-All platforms that can execute Python are supported, which includes GNU/Linux,
-macOS and Microsoft Windows.
+**Regeltabelle** (`contract/regeln.json`). Sie enthält alle 142 Bestimmungen beider Erlasse mit Wortlaut, Kurzfassung in einfacher Sprache, Quelle und Umsetzung. 63 sind modelliert, 79 bewusst nicht (Plattform, Datenschutz, Zahlungsflüsse, Zuständigkeiten, Budget), jeweils mit Begründung. Sie haben keinen Einfluss auf den Einzelfall. Das Frontend zeigt die Wortlaute aus dieser Tabelle an.
 
-### A. Minimal Installation
+**Warum OpenFisca?** Es trennt Formeln, Parameter und Testfälle, kennt zeitabhängige Werte und bringt eine Web-API mit. Testfälle sind YAML-Dateien, die auch das Rechtsteam lesen und ergänzen kann.
 
-Follow this installation if you wish to:
+## 4. Vom Recht zum Code
 
-- run calculations on a large population;
-- create tax & benefits simulations;
-- write an extension to this legislation (e.g. city specific tax & benefits);
-- serve your Country Package with the OpenFisca Web API.
+**Rechtsstand im Modell.** Jede Formel gilt erst ab dem 1. August 2028. Für frühere Monate meldet das Modell „noch nicht in Kraft“. Werte aus der Verordnung sind als Entwurf gekennzeichnet.
 
-For more advanced uses, head to the
-[Advanced Installation](#advanced-installation-git-clone).
+**Systemgrenze.** Wo das KiBG auf anderes Recht verweist, fragen wir den Sachverhalt ab, statt das andere Recht zu modellieren:
 
-#### Install this Country Package with [uv](https://docs.astral.sh/uv/)
+| Begriff | Verweis | Im Modell |
+| --- | --- | --- |
+| Wohnsitz | ZGB | Auswahl der Wohngemeinde (75 politische Gemeinden) |
+| Obhut, Erziehungsberechtigung | Case Law (Bundesgericht) | Rolle in der Familie |
+| bewilligte Kita, gemeldete Tagesfamilie | Pflegekinderverordnung | Art des Angebots, „beim Kanton angemeldet?“ |
+| massgebendes Einkommen | V zum EG-KVG Art. 12 | Eingabe des Werts |
 
-Install the Country Package:
+**Ermessen bleibt bei der Gemeinde.** Nur an einer Stelle hat die Gemeinde Ermessen: Sie *kann* in Ausnahmefällen auf das Mindestpensum verzichten (Art. 4 Abs. 2 KiBG). Das Modell prüft nur, ob ein Grund nach Art. 12 KiBV vorliegt, und zeigt dann „Prüfung durch die Gemeinde“, zusammen mit dem Ergebnis bei Bewilligung und bei Ablehnung.
+
+**Unklarheiten und Entscheide.** Wo der Text mehrdeutig ist, hat das Rechtsteam entschieden und wir haben es dokumentiert:
+
+| Stelle | Frage | Entscheid |
+| --- | --- | --- |
+| Art. 4 Abs. 2 KiBG, Art. 12 KiBV | Ist die Entbindung zwingend, wenn ein Grund vorliegt? | Nein, Ermessen der Gemeinde; ohne Grund keine Entbindung |
+| Art. 4 Abs. 1 lit. a/b KiBG | Paar: Reicht die Summe von 120 %, oder braucht jede Person 20 %? | Summe genügt |
+| Art. 4 Abs. 3 KiBG, Art. 14 KiBV | Gilt der Kindergarten als eingeschult? | Ja, sonst gäbe es für Kindergartenkinder im Hort keinen Höchstbeitrag |
+| Art. 11 Abs. 2 KiBV | 25 % Abweichung wovon, in welche Richtung? | Rückgang gegenüber der Veranlagung, nur auf Antrag |
+| Art. 6 Abs. 2, Art. 20 Abs. 3 KiBG | Welche Kosten deckeln den Beitrag? | Betreuungskosten ohne Verpflegung |
+| Art. 9 Abs. 2 KiBG | Was ist das „Datum der Inanspruchnahme“? | Erster Betreuungstag |
+| Art. 14 KiBV | Was gilt bei genau 18 Monaten? | Ab diesem Tag der tiefere Satz; im Übergangsmonat tageweise gerechnet (gleich bei 3 Monaten) |
+| Art. 3 Abs. 2 lit. d KiBG | Höchstbeitrag für Sonderschulen fehlt | Wie schulergänzende Betreuung (CHF 5.50); vor Einschulung kein Beitrag |
+| Art. 15 Abs. 2 KiBV | Gilt „über CHF 154 000 kein Beitrag“ auch für den Gemeindezuschlag? | Ja |
+| Art. 14 KiBV | Schulergänzende Betreuung vor Einschulung | Keine Lücke, die Kombination gibt es nicht |
+| Art. 16 KiBV | Wie lange gilt die Verfügung? | 12 Monate, im Jahr des Schuleintritts nur bis Schulbeginn |
+| Art. 4 Abs. 1 KiBG | Müssen alle Erziehungsberechtigten im Kanton wohnen? | Bei getrenntem Haushalt zählt die gesuchstellende Person |
+| Art. 24 KiBV | Dürfen Gemeinden Zuschläge frei gestalten? | Nein, nur über Z1 und Z2 der Formel |
+| Art. 4 Abs. 1 lit. b KiBG, Art. 8 KiBV | Gilt die 120-%-Regel mit neuer Partnerin oder neuem Partner? | Ja, sobald die Beziehung gefestigt ist (Ehe oder zwei Jahre Konkubinat) |
+
+## 5. Verantwortung und Risiken
+
+- **Grenzen der Automatisierung.** Das Ergebnis ist eine Schätzung, keine Verfügung. Wo die Gemeinde Ermessen hat, rechnet das Modell nicht weiter. Fehlen Angaben, sagt es „Angaben fehlen“ und welche, statt zu raten.
+- **Transparenz.** Jeder Rechenschritt verweist auf seine Fundstelle, die Warum-Ansicht zeigt den Wortlaut. Wo das Gesetz unklar ist, steht unser Entscheid mit Begründung in der Tabelle „Unklarheiten und Entscheide“ (Abschnitt 4). Der Code ist öffentlich.
+- **Fairness.** Gleiche Fälle werden gleich behandelt, unabhängig von Gemeinde und Sachbearbeitung. Ungleiche Folgen einer Auslegung machen wir sichtbar: Nach unserer Auslegung von Art. 4 Abs. 1 lit. b KiBG muss ein Elternteil mit gefestigter neuer Partnerschaft zusammen 120 % arbeiten, ohne Partner nur 20 %.
+- **Datenschutz.** Kein Login, kein Name, keine AHV-Nummer. Die Angaben gehen nur für die einzelne Berechnung an die API und werden nicht gespeichert.
+- **Verantwortlichkeit.** Auslegungen und Sollwerte stammen vom Rechtsteam, die Umsetzung vom Techteam. Ändert sich ein Wert, zeigen die Tests sofort, welche Fälle betroffen sind.
+
+**Grenzen des Prototyps:**
+
+- Übergangsregel (Art. 25 KiBV) nicht modelliert; es gilt immer die 30-Tage-Frist von Art. 9 Abs. 2 KiBG.
+- Massgebendes Einkommen wird eingegeben
+- Eine Berechnung pro Monat; Änderungen während einer Verfügung (Art. 11 Abs. 3, Art. 16 Abs. 3 KiBV) fehlen.
+- Ein Monat hat 52/12 Wochen (Annahme); Module und Monatspauschalen (Art. 14 Abs. 5 KiBV) fehlen mangels Richtlinie.
+- Zusatzbeiträge aller Gemeinden sind CHF 0, bis Beschlüsse vorliegen.
+
+## 6. Tests
+
+**Testfälle des Rechtsteams.** 63 Familien mit Sollwerten im YAML-Format, 26 Normalfälle und 37 Grenzfälle. Das Modell muss genau diese Werte liefern. Die Fälle sind nach Thema aufgeteilt (`openfisca_ch_sg/tests/kibg/test_01_standardfamilien.yaml` bis `test_09_mehrere_kinder.yaml`). Ein neuer Fall entsteht, indem man einen bestehenden kopiert und die Angaben ändert, ohne Programmierkenntnisse.
+
+Beispiele für Grenzfälle: Kind wird am 1. oder 16. drei Monate alt; Pensum 19/20 % allein und 119/120 % als Paar; Konkubinat 1,9/2 Jahre; Einkommen CHF 39 999/40 000 und 154 000/154 001; Rückgang 24,9/25 %; Gesuch nach 30/31 Tagen; Monat vor und nach Inkrafttreten.
+
+**Abgleichtests.** 70 weitere Tests prüfen, dass Regeltabelle und Code übereinstimmen und dass Rechts- und Erklärungsschicht sich nicht widersprechen. Zusammen sind es **133 Tests**, alle bestanden.
+
+**Demo-Fälle.** In `contract/fixtures/` liegen 10 Beispielfamilien mit gespeicherten API-Antworten. So lässt sich der Rechner ohne laufendes Modell vorführen. Jeder Fall zeigt ein anderes Ergebnis des Rechners:
+
+| Fall | Zeigt |
+| --- | --- |
+| F1 Standardfamilie | Anspruch, CHF 325 pro Monat (wie Familie Meier) |
+| F2 Standardfamilie 2027 | noch nicht in Kraft |
+| F3 Alleinerziehend, Hort | schulergänzende Betreuung, 20-%-Regel allein |
+| F4 110 % + 10 % | 120-%-Regel als Paar, Summe genügt |
+| F5 Einkommen über MaxmE | Anspruch, aber Beitrag CHF 0 |
+| F6 Kind 2 Monate | Kind zu jung |
+| F7 Kind wird im Monat 18 Monate | tageweise Rechnung im Übergangsmonat |
+| F8 Ausnahme offen | Prüfung durch die Gemeinde |
+| F9 Konkubinat, Partner 20 % | neue Partnerschaft zählt mit |
+| F10 Wohnsitz ausserkantonal | kein Anspruch |
+
+## 7. Installation
+
+Voraussetzungen: Python 3.11, [uv](https://docs.astral.sh/uv/), Node.js mit npm, Git.
+
+**Modell** (im Repo-Root):
 
 ```sh
-uv add install openfisca-ch_sg
+uv sync      # installiert OpenFisca-Core 44.7.1 und das Modell
+make test    # alle 133 Tests
+uv run openfisca serve --country-package openfisca_ch_sg --bind 127.0.0.1:5001
 ```
 
-:tada: This OpenFisca Country Package is now installed and ready!
+Die API läuft auf `http://127.0.0.1:5001` (Port 5001, weil macOS Port 5000 für AirPlay belegt).
 
-#### Next Steps
-
-- To learn how to use OpenFisca, follow our
-  [tutorials](https://openfisca.org/doc/).
-- To serve this Country Package, serve the
-  [OpenFisca Web API](#serve-your-country-package-with-the-openFisca-web-api).
-
-Depending on what you want to do with OpenFisca, you may want to install yet
-other packages:
-
-- To install extensions or write on top of this Country Package, head to the
-  [Extensions documentation](https://openfisca.org/doc/contribute/extensions.html).
-- To plot simulation results, try [matplotlib](http://matplotlib.org/).
-- To manage data, check out [pandas](http://pandas.pydata.org/).
-
-### B. Advanced Installation (Git Clone)
-
-Follow this tutorial if you wish to:
-
-- create or change this Country Package's legislation;
-- contribute to the source code.
-
-#### Clone this Country Package with Git
-
-First, make sure [Git](https://www.git-scm.com/) is installed on your machine.
-
-Set your working directory to the location where you want this OpenFisca
-Country Package cloned.
-
-Clone this Country Package on your machine:
+**Frontend** (im Ordner `frontend/`):
 
 ```sh
-git clone git://github.com/openfisca/openfisca-CH-SG.git
-cd openfisca-CH-SG
+npm install
+API_ZIEL=http://127.0.0.1:5001 npm run dev:live   # mit laufendem Modell, http://localhost:5173
+npm run dev:demo                                  # ohne Modell, mit den 10 Demo-Fällen
+npm test                                          # Frontend-Tests
 ```
 
-You can make sure that everything is working by running the provided tests with
-`make test`.
+**Aufbau:**
 
-> [Learn more about tests](https://openfisca.org/doc/coding-the-legislation/writing_yaml_tests.html)
+| Pfad | Inhalt |
+| --- | --- |
+| `openfisca_ch_sg/variables/kibg/` | Rechtsschicht |
+| `openfisca_ch_sg/variables/anwendung/` | Erklärungsschicht |
+| `openfisca_ch_sg/parameters/` | Beträge und Grenzen mit Fundstelle |
+| `openfisca_ch_sg/tests/` | Testfälle und Abgleichtests |
+| `contract/regeln.json` | 142 Bestimmungen mit Wortlaut und Umsetzung |
+| `contract/gemeinden.json` | 75 Gemeinden |
+| `contract/fixtures/` | 10 Demo-Fälle: Anfrage und Antwort der API |
+| `frontend/` | Rechner (React, Vite, TypeScript) |
 
-:tada: This OpenFisca Country Package is now installed and ready!
+## 8. Team, KI und Quellen
 
-#### Next Steps
+Wir haben im Team zwei Gruppen gebildet:
 
-- To write new legislation, read the
-  [Coding the legislation](https://openfisca.org/doc/coding-the-legislation/index.html)
-  section to know how to write legislation.
-- To contribute to the code, read our
-  [Contribution Guidebook](https://openfisca.org/doc/contribute/index.html).
+| Team | Personen | Beitrag |
+| --- | --- | --- |
+| Techteam | Leon Schwendener, Elia Besmer | OpenFisca-Modell, Regeln, Parameter, Umsetzung der Tests in YAML; Frontend mit Fragebogen, Ergebnis- und Warum-Ansicht, API-Anbindung |
+| Rechtsteam | Dario Jacobi, Sebastian Meier | Auslegung der unklaren Stellen, Grenzfälle und Sollwerte der Testfälle, Fragen in einfacher Sprache |
 
-### C. Contributing
+Gemeinsame Aufgaben:
 
-- Read [CONTRIBUTING](CONTRIBUTING.md).
-- Open a pull request to the `main` branch of this repository.
-- Announce your changes as described in [CONTRIBUTING](CONTRIBUTING.md).
+- **Dokumentation:** Leon Schwendener, Elia Besmer und Dario Jacobi
+- **Präsentation:** Sebastian Meier
 
-## Serve this Country Package with the OpenFisca Web API
+**KI-Einsatz.** Wir haben Claude Code (Anthropic) als Programmierassistenten genutzt: für Modell- und Frontend-Code, die Umsetzung der Testfälle in YAML, das Extrahieren der Regeln aus den amtlichen PDFs und Textentwürfe. Die KI hat Unklarheiten aufgezeigt und Lesarten vorgeschlagen. Entschieden hat das Rechtsteam, und alle Sollwerte stammen von ihm. Code und Texte haben wir selbst geprüft.
 
-If you are considering building a web application, you can use the packaged
-OpenFisca Web API with your Country Package.
+**Open Source.** OpenFisca Core und Country-Template (AGPL-3.0), uv, pytest, React, Vite, TypeScript, Vitest, Zod.
 
-To serve the Openfisca Web API locally, run:
+**Quellen.** KiBG, Ergebnis der 1. Lesung im Kantonsrat vom 16.9.2025 (Ratsinformationssystem St.Gallen); KiBV-Entwurf, RRB 2026/733, mit Medienmitteilung; Gemeindeliste nach BFS-Stand 1.1.2024 (Fachstelle für Statistik St.Gallen).
 
-```sh
-openfisca serve --port 5000 --country-package openfisca_ch_sg
-```
 
-Or use the quick-start Make command:
-
-```
-make serve-local
-```
-
-To read more about the `openfisca serve` command, check out its
-[documentation](https://openfisca.org/doc/openfisca-python-api/openfisca_serve.html).
-
-You can make sure that your instance of the API is working by requesting:
-
-```sh
-curl "http://localhost:5000/spec"
-```
-
-This endpoint returns the [Open API specification](https://www.openapis.org/)
-of your API.
-
-:tada: This OpenFisca Country Package is now served by the OpenFisca Web API!
-To learn more, go to the
-[OpenFisca Web API documentation](https://openfisca.org/doc/openfisca-web-api/index.html).
-
-You can test your new Web API by sending it example JSON data located in the
-`situation_examples` folder.
-
-```sh
-curl -X POST -H "Content-Type: application/json" \
-  -d @./openfisca_ch_sg/situation_examples/couple.json \
-  http://localhost:5000/calculate
-```
