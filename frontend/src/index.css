@@ -118,7 +118,6 @@ select { width: 100%; }
 .norm { margin: 0.75rem 0; padding-left: 0.75rem; border-left: 3px solid var(--rand); }
 .norm p { margin: 0.2rem 0; }
 .norm__kopf { font-weight: 600; }
-.norm__amb { font-size: 0.85rem; color: var(--pruefung); }
 .norm--hinweis { border-left-color: var(--warn-rand); color: var(--text-leise); }
 .norm summary { cursor: pointer; color: var(--akzent); }
 blockquote { margin: 0.5rem 0; padding: 0.5rem 0.75rem; background: var(--hintergrund); font-style: italic; }
@@ -201,3 +200,11 @@ a.regel-id--link:hover { background: var(--fehlt-hg); }
   display: grid;
   gap: 0.75rem;
 }
+
+.beispiel h2 { margin-top: 0; }
+
+/* Testfälle: klein und eingeklappt */
+.testfaelle { margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-leise); }
+.testfaelle summary { cursor: pointer; }
+.testfaelle__liste { list-style: none; padding: 0; margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+.testfaelle .link { font-size: 0.85rem; }

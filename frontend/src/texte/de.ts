@@ -38,11 +38,15 @@ export const texte = {
     'Simulation, keine Verfügung. Das Gesetz gilt ab 1. August 2028. Die Zahlen stammen aus dem Verordnungsentwurf.',
   start: {
     starten: 'Rechner starten',
-    demoTitel: 'Beispielfamilien',
     demoHinweis: 'Ergebnis für eine vorbereitete Familie direkt anzeigen.',
-    weitereFaelle: 'Weitere Fälle',
-    keineDemos: 'Noch keine Beispielfamilien vorhanden.',
+    testfaelle: (anzahl: number) => `Weitere Testfälle (${anzahl})`,
     demoName: (id: string) => id.replace(/^F0?(\d+\w?)_/, 'F$1 · ').replaceAll('_', ' '),
+    beispiel: {
+      titel: 'Beispiel: Familie Meier',
+      text: 'Sara arbeitet 60 %, ihr Partner 100 %. Ihre Tochter Lina (2) geht zwei Tage pro Woche in die Kita.',
+      fragebogen: 'Fragebogen ansehen',
+      ergebnis: 'Direkt zum Ergebnis',
+    },
   },
   navigation: {
     weiter: 'Weiter',
@@ -64,7 +68,6 @@ export const texte = {
     kurztext: 'Kurz gesagt',
     annahme: 'Annahme unseres Teams, ohne Grundlage im Gesetz.',
     rechtsstand: 'Hinweis zum Rechtsstand: Gesetz angenommen, Verordnung im Entwurf.',
-    mehrdeutig: 'Unklare Stelle',
     quelleOeffnen: (id: string, fundstelle: string) => `${id}, ${fundstelle}: Quelle öffnen (neues Fenster)`,
     mehrereBestimmungen: (anzahl: number) => `${anzahl} Bestimmungen, je nach Ihren Angaben:`,
   },
@@ -429,6 +432,6 @@ export const texte = {
   },
   fusszeile: {
     datenschutz:
-      'Der Rechner speichert nichts. Im offiziellen Verfahren ruft die Plattform Steuer- und Einwohnerdaten ab.',
+      'Der Rechner speichert nichts.',
   },
 }

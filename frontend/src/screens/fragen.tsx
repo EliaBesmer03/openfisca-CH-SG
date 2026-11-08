@@ -30,6 +30,7 @@ export type FrageDef = {
 }
 
 const t = texte.fragen
+const MAX_PENSUM = 100
 
 const zahl = (w: number, min = 0, max = Number.POSITIVE_INFINITY) => Number.isFinite(w) && w >= min && w <= max
 const datumGueltig = (w: string) => /^\d{4}-\d{2}-\d{2}$/.test(w) && !Number.isNaN(Date.parse(w))
@@ -249,15 +250,15 @@ function pensumFrage(suffix: string, mitSie: boolean, mitPartner: boolean): Frag
     schluessel: `pensum${suffix}`,
     titel: mitSie ? t.pensum.titel : t.pensum.titelPartner,
     hilfe: t.pensum.hilfe,
-    vollstaendig: (x) => (!mitSie || zahl(x.sie.erwerbspensum, 0, 100)) && (!mitPartner || zahl(x.partner.erwerbspensum, 0, 100)),
+    vollstaendig: (x) => (!mitSie || zahl(x.sie.erwerbspensum, 0, MAX_PENSUM)) && (!mitPartner || zahl(x.partner.erwerbspensum, 0, MAX_PENSUM)),
     pruefen: true,
     inhalt: (x, a) => (
       <>
         {mitSie && (
-          <ZahlFeld label={t.pensum.sie} einheit={texte.einheiten.prozent} min={0} max={100} schritt={5} wert={x.sie.erwerbspensum} onChange={(w) => setze(a, 'sie', w)} />
+          <ZahlFeld label={t.pensum.sie} einheit={texte.einheiten.prozent} min={0} max={MAX_PENSUM} schritt={5} wert={x.sie.erwerbspensum} onChange={(w) => setze(a, 'sie', w)} />
         )}
         {mitPartner && (
-          <ZahlFeld label={t.pensum.partner} einheit={texte.einheiten.prozent} min={0} max={100} schritt={5} wert={x.partner.erwerbspensum} onChange={(w) => setze(a, 'partner', w)} />
+          <ZahlFeld label={t.pensum.partner} einheit={texte.einheiten.prozent} min={0} max={MAX_PENSUM} schritt={5} wert={x.partner.erwerbspensum} onChange={(w) => setze(a, 'partner', w)} />
         )}
       </>
     ),

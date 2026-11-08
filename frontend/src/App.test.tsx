@@ -98,16 +98,20 @@ async function kind(u: ReturnType<typeof userEvent.setup>, name: string, geburt:
 describe('App im Fixture-Modus', () => {
   const client = erstelleClient('fixtures')
 
-  it('Startseite zeigt Banner, Startknopf und Demo F01', () => {
+  it('Startseite zeigt Banner, Startknopf, Familie Meier und eingeklappte Testfälle', async () => {
+    const u = userEvent.setup()
     render(<App client={client} />)
     expect(screen.getByRole('note').textContent).toContain('Simulation, keine Verfügung')
     expect(screen.getByRole('button', { name: 'Rechner starten' })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: 'Beispiel: Familie Meier' })).toBeTruthy()
+    await u.click(screen.getByText(/Weitere Testfälle \(\d+\)/))
     expect(screen.getByRole('button', { name: /F1 · standardfamilie/ })).toBeTruthy()
   })
 
   it('Demo F01 → Ergebnis mit CHF 325, ohne Artikel', async () => {
     const u = userEvent.setup()
     render(<App client={client} />)
+    await u.click(screen.getByText(/Weitere Testfälle/))
     await u.click(screen.getByRole('button', { name: /F1 · standardfamilie/ }))
     expect(await screen.findByText(/rund CHF 325 pro Monat für Lina/)).toBeTruthy()
     expect(screen.getByText('Anspruch auf Beiträge')).toBeTruthy()

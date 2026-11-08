@@ -72,3 +72,4 @@ describe('Ergebnis bei PRUEFUNG_DURCH_GEMEINDE', () => {
     expect(gesendet).toEqual([Entscheid.OFFEN, Entscheid.BEWILLIGT, Entscheid.ABGELEHNT])
   })
 })
+
