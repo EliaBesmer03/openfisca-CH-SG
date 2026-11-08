@@ -1,0 +1,306 @@
+# Pensum – Fälle vom Rechtsteam ausgearbeitet und bestätigt (Stand 8.11.2026).
+# Ausgangslage: Familie F1 (Mutter 100 %, CHF 60 000; Vater 60 %, CHF 37 000; Lina 26 Monate, Kita 2 × 10 h,
+# CHF 12/h, Stadt St.Gallen, Beginn 15.8.2028, Gesuch 30.8.2028). Jeder Fall ändert nur die geprüfte Angabe.
+- name: 'KiBG-4.1.a Grenzfall: allein, 19 % → Mindestpensum nicht erreicht, kein Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 19, me_veranlagung: 60000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    erwerbspensum_erfuellt: false
+    pruefstatus: KEIN_ANSPRUCH
+- name: 'KiBG-4.1.a Grenzfall: allein, 20 % → Mindestpensum erreicht, Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 20, me_veranlagung: 60000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    erwerbspensum_erfuellt: true
+    pruefstatus: ANSPRUCH
+- name: 'KiBG-4.1.b Grenzfall: Paar, 100 + 19 % = 119 % → kein Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 19, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    erwerbspensum_erfuellt: false
+    pruefstatus: KEIN_ANSPRUCH
+- name: 'KiBG-4.1.b Grenzfall: Paar, 100 + 20 % = 120 % → Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 20, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    erwerbspensum_erfuellt: true
+    pruefstatus: ANSPRUCH
+- name: 'KiBG-4.1.b KiBV-8.2.b Grenzfall: getrennt, gefestigter Partner, 100 + 19 % → unter 120 %, kein Anspruch (A-16)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: KONKUBINAT, konkubinat_jahre: 3, erwerbspensum: 19}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    erwerbspensum_erfuellt: false
+    flag_pensum_mit_partner: true
+    pruefstatus: KEIN_ANSPRUCH
+- name: 'KiBG-4.1.b KiBV-8.2.b Grenzfall: getrennt, gefestigter Partner, 100 + 20 % → 120 %, Anspruch (A-16)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: KONKUBINAT, konkubinat_jahre: 3, erwerbspensum: 20}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    erwerbspensum_erfuellt: true
+    flag_pensum_mit_partner: true
+    beitrag_total_kind: [0, 364.91, 0]
+    pruefstatus: ANSPRUCH
+- name: 'KiBV-8.2.a Grenzfall: mit Partner verheiratet, erst seit kurzem zusammen → sofort gefestigt'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: EHE_ODER_EINGETRAGENE_PARTNERSCHAFT, konkubinat_jahre: 0, erwerbspensum: 20}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    partner_gefestigt: [false, false, true]
+    me_veranlagung_familie: 90000
+- name: 'KiBV-8.2.b Grenzfall: Konkubinat 1.9 Jahre → nicht gefestigt'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: KONKUBINAT, konkubinat_jahre: 1.9, erwerbspensum: 20}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    partner_gefestigt: [false, false, false]
+    me_veranlagung_familie: 50000
+- name: 'KiBV-8.2.b Grenzfall: Konkubinat genau 2 Jahre → gefestigt'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: KONKUBINAT, konkubinat_jahre: 2, erwerbspensum: 20}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    partner_gefestigt: [false, false, true]
+    me_veranlagung_familie: 90000
+- name: 'KiBG-4.1.a KiBV-8.2.b Normalfall: Partner nicht gefestigt (1 Jahr), Mutter 10 % + Partner 100 % → Pensum des Partners zählt nicht, kein Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 10, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: KONKUBINAT, konkubinat_jahre: 1, erwerbspensum: 100}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    erwerbspensum_erfuellt: false
+    flag_pensum_mit_partner: false
+    pruefstatus: KEIN_ANSPRUCH
+- name: 'KiBG-4.1 Normalfall: Pensum einer erziehungsberechtigten Person unbekannt → Angaben fehlen'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000, erwerbspensum_bekannt: false}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    flag_pensum_unbekannt: true
+    pruefstatus: ANGABEN_FEHLEN
+- name: 'KiBG-4.1 KiBV-8.2.b Normalfall: Pensum des gefestigten Partners unbekannt → Angaben fehlen (A-16)'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: KONKUBINAT, konkubinat_jahre: 3, erwerbspensum_bekannt: false}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    flag_pensum_unbekannt: true
+    pruefstatus: ANGABEN_FEHLEN
+- name: 'KiBG-4.2 KiBV-12.1 Normalfall: Pensum zu tief, kein Ausnahmegrund → kein Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 0, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    flag_ausnahme_kein_grund: true
+    pruefstatus: KEIN_ANSPRUCH
+- name: 'KiBG-4.2 KiBV-12.1.a Normalfall: Pensum zu tief, Ausnahmegrund, Gemeinde hat noch nicht entschieden → Prüfung durch die Gemeinde'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 0, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        ausnahmegrund: BERUFLICHE_INTEGRATION
+  output:
+    pruefstatus: PRUEFUNG_DURCH_GEMEINDE
+    beitrag_total_kind: [0, 0, 0]
+    schaetzung_beitrag_total_kind: [0, 0, 325]
+- name: 'KiBG-4.2 KiBV-12.1.a Normalfall: Pensum zu tief, Ausnahmegrund, Gemeinde bewilligt → Anspruch, CHF 325'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 0, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        ausnahmegrund: BERUFLICHE_INTEGRATION
+        ausnahme_entscheid: BEWILLIGT
+  output:
+    pruefstatus: ANSPRUCH
+    beitrag_total_kind: [0, 0, 325]
+- name: 'KiBG-4.2 KiBV-12.1.b Normalfall: Pensum zu tief, Ausnahmegrund, Gemeinde lehnt ab → kein Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 0, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        ausnahmegrund: FAMILIAERE_BELASTUNG
+        ausnahme_entscheid: ABGELEHNT
+  output:
+    flag_ausnahme_abgelehnt: true
+    pruefstatus: KEIN_ANSPRUCH
