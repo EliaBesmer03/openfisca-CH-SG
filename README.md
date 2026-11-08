@@ -144,6 +144,17 @@ npm run dev:demo                                  # ohne Modell, mit den 10 Demo
 npm test                                          # Frontend-Tests
 ```
 
+**Schnell ausprobieren** (ohne Modell, nur Node.js nötig):
+
+1. Im Ordner `frontend/` `npm install` und `npm run dev:demo` ausführen, dann `http://localhost:5173` öffnen.
+2. Bei „Beispiel: Familie Meier“ auf **Direkt zum Ergebnis** klicken. Erwartet: Anspruch, rund **CHF 325 pro Monat** für Lina. Mit **Warum?** erscheinen die Bestimmungen, auf denen das Ergebnis beruht.
+3. Unter **Weitere Testfälle** weitere Familien öffnen, zum Beispiel:
+   - **F2:** gleiche Familie im Jahr 2027 → noch nicht in Kraft
+   - **F6:** Kind 2 Monate alt → kein Anspruch, Kind zu jung
+   - **F8:** Pensum zu tief, Ausnahmegrund vorhanden → Prüfung durch die Gemeinde
+
+Mit **Rechner starten** lässt sich der Fragebogen selbst ausfüllen. Im Demo-Modus gibt es nur für die vorbereiteten Familien ein Ergebnis, für eigene Angaben braucht es das laufende Modell (`dev:live`).
+
 **Aufbau:**
 
 | Pfad | Inhalt |
