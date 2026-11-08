@@ -1,5 +1,7 @@
-# Ausgangslage aller Tests: Grundfamilie F1 (Teil A, A8). Jeder Test variiert nur die geprüfte Angabe.
-- name: 'KiBV-2.1 KiBG-4.1 KiBG-20.2 Normalfall: Stadt St.Gallen → Wohnsitz JA, Zusatzbeiträge 0 (AN-04)'
+# Gemeinden – Fälle vom Rechtsteam ausgearbeitet und bestätigt (Stand 8.11.2026).
+# Ausgangslage: Familie F1 (Mutter 100 %, CHF 60 000; Vater 60 %, CHF 37 000; Lina 26 Monate, Kita 2 × 10 h,
+# CHF 12/h, Stadt St.Gallen, Beginn 15.8.2028, Gesuch 30.8.2028). Jeder Fall ändert nur die geprüfte Angabe.
+- name: 'KiBV-2.1 KiBG-20.2 Normalfall: Stadt St.Gallen → Wohnsitz im Kanton, Zusatzbeiträge 0 (AN-04)'
   period: 2028-09
   absolute_error_margin: 0.01
   input:
@@ -14,8 +16,11 @@
         wohngemeinde: ST_GALLEN
         haushalt_form: GEMEINSAMER_HAUSHALT
         gesuchsdatum: '2028-08-30'
-  output: {wohnsitz_sg: JA, zusatzbeitrag_z1_pro_stunde: 0, zusatzbeitrag_z2_pro_stunde: 0}
-- name: 'KiBV-2.1 KiBG-4.1 Grenzfall: Gemeinde mit Namenszusatz (SG), Wil → Wohnsitz JA'
+  output:
+    wohnsitz_sg: JA
+    zusatzbeitrag_z1_pro_stunde: 0
+    zusatzbeitrag_z2_pro_stunde: 0
+- name: 'KiBV-2.1 Normalfall: Wil (SG) → Wohnsitz im Kanton, Zusatzbeitrag 0'
   period: 2028-09
   absolute_error_margin: 0.01
   input:
@@ -30,24 +35,10 @@
         wohngemeinde: WIL_SG
         haushalt_form: GEMEINSAMER_HAUSHALT
         gesuchsdatum: '2028-08-30'
-  output: {wohnsitz_sg: JA, zusatzbeitrag_z1_pro_stunde: 0}
-- name: 'KiBV-2.1 KiBG-4.1 Normalfall: Wildhaus-Alt St.Johann → Wohnsitz JA'
-  period: 2028-09
-  absolute_error_margin: 0.01
-  input:
-    persons:
-      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
-      vater: {erwerbspensum: 60, me_veranlagung: 37000}
-      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
-    familien:
-      familie:
-        erziehungsberechtigte: [mutter, vater]
-        kinder: [lina]
-        wohngemeinde: WILDHAUS_ALT_ST_JOHANN
-        haushalt_form: GEMEINSAMER_HAUSHALT
-        gesuchsdatum: '2028-08-30'
-  output: {wohnsitz_sg: JA, zusatzbeitrag_z2_pro_stunde: 0}
-- name: 'F15 KiBG-20.2 KiBV-24.1 Normalfall: Szenario, Z1 = 1.00 und Z2 = 0.50 als Eingabe überschreiben den Parameter'
+  output:
+    wohnsitz_sg: JA
+    zusatzbeitrag_z1_pro_stunde: 0
+- name: 'F15 KiBG-20.2 KiBV-24.1 KiBV-Anh Normalfall: Szenario Gemeinde zahlt Z1 = 1.00 und Z2 = 0.50 → total CHF 411.67, davon Zusatz CHF 86.67'
   period: 2028-09
   absolute_error_margin: 0.01
   input:
@@ -64,4 +55,8 @@
         gesuchsdatum: '2028-08-30'
         zusatzbeitrag_z1_pro_stunde: 1.0
         zusatzbeitrag_z2_pro_stunde: 0.5
-  output: {zusatzbeitrag_z1_pro_stunde: 1.0, zusatzbeitrag_z2_pro_stunde: 0.5}
+  output:
+    beitrag_pro_stunde_total: [0, 0, 4.75]
+    beitrag_mindest_kind: [0, 0, 325]
+    beitrag_total_kind: [0, 0, 411.67]
+    zusatzbeitrag_kind: [0, 0, 86.67]

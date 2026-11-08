@@ -1,0 +1,80 @@
+# Alter des Kindes – Fälle vom Rechtsteam ausgearbeitet und bestätigt (Stand 8.11.2026).
+# Ausgangslage: Familie F1 (Mutter 100 %, CHF 60 000; Vater 60 %, CHF 37 000; Lina 26 Monate, Kita 2 × 10 h,
+# CHF 12/h, Stadt St.Gallen, Beginn 15.8.2028, Gesuch 30.8.2028). Jeder Fall ändert nur die geprüfte Angabe.
+- name: 'KiBG-4.3 Grenzfall: Kind wird am 1.9. genau 3 Monate alt → ganzer September, Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {geburtsdatum: '2028-06-01', schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    alter_kind_erfuellt: [false, false, true]
+    beitrag_total_kind: [0, 0, 476.67]
+    pruefstatus: ANSPRUCH
+- name: 'KiBG-4.3 Grenzfall: Kind wird am 16.9. 3 Monate alt → Beiträge ab diesem Tag, halber September'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {geburtsdatum: '2028-06-16', schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    alter_kind_erfuellt: [false, false, true]
+    anteil_monat_ab_mindestalter: [0, 0, 0.5]
+    beitrag_total_kind: [0, 0, 238.33]
+    pruefstatus: ANSPRUCH
+- name: 'KiBG-4.3 Grenzfall: Kind wird erst am 1.10. 3 Monate alt → im September kein Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {geburtsdatum: '2028-07-01', schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    alter_kind_erfuellt: [false, false, false]
+    flag_kind_zu_jung: [false, false, true]
+    pruefstatus: KEIN_ANSPRUCH
+- name: 'KiBG-4.3 Grenzfall: Oberstufe, Primarschule abgeschlossen → kein Anspruch'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 150, schulstufe: OBERSTUFE_ODER_HOEHER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    alter_kind_erfuellt: [false, false, false]
+    flag_kind_zu_alt: [false, false, true]
+    pruefstatus: KEIN_ANSPRUCH

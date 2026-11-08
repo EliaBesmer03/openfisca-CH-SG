@@ -1,0 +1,44 @@
+# Mehrere Kinder – Fälle vom Rechtsteam ausgearbeitet und bestätigt (Stand 8.11.2026).
+# Ausgangslage: Familie F1 (Mutter 100 %, CHF 60 000; Vater 60 %, CHF 37 000; Lina 26 Monate, Kita 2 × 10 h,
+# CHF 12/h, Stadt St.Gallen, Beginn 15.8.2028, Gesuch 30.8.2028). Jeder Fall ändert nur die geprüfte Angabe.
+- name: 'KiBG-4.3 Normalfall: zwei Kinder, Lina mit Anspruch, Ben 2 Monate ohne → Familie Anspruch, CHF 325'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      ben: {alter_monate: 2, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina, ben]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    pruefstatus: ANSPRUCH
+    beitrag_total_familie: 325
+- name: 'KiBV-14.1.a KiBV-14.3.b Normalfall: zwei Kinder mit Anspruch, Baby 10 Monate in der Kita und Schulkind 7 Jahre im Hort → CHF 476.67 + 143.00 = 619.67'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 10, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      ben: {alter_monate: 84, schulstufe: PRIMARSCHULE, angebot_typ: SCHULERGAENZEND, angebot_angemeldet: JA, betreuungstage_pro_woche: 4, betreuungsstunden_pro_tag: 3, kosten_pro_stunde: 9, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina, ben]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    hoechstbeitrag_maxv: [0, 0, 11, 5.5]
+    beitrag_total_kind: [0, 0, 476.67, 143]
+    beitrag_total_familie: 619.67
+    restkosten_familie: 888.33
+    pruefstatus: ANSPRUCH

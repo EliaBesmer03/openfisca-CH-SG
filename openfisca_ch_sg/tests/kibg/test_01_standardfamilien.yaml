@@ -1,0 +1,85 @@
+# Standardfamilien – normale Fälle, vom Rechtsteam nachzurechnen (Stand 8.11.2026).
+- name: 'F1 KiBG-4.1.b KiBV-8.1.a KiBV-14.2.a KiBV-Anh KiBG-9.2 Normalfall: Paar 100 + 60 %, Einkommen 97 000, Kind 26 Monate in der Kita → CHF 325'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 60000}
+      vater: {erwerbspensum: 60, me_veranlagung: 37000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    me_massgebend: 97000
+    einkommensfaktor: 0.5
+    hoechstbeitrag_maxv: [0, 0, 7.5]
+    beitrag_total_kind: [0, 0, 325]
+    restkosten_familie: 715
+    beitrag_ab_datum: ["1970-01-01", "1970-01-01", "2028-08-15"]
+    pruefstatus: ANSPRUCH
+- name: 'F2 KiBG-4.1.a KiBV-14.3.b KiBV-15.1 Normalfall: alleinerziehend 40 %, Einkommen 38 000, Kind 7 Jahre im Hort 4 × 3 h → CHF 286'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 40, me_veranlagung: 38000}
+      lina: {alter_monate: 84, schulstufe: PRIMARSCHULE, angebot_typ: SCHULERGAENZEND, angebot_angemeldet: JA, betreuungstage_pro_woche: 4, betreuungsstunden_pro_tag: 3, kosten_pro_stunde: 9, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    einkommensfaktor: 1
+    hoechstbeitrag_maxv: [0, 5.5]
+    beitrag_total_kind: [0, 286]
+    pruefstatus: ANSPRUCH
+- name: 'F16 KiBV-14.1.b KiBV-Anh Normalfall: Paar 80 + 60 %, Einkommen 70 000, Baby 10 Monate in der Tagesfamilie 3 × 9 h → CHF 715.55'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 80, me_veranlagung: 45000}
+      vater: {erwerbspensum: 60, me_veranlagung: 25000}
+      lina: {alter_monate: 10, schulstufe: VORSCHULALTER, angebot_typ: TAGESFAMILIE, angebot_angemeldet: JA, betreuungstage_pro_woche: 3, betreuungsstunden_pro_tag: 9, kosten_pro_stunde: 10, betreuungsbeginn: '2028-08-15'}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter, vater]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GEMEINSAMER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+  output:
+    me_massgebend: 70000
+    hoechstbeitrag_maxv: [0, 0, 8.3]
+    subventionierte_stunden_monat: [0, 0, 117]
+    beitrag_total_kind: [0, 0, 715.55]
+    restkosten_familie: 454.45
+    pruefstatus: ANSPRUCH
+- name: 'F10c KiBG-4.1.b KiBV-8.1.b KiBV-8.2.b Normalfall: getrennt, Mutter 100 % lebt seit 3 Jahren mit Partner (20 %) zusammen, Einkommen 50 000 + 40 000 → CHF 364.91'
+  period: 2028-09
+  absolute_error_margin: 0.01
+  input:
+    persons:
+      mutter: {erwerbspensum: 100, me_veranlagung: 50000}
+      lina: {alter_monate: 26, schulstufe: VORSCHULALTER, angebot_typ: KITA, angebot_angemeldet: JA, betreuungstage_pro_woche: 2, betreuungsstunden_pro_tag: 10, kosten_pro_stunde: 12, betreuungsbeginn: '2028-08-15'}
+      partner: {me_veranlagung: 40000, partnerschaft: KONKUBINAT, konkubinat_jahre: 3, erwerbspensum: 20}
+    familien:
+      familie:
+        erziehungsberechtigte: [mutter]
+        kinder: [lina]
+        wohngemeinde: ST_GALLEN
+        haushalt_form: GETRENNTER_HAUSHALT
+        gesuchsdatum: '2028-08-30'
+        partnerinnen: [partner]
+  output:
+    me_massgebend: 90000
+    beitrag_total_kind: [0, 364.91, 0]
+    pruefstatus: ANSPRUCH
