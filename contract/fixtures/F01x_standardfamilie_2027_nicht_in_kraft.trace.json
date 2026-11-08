@@ -153,9 +153,9 @@
   ],
   "trace": {
     "alter_kind_erfuellt<2027-09>": {
-      "calculation_time": 6.914e-06,
+      "calculation_time": 1.001e-05,
       "dependencies": [],
-      "formula_time": 6.914e-06,
+      "formula_time": 1.001e-05,
       "parameters": {},
       "value": [
         false,
@@ -197,9 +197,9 @@
       ]
     },
     "anspruch_kind<2027-09>": {
-      "calculation_time": 9.06e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 9.06e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         false,
@@ -208,17 +208,6 @@
       ]
     },
     "anteil_gemeinde_kind<2027-09>": {
-      "calculation_time": 3.815e-06,
-      "dependencies": [],
-      "formula_time": 3.815e-06,
-      "parameters": {},
-      "value": [
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    "anteil_kanton_kind<2027-09>": {
       "calculation_time": 4.053e-06,
       "dependencies": [],
       "formula_time": 4.053e-06,
@@ -229,10 +218,21 @@
         0.0
       ]
     },
-    "anteil_monat_ab_18_monate<2027-09>": {
-      "calculation_time": 2.861e-06,
+    "anteil_kanton_kind<2027-09>": {
+      "calculation_time": 3.815e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 3.815e-06,
+      "parameters": {},
+      "value": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "anteil_monat_ab_18_monate<2027-09>": {
+      "calculation_time": 3.099e-06,
+      "dependencies": [],
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -241,9 +241,9 @@
       ]
     },
     "anteil_monat_ab_mindestalter<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -281,9 +281,9 @@
       ]
     },
     "beitrag_mindest_kind<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 3.815e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 3.815e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -292,9 +292,9 @@
       ]
     },
     "beitrag_pro_stunde_mindest<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -303,9 +303,9 @@
       ]
     },
     "beitrag_pro_stunde_total<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -314,18 +314,18 @@
       ]
     },
     "beitrag_total_familie<2027-09>": {
-      "calculation_time": 3.815e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.815e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         0.0
       ]
     },
     "beitrag_total_kind<2027-09>": {
-      "calculation_time": 2.861e-06,
+      "calculation_time": 3.815e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 3.815e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -334,27 +334,27 @@
       ]
     },
     "einkommensfaktor<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 8.082e-05,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 8.082e-05,
       "parameters": {},
       "value": [
         0.0
       ]
     },
     "erwerbspensum_erfuellt<2027-09>": {
-      "calculation_time": 2.861e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_angebot_anmeldung_unbekannt<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         false,
@@ -363,9 +363,9 @@
       ]
     },
     "flag_angebot_nicht_anerkannt<2027-09>": {
-      "calculation_time": 3.815e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.815e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false,
@@ -374,9 +374,9 @@
       ]
     },
     "flag_angebot_nicht_angemeldet<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 2.861e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 2.861e-06,
       "parameters": {},
       "value": [
         false,
@@ -385,15 +385,24 @@
       ]
     },
     "flag_ausnahme_abgelehnt<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_ausnahme_kein_grund<2027-09>": {
+      "calculation_time": 4.053e-06,
+      "dependencies": [],
+      "formula_time": 4.053e-06,
+      "parameters": {},
+      "value": [
+        false
+      ]
+    },
+    "flag_ausnahme_offen<2027-09>": {
       "calculation_time": 2.861e-06,
       "dependencies": [],
       "formula_time": 2.861e-06,
@@ -402,19 +411,10 @@
         false
       ]
     },
-    "flag_ausnahme_offen<2027-09>": {
+    "flag_gesuch_verspaetet<2027-09>": {
       "calculation_time": 3.099e-06,
       "dependencies": [],
       "formula_time": 3.099e-06,
-      "parameters": {},
-      "value": [
-        false
-      ]
-    },
-    "flag_gesuch_verspaetet<2027-09>": {
-      "calculation_time": 4.053e-06,
-      "dependencies": [],
-      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false,
@@ -443,9 +443,9 @@
       ]
     },
     "flag_kind_zu_alt<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         false,
@@ -454,9 +454,9 @@
       ]
     },
     "flag_kind_zu_jung<2027-09>": {
-      "calculation_time": 3.815e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 3.815e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         false,
@@ -465,9 +465,9 @@
       ]
     },
     "flag_kostendeckel_greift<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 2.861e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 2.861e-06,
       "parameters": {},
       "value": [
         false,
@@ -503,15 +503,6 @@
       ]
     },
     "flag_me_unbekannt<2027-09>": {
-      "calculation_time": 4.053e-06,
-      "dependencies": [],
-      "formula_time": 4.053e-06,
-      "parameters": {},
-      "value": [
-        false
-      ]
-    },
-    "flag_partner_nicht_gefestigt<2027-09>": {
       "calculation_time": 3.099e-06,
       "dependencies": [],
       "formula_time": 3.099e-06,
@@ -520,19 +511,28 @@
         false
       ]
     },
-    "flag_pensum_mit_partner<2027-09>": {
-      "calculation_time": 2.861e-06,
+    "flag_partner_nicht_gefestigt<2027-09>": {
+      "calculation_time": 3.815e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 3.815e-06,
+      "parameters": {},
+      "value": [
+        false
+      ]
+    },
+    "flag_pensum_mit_partner<2027-09>": {
+      "calculation_time": 4.053e-06,
+      "dependencies": [],
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_pensum_unbekannt<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 2.861e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 2.861e-06,
       "parameters": {},
       "value": [
         false
@@ -548,6 +548,17 @@
       ]
     },
     "flag_stunden_gekappt<2027-09>": {
+      "calculation_time": 3.099e-06,
+      "dependencies": [],
+      "formula_time": 3.099e-06,
+      "parameters": {},
+      "value": [
+        false,
+        false,
+        false
+      ]
+    },
+    "flag_uebergangsregel<2027-09>": {
       "calculation_time": 2.861e-06,
       "dependencies": [],
       "formula_time": 2.861e-06,
@@ -558,39 +569,28 @@
         false
       ]
     },
-    "flag_uebergangsregel<2027-09>": {
+    "flag_verordnung_entwurf<2027-09>": {
       "calculation_time": 3.099e-06,
       "dependencies": [],
       "formula_time": 3.099e-06,
-      "parameters": {},
-      "value": [
-        false,
-        false,
-        false
-      ]
-    },
-    "flag_verordnung_entwurf<2027-09>": {
-      "calculation_time": 4.053e-06,
-      "dependencies": [],
-      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_wohnsitz_nicht_sg<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 2.861e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 2.861e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_wohnsitz_unbekannt<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false
@@ -606,9 +606,9 @@
       ]
     },
     "hoechstbeitrag_maxv<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 3.815e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 3.815e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -617,9 +617,9 @@
       ]
     },
     "ist_erziehungsberechtigt<2027-09>": {
-      "calculation_time": 2.861e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         false,
@@ -628,9 +628,9 @@
       ]
     },
     "ist_kind<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 2.861e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 2.861e-06,
       "parameters": {},
       "value": [
         false,
@@ -639,9 +639,9 @@
       ]
     },
     "ist_partner<2027-09>": {
-      "calculation_time": 2.861e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false,
@@ -650,9 +650,9 @@
       ]
     },
     "jahr_schulpflicht<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 5.007e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 5.007e-06,
       "parameters": {},
       "value": [
         0,
@@ -661,9 +661,9 @@
       ]
     },
     "kosten_monat<2027-09>": {
-      "calculation_time": 2.861e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -672,9 +672,9 @@
       ]
     },
     "me_massgebend<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 3.815e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 3.815e-06,
       "parameters": {},
       "value": [
         0.0
@@ -721,26 +721,15 @@
       ]
     },
     "restkosten_familie<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 3.815e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 3.815e-06,
       "parameters": {},
       "value": [
         0.0
       ]
     },
     "restkosten_kind<2027-09>": {
-      "calculation_time": 2.861e-06,
-      "dependencies": [],
-      "formula_time": 2.861e-06,
-      "parameters": {},
-      "value": [
-        0.0,
-        0.0,
-        0.0
-      ]
-    },
-    "schaetzung_beitrag_total_kind<2027-09>": {
       "calculation_time": 4.053e-06,
       "dependencies": [],
       "formula_time": 4.053e-06,
@@ -751,10 +740,21 @@
         0.0
       ]
     },
-    "subventionierte_stunden_monat<2027-09>": {
+    "schaetzung_beitrag_total_kind<2027-09>": {
       "calculation_time": 2.861e-06,
       "dependencies": [],
       "formula_time": 2.861e-06,
+      "parameters": {},
+      "value": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "subventionierte_stunden_monat<2027-09>": {
+      "calculation_time": 4.053e-06,
+      "dependencies": [],
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -774,36 +774,36 @@
       ]
     },
     "voraussetzung_erziehungsberechtigte_erfuellt<2027-09>": {
-      "calculation_time": 2.861e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 2.861e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "wohnsitz_erfuellt<2027-09>": {
-      "calculation_time": 3.099e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.099e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "wohnsitz_sg<2027-09>": {
-      "calculation_time": 3.815e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 3.815e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         "UNBEKANNT"
       ]
     },
     "zusatzbeitrag_kind<2027-09>": {
-      "calculation_time": 4.053e-06,
+      "calculation_time": 2.861e-06,
       "dependencies": [],
-      "formula_time": 4.053e-06,
+      "formula_time": 2.861e-06,
       "parameters": {},
       "value": [
         0.0,

@@ -1,10 +1,9 @@
-"""Drift-Test Teil 1 (B9): Jede Variable aus Teil A, A6 existiert mit Typ und Entität, keine Variable zu viel.
+"""Schnittstelle zum Frontend: Jede vereinbarte Variable existiert mit Typ und Entität, keine Variable zu viel.
 
-Die Liste unten ist A6 wörtlich. Ändert sich A6 (A10: zuerst Vertrag, dann Code), wird sie hier nachgeführt.
+Die Liste unten ist die mit dem Frontend vereinbarte Schnittstelle. Ändert sie sich, zuerst hier nachführen.
 """
 
 import os
-import re
 from datetime import date
 
 from openfisca_core.indexed_enums import Enum
@@ -114,7 +113,6 @@ FLAGS_PERSON = [
 A6.update({f"flag_{n}": (F, bool) for n in FLAGS_FAMILIE})
 A6.update({f"flag_{n}": (P, bool) for n in FLAGS_PERSON})
 
-REGEL_ID = re.compile(r"^(KiBG|KiBV)-[0-9A-Za-z.]+ \| ")
 TBS = CountryTaxBenefitSystem()
 
 
@@ -135,13 +133,13 @@ def test_keine_variable_ausserhalb_von_a6():
     assert sorted(set(TBS.variables) - set(A6)) == []
 
 
-def test_documentation_praefix_je_schicht():
+def test_label_und_quelle():
+    """OpenFisca-Konvention: jede Variable hat ein label; Variablen des Rechts verweisen auf ihre Quelle."""
     fehler = []
     for name, var in TBS.variables.items():
         schicht = os.path.basename(os.path.dirname(var.introspection_data[0]))
-        doc = var.documentation or ""
-        if schicht == "kibg" and not REGEL_ID.match(doc):
-            fehler.append(f"{name}: Rechtsschicht ohne Regel-ID am Anfang")
-        if schicht == "anwendung" and not doc.startswith("ANWENDUNG | "):
-            fehler.append(f"{name}: Anwendungsschicht ohne Präfix ANWENDUNG")
+        if not var.label:
+            fehler.append(f"{name}: label fehlt")
+        if schicht == "kibg" and not var.reference:
+            fehler.append(f"{name}: reference fehlt")
     assert not fehler, "\n".join(fehler)

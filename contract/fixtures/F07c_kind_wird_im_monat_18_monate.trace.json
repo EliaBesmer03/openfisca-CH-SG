@@ -154,13 +154,13 @@
   ],
   "trace": {
     "alter_kind_erfuellt<2028-09>": {
-      "calculation_time": 0.000144,
+      "calculation_time": 0.0001981,
       "dependencies": [
         "anteil_monat_ab_mindestalter<2028-09>",
         "schulstufe<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 2.98e-05,
+      "formula_time": 3.409e-05,
       "parameters": {},
       "value": [
         false,
@@ -169,11 +169,11 @@
       ]
     },
     "alter_monate<2028-09>": {
-      "calculation_time": 3.29e-05,
+      "calculation_time": 4.506e-05,
       "dependencies": [
         "geburtsdatum<2028-09>"
       ],
-      "formula_time": 3.195e-05,
+      "formula_time": 4.411e-05,
       "parameters": {},
       "value": [
         0,
@@ -182,12 +182,12 @@
       ]
     },
     "altersstufe<2028-09>": {
-      "calculation_time": 4.601e-05,
+      "calculation_time": 5.889e-05,
       "dependencies": [
         "schulstufe<2028-09>",
         "alter_monate<2028-09>"
       ],
-      "formula_time": 4.292e-05,
+      "formula_time": 5.651e-05,
       "parameters": {},
       "value": [
         "UNTER_18_MONATE",
@@ -196,9 +196,9 @@
       ]
     },
     "angebot_angemeldet<2028-09>": {
-      "calculation_time": 1.907e-06,
+      "calculation_time": 1.192e-06,
       "dependencies": [],
-      "formula_time": 1.907e-06,
+      "formula_time": 1.192e-06,
       "parameters": {},
       "value": [
         "UNBEKANNT",
@@ -207,13 +207,13 @@
       ]
     },
     "angebot_erfuellt<2028-09>": {
-      "calculation_time": 1.812e-05,
+      "calculation_time": 1.502e-05,
       "dependencies": [
         "angebot_typ<2028-09>",
         "angebot_angemeldet<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 1.407e-05,
+      "formula_time": 1.168e-05,
       "parameters": {},
       "value": [
         false,
@@ -233,17 +233,17 @@
       ]
     },
     "anspruch_kind<2028-09>": {
-      "calculation_time": 0.000397,
+      "calculation_time": 0.0003228,
       "dependencies": [
+        "alter_kind_erfuellt<2028-09>",
+        "angebot_erfuellt<2028-09>",
         "hoechstbeitrag_maxv<2028-09>",
         "voraussetzung_erziehungsberechtigte_erfuellt<2028-09>",
-        "me_bekannt<2028-09>",
-        "partner_gefestigt<2028-09>",
         "haushalt_form<2028-09>",
-        "alter_kind_erfuellt<2028-09>",
-        "angebot_erfuellt<2028-09>"
+        "partner_gefestigt<2028-09>",
+        "me_bekannt<2028-09>"
       ],
-      "formula_time": 4.578e-05,
+      "formula_time": 3.648e-05,
       "parameters": {},
       "value": [
         false,
@@ -252,11 +252,11 @@
       ]
     },
     "anteil_gemeinde_kind<2028-09>": {
-      "calculation_time": 0.000129,
+      "calculation_time": 0.0001111,
       "dependencies": [
         "beitrag_mindest_kind<2028-09>"
       ],
-      "formula_time": 8.821e-06,
+      "formula_time": 8.106e-06,
       "parameters": {
         "kibg.finanzierung.anteil_kanton<2028-09-01>": 0.5
       },
@@ -271,7 +271,7 @@
       "dependencies": [
         "beitrag_mindest_kind<2028-09>"
       ],
-      "formula_time": 8.106e-06,
+      "formula_time": 7.868e-06,
       "parameters": {
         "kibg.finanzierung.anteil_kanton<2028-09-01>": 0.5
       },
@@ -282,13 +282,13 @@
       ]
     },
     "anteil_monat_ab_18_monate<2028-09>": {
-      "calculation_time": 3.409e-05,
+      "calculation_time": 3.219e-05,
       "dependencies": [
         "geburtsdatum<2028-09>",
         "alter_monate<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 3.004e-05,
+      "formula_time": 2.933e-05,
       "parameters": {},
       "value": [
         0.0,
@@ -297,13 +297,13 @@
       ]
     },
     "anteil_monat_ab_mindestalter<2028-09>": {
-      "calculation_time": 0.0001111,
+      "calculation_time": 0.0001621,
       "dependencies": [
         "geburtsdatum<2028-09>",
         "alter_monate<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 6.723e-05,
+      "formula_time": 0.0001042,
       "parameters": {
         "kibg.anspruch.mindestalter_monate<2028-09-01>": 3
       },
@@ -314,9 +314,9 @@
       ]
     },
     "antrag_aktuelle_gegebenheiten<2028-09>": {
-      "calculation_time": 5.96e-06,
+      "calculation_time": 2.861e-06,
       "dependencies": [],
-      "formula_time": 5.96e-06,
+      "formula_time": 2.861e-06,
       "parameters": {},
       "value": [
         false
@@ -341,7 +341,7 @@
       ]
     },
     "ausnahme_pensum_gewaehrt<2028-09>": {
-      "calculation_time": 1.788e-05,
+      "calculation_time": 1.693e-05,
       "dependencies": [
         "ausnahmegrund<2028-09>",
         "ausnahme_entscheid<2028-09>"
@@ -353,22 +353,24 @@
       ]
     },
     "ausnahmegrund<2028-09>": {
-      "calculation_time": 5.007e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 5.007e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         "KEINER"
       ]
     },
     "beitrag_ab_datum<2028-09>": {
-      "calculation_time": 2.408e-05,
+      "calculation_time": 2.599e-05,
       "dependencies": [
+        "betreuungsbeginn<2028-09>",
+        "gesuchsdatum<2028-09>",
         "betreuungsbeginn<2028-09>",
         "gesuchsdatum<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 2.098e-05,
+      "formula_time": 2.122e-05,
       "parameters": {
         "kibg.verfahren.frist_rueckwirkung_tage<2028-09-01>": 30
       },
@@ -379,25 +381,25 @@
       ]
     },
     "beitrag_mindest_familie<2028-09>": {
-      "calculation_time": 1.407e-05,
+      "calculation_time": 1.597e-05,
       "dependencies": [
         "beitrag_mindest_kind<2028-09>"
       ],
-      "formula_time": 1.311e-05,
+      "formula_time": 1.502e-05,
       "parameters": {},
       "value": [
         400.8333435058594
       ]
     },
     "beitrag_mindest_kind<2028-09>": {
-      "calculation_time": 0.0001202,
+      "calculation_time": 0.000103,
       "dependencies": [
         "beitrag_pro_stunde_mindest<2028-09>",
         "subventionierte_stunden_monat<2028-09>",
         "kosten_monat<2028-09>",
         "anspruch_kind<2028-09>"
       ],
-      "formula_time": 1.311e-05,
+      "formula_time": 1.216e-05,
       "parameters": {},
       "value": [
         0.0,
@@ -406,7 +408,7 @@
       ]
     },
     "beitrag_pro_stunde_mindest<2028-09>": {
-      "calculation_time": 6.604e-05,
+      "calculation_time": 5.698e-05,
       "dependencies": [
         "hoechstbeitrag_maxv<2028-09>",
         "einkommensfaktor<2028-09>",
@@ -421,7 +423,7 @@
       ]
     },
     "beitrag_pro_stunde_total<2028-09>": {
-      "calculation_time": 0.0003071,
+      "calculation_time": 0.00032,
       "dependencies": [
         "hoechstbeitrag_maxv<2028-09>",
         "einkommensfaktor<2028-09>",
@@ -430,7 +432,7 @@
         "me_massgebend<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 2.289e-05,
+      "formula_time": 2.313e-05,
       "parameters": {
         "kibv.einkommen.max_me<2028-09-01>": 154000
       },
@@ -441,11 +443,11 @@
       ]
     },
     "beitrag_total_familie<2028-09>": {
-      "calculation_time": 1.001e-05,
+      "calculation_time": 1.097e-05,
       "dependencies": [
         "beitrag_total_kind<2028-09>"
       ],
-      "formula_time": 9.06e-06,
+      "formula_time": 1.001e-05,
       "parameters": {},
       "value": [
         400.8333435058594
@@ -459,7 +461,7 @@
         "kosten_monat<2028-09>",
         "anspruch_kind<2028-09>"
       ],
-      "formula_time": 1.216e-05,
+      "formula_time": 1.121e-05,
       "parameters": {},
       "value": [
         0.0,
@@ -468,9 +470,9 @@
       ]
     },
     "betreuungsbeginn<2028-09>": {
-      "calculation_time": 1.192e-06,
+      "calculation_time": 9.537e-07,
       "dependencies": [],
-      "formula_time": 1.192e-06,
+      "formula_time": 9.537e-07,
       "parameters": {},
       "value": [
         "Thu, 01 Jan 1970 00:00:00 GMT",
@@ -479,9 +481,9 @@
       ]
     },
     "betreuungsstunden_pro_tag<2028-09>": {
-      "calculation_time": 9.537e-07,
+      "calculation_time": 1.192e-06,
       "dependencies": [],
-      "formula_time": 9.537e-07,
+      "formula_time": 1.192e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -501,11 +503,11 @@
       ]
     },
     "einkommensfaktor<2028-09>": {
-      "calculation_time": 5.388e-05,
+      "calculation_time": 4.387e-05,
       "dependencies": [
         "me_massgebend<2028-09>"
       ],
-      "formula_time": 1.287e-05,
+      "formula_time": 1.001e-05,
       "parameters": {
         "kibv.einkommen.max_me<2028-09-01>": 154000,
         "kibv.einkommen.min_me<2028-09-01>": 40000
@@ -515,9 +517,9 @@
       ]
     },
     "erwerbspensum<2028-09>": {
-      "calculation_time": 1.192e-06,
+      "calculation_time": 9.537e-07,
       "dependencies": [],
-      "formula_time": 1.192e-06,
+      "formula_time": 9.537e-07,
       "parameters": {},
       "value": [
         100.0,
@@ -526,9 +528,9 @@
       ]
     },
     "erwerbspensum_bekannt<2028-09>": {
-      "calculation_time": 5.007e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 5.007e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         true,
@@ -537,14 +539,14 @@
       ]
     },
     "erwerbspensum_erfuellt<2028-09>": {
-      "calculation_time": 6.318e-05,
+      "calculation_time": 0.0001032,
       "dependencies": [
-        "erwerbspensum<2028-09>",
-        "partner_gefestigt<2028-09>",
         "haushalt_form<2028-09>",
+        "partner_gefestigt<2028-09>",
+        "erwerbspensum<2028-09>",
         "auslegung_kibg_4_1<2028-09>"
       ],
-      "formula_time": 5.484e-05,
+      "formula_time": 7.033e-05,
       "parameters": {
         "kibg.anspruch.mindestpensum_einzeln<2028-09-01>": 20,
         "kibg.anspruch.mindestpensum_gemeinsam<2028-09-01>": 120
@@ -582,12 +584,12 @@
       ]
     },
     "flag_angebot_nicht_angemeldet<2028-09>": {
-      "calculation_time": 1.001e-05,
+      "calculation_time": 9.06e-06,
       "dependencies": [
         "angebot_angemeldet<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 8.106e-06,
+      "formula_time": 7.153e-06,
       "parameters": {},
       "value": [
         false,
@@ -596,50 +598,50 @@
       ]
     },
     "flag_ausnahme_abgelehnt<2028-09>": {
-      "calculation_time": 1.001e-05,
+      "calculation_time": 9.06e-06,
       "dependencies": [
         "ausnahme_entscheid<2028-09>",
         "flag_pensum_unter_minimum<2028-09>"
       ],
-      "formula_time": 8.106e-06,
+      "formula_time": 6.199e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_ausnahme_kein_grund<2028-09>": {
-      "calculation_time": 3.695e-05,
+      "calculation_time": 4.411e-05,
       "dependencies": [
         "ausnahmegrund<2028-09>",
         "flag_pensum_unter_minimum<2028-09>"
       ],
-      "formula_time": 8.821e-06,
+      "formula_time": 7.153e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_ausnahme_offen<2028-09>": {
-      "calculation_time": 1.192e-05,
+      "calculation_time": 1.311e-05,
       "dependencies": [
         "ausnahmegrund<2028-09>",
         "ausnahme_entscheid<2028-09>",
         "flag_pensum_unter_minimum<2028-09>"
       ],
-      "formula_time": 9.06e-06,
+      "formula_time": 1.001e-05,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_gesuch_verspaetet<2028-09>": {
-      "calculation_time": 1.812e-05,
+      "calculation_time": 1.693e-05,
       "dependencies": [
         "betreuungsbeginn<2028-09>",
         "gesuchsdatum<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 1.526e-05,
+      "formula_time": 1.407e-05,
       "parameters": {
         "kibg.verfahren.frist_rueckwirkung_tage<2028-09-01>": 30
       },
@@ -661,13 +663,13 @@
       ]
     },
     "flag_kein_hoechstbeitrag<2028-09>": {
-      "calculation_time": 1.383e-05,
+      "calculation_time": 1.407e-05,
       "dependencies": [
         "angebot_typ<2028-09>",
         "hoechstbeitrag_maxv<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 1.073e-05,
+      "formula_time": 1.097e-05,
       "parameters": {},
       "value": [
         false,
@@ -676,12 +678,12 @@
       ]
     },
     "flag_kind_zu_alt<2028-09>": {
-      "calculation_time": 9.06e-06,
+      "calculation_time": 1.001e-05,
       "dependencies": [
         "schulstufe<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 7.153e-06,
+      "formula_time": 8.106e-06,
       "parameters": {},
       "value": [
         false,
@@ -695,7 +697,7 @@
         "ist_kind<2028-09>",
         "anteil_monat_ab_mindestalter<2028-09>"
       ],
-      "formula_time": 6.914e-06,
+      "formula_time": 7.153e-06,
       "parameters": {},
       "value": [
         false,
@@ -720,25 +722,25 @@
       ]
     },
     "flag_me_aktuell_angewendet<2028-09>": {
-      "calculation_time": 1.502e-05,
+      "calculation_time": 1.407e-05,
       "dependencies": [
         "antrag_aktuelle_gegebenheiten<2028-09>",
         "me_massgebend<2028-09>",
         "me_veranlagung_familie<2028-09>"
       ],
-      "formula_time": 1.216e-05,
+      "formula_time": 1.097e-05,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_me_aktuell_unter_schwelle<2028-09>": {
-      "calculation_time": 1.001e-05,
+      "calculation_time": 8.821e-06,
       "dependencies": [
         "antrag_aktuelle_gegebenheiten<2028-09>",
         "flag_me_aktuell_angewendet<2028-09>"
       ],
-      "formula_time": 6.914e-06,
+      "formula_time": 6.676e-06,
       "parameters": {},
       "value": [
         false
@@ -758,13 +760,13 @@
       ]
     },
     "flag_me_unbekannt<2028-09>": {
-      "calculation_time": 3.695e-05,
+      "calculation_time": 2.599e-05,
       "dependencies": [
-        "me_bekannt<2028-09>",
+        "haushalt_form<2028-09>",
         "partner_gefestigt<2028-09>",
-        "haushalt_form<2028-09>"
+        "me_bekannt<2028-09>"
       ],
-      "formula_time": 3.386e-05,
+      "formula_time": 2.289e-05,
       "parameters": {},
       "value": [
         false
@@ -782,50 +784,50 @@
       ]
     },
     "flag_pensum_mit_partner<2028-09>": {
-      "calculation_time": 1.216e-05,
+      "calculation_time": 1.311e-05,
       "dependencies": [
         "partner_gefestigt<2028-09>",
         "haushalt_form<2028-09>"
       ],
-      "formula_time": 1.001e-05,
+      "formula_time": 1.097e-05,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_pensum_unbekannt<2028-09>": {
-      "calculation_time": 1.979e-05,
+      "calculation_time": 2.885e-05,
       "dependencies": [
-        "erwerbspensum_bekannt<2028-09>",
+        "haushalt_form<2028-09>",
         "partner_gefestigt<2028-09>",
-        "haushalt_form<2028-09>"
+        "erwerbspensum_bekannt<2028-09>"
       ],
-      "formula_time": 1.669e-05,
+      "formula_time": 2.575e-05,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_pensum_unter_minimum<2028-09>": {
-      "calculation_time": 2.718e-05,
+      "calculation_time": 3.6e-05,
       "dependencies": [
         "erwerbspensum_erfuellt<2028-09>",
         "flag_pensum_unbekannt<2028-09>"
       ],
-      "formula_time": 6.437e-06,
+      "formula_time": 5.96e-06,
       "parameters": {},
       "value": [
         false
       ]
     },
     "flag_stunden_gekappt<2028-09>": {
-      "calculation_time": 1.502e-05,
+      "calculation_time": 1.597e-05,
       "dependencies": [
         "betreuungstage_pro_woche<2028-09>",
         "betreuungsstunden_pro_tag<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 1.192e-05,
+      "formula_time": 1.287e-05,
       "parameters": {
         "kibv.umfang.max_stunden_pro_tag<2028-09-01>": 12,
         "kibv.umfang.max_tage_pro_woche<2028-09-01>": 5
@@ -837,9 +839,9 @@
       ]
     },
     "flag_uebergangsregel<2028-09>": {
-      "calculation_time": 5.007e-06,
+      "calculation_time": 4.053e-06,
       "dependencies": [],
-      "formula_time": 5.007e-06,
+      "formula_time": 4.053e-06,
       "parameters": {},
       "value": [
         false,
@@ -848,20 +850,20 @@
       ]
     },
     "flag_verordnung_entwurf<2028-09>": {
-      "calculation_time": 6.914e-06,
+      "calculation_time": 5.007e-06,
       "dependencies": [],
-      "formula_time": 6.914e-06,
+      "formula_time": 5.007e-06,
       "parameters": {},
       "value": [
         true
       ]
     },
     "flag_wohnsitz_nicht_sg<2028-09>": {
-      "calculation_time": 7.868e-06,
+      "calculation_time": 8.106e-06,
       "dependencies": [
         "wohnsitz_sg<2028-09>"
       ],
-      "formula_time": 5.722e-06,
+      "formula_time": 7.153e-06,
       "parameters": {},
       "value": [
         false
@@ -879,9 +881,9 @@
       ]
     },
     "flag_zusatzbeitrag_platzhalter<2028-09>": {
-      "calculation_time": 7.153e-06,
+      "calculation_time": 5.96e-06,
       "dependencies": [],
-      "formula_time": 7.153e-06,
+      "formula_time": 5.96e-06,
       "parameters": {
         "anwendung.zusatzbeitraege_platzhalter<2028-09-01>": 1
       },
@@ -890,9 +892,9 @@
       ]
     },
     "geburtsdatum<2028-09>": {
-      "calculation_time": 1.907e-06,
+      "calculation_time": 9.537e-07,
       "dependencies": [],
-      "formula_time": 1.907e-06,
+      "formula_time": 9.537e-07,
       "parameters": {},
       "value": [
         "Thu, 01 Jan 1970 00:00:00 GMT",
@@ -919,14 +921,14 @@
       ]
     },
     "hoechstbeitrag_maxv<2028-09>": {
-      "calculation_time": 0.0001168,
+      "calculation_time": 9.298e-05,
       "dependencies": [
         "altersstufe<2028-09>",
-        "anteil_monat_ab_18_monate<2028-09>",
         "angebot_typ<2028-09>",
+        "anteil_monat_ab_18_monate<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 7.987e-05,
+      "formula_time": 5.794e-05,
       "parameters": {
         "kibv.hoechstbeitrag.ab_18_monate.kita<2028-09-01>": 7.5,
         "kibv.hoechstbeitrag.ab_18_monate.tagesfamilie<2028-09-01>": 5.5,
@@ -943,9 +945,9 @@
       ]
     },
     "ist_erziehungsberechtigt<2028-09>": {
-      "calculation_time": 6.199e-06,
+      "calculation_time": 5.007e-06,
       "dependencies": [],
-      "formula_time": 6.199e-06,
+      "formula_time": 5.007e-06,
       "parameters": {},
       "value": [
         true,
@@ -954,9 +956,9 @@
       ]
     },
     "ist_kind<2028-09>": {
-      "calculation_time": 9.06e-06,
+      "calculation_time": 1.192e-05,
       "dependencies": [],
-      "formula_time": 9.06e-06,
+      "formula_time": 1.192e-05,
       "parameters": {},
       "value": [
         false,
@@ -965,9 +967,9 @@
       ]
     },
     "ist_partner<2028-09>": {
-      "calculation_time": 5.96e-06,
+      "calculation_time": 4.768e-06,
       "dependencies": [],
-      "formula_time": 5.96e-06,
+      "formula_time": 4.768e-06,
       "parameters": {},
       "value": [
         false,
@@ -976,13 +978,13 @@
       ]
     },
     "jahr_schulpflicht<2028-09>": {
-      "calculation_time": 4.387e-05,
+      "calculation_time": 4.816e-05,
       "dependencies": [
         "geburtsdatum<2028-09>",
         "alter_monate<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 4.077e-05,
+      "formula_time": 4.435e-05,
       "parameters": {
         "anwendung.schuleintritt_alter_jahre<2028-09-01>": 4,
         "anwendung.schuljahresende_monat<2028-09-01>": 7
@@ -1005,14 +1007,14 @@
       ]
     },
     "kosten_monat<2028-09>": {
-      "calculation_time": 1.907e-05,
+      "calculation_time": 1.502e-05,
       "dependencies": [
         "betreuungstage_pro_woche<2028-09>",
         "betreuungsstunden_pro_tag<2028-09>",
         "ist_kind<2028-09>",
         "kosten_pro_stunde<2028-09>"
       ],
-      "formula_time": 1.407e-05,
+      "formula_time": 1.073e-05,
       "parameters": {
         "anwendung.wochen_pro_monat<2028-09-01>": 4.333333333
       },
@@ -1034,9 +1036,9 @@
       ]
     },
     "me_aktuell<2028-09>": {
-      "calculation_time": 3.815e-06,
+      "calculation_time": 3.099e-06,
       "dependencies": [],
-      "formula_time": 3.815e-06,
+      "formula_time": 3.099e-06,
       "parameters": {},
       "value": [
         0.0
@@ -1054,13 +1056,13 @@
       ]
     },
     "me_massgebend<2028-09>": {
-      "calculation_time": 4.101e-05,
+      "calculation_time": 3.386e-05,
       "dependencies": [
         "me_veranlagung_familie<2028-09>",
         "me_aktuell<2028-09>",
         "antrag_aktuelle_gegebenheiten<2028-09>"
       ],
-      "formula_time": 1.24e-05,
+      "formula_time": 1.168e-05,
       "parameters": {
         "kibv.einkommen.schwelle_abweichung<2028-09-01>": 0.25
       },
@@ -1069,9 +1071,9 @@
       ]
     },
     "me_veranlagung<2028-09>": {
-      "calculation_time": 1.192e-06,
+      "calculation_time": 9.537e-07,
       "dependencies": [],
-      "formula_time": 1.192e-06,
+      "formula_time": 9.537e-07,
       "parameters": {},
       "value": [
         60000.0,
@@ -1080,26 +1082,26 @@
       ]
     },
     "me_veranlagung_familie<2028-09>": {
-      "calculation_time": 1.884e-05,
+      "calculation_time": 1.621e-05,
       "dependencies": [
         "me_veranlagung<2028-09>",
-        "partner_gefestigt<2028-09>",
-        "haushalt_form<2028-09>"
+        "haushalt_form<2028-09>",
+        "partner_gefestigt<2028-09>"
       ],
-      "formula_time": 1.574e-05,
+      "formula_time": 1.335e-05,
       "parameters": {},
       "value": [
         97000.0
       ]
     },
     "partner_gefestigt<2028-09>": {
-      "calculation_time": 2.98e-05,
+      "calculation_time": 2.599e-05,
       "dependencies": [
         "partnerschaft<2028-09>",
         "konkubinat_jahre<2028-09>",
         "ist_partner<2028-09>"
       ],
-      "formula_time": 1.383e-05,
+      "formula_time": 1.216e-05,
       "parameters": {
         "kibv.einkommen.konkubinat_mindestjahre<2028-09-01>": 2
       },
@@ -1110,9 +1112,9 @@
       ]
     },
     "partnerschaft<2028-09>": {
-      "calculation_time": 5.96e-06,
+      "calculation_time": 5.007e-06,
       "dependencies": [],
-      "formula_time": 5.96e-06,
+      "formula_time": 5.007e-06,
       "parameters": {},
       "value": [
         "KEINE",
@@ -1121,18 +1123,18 @@
       ]
     },
     "pruefstatus<2028-09>": {
-      "calculation_time": 3.29e-05,
+      "calculation_time": 2.813e-05,
       "dependencies": [
         "pruefstatus_kind<2028-09>"
       ],
-      "formula_time": 3.195e-05,
+      "formula_time": 2.718e-05,
       "parameters": {},
       "value": [
         "ANSPRUCH"
       ]
     },
     "pruefstatus_kind<2028-09>": {
-      "calculation_time": 0.0001898,
+      "calculation_time": 0.0001822,
       "dependencies": [
         "ist_kind<2028-09>",
         "ist_kind<2028-09>",
@@ -1153,7 +1155,7 @@
         "ist_kind<2028-09>",
         "flag_ausnahme_offen<2028-09>"
       ],
-      "formula_time": 5.722e-05,
+      "formula_time": 5.221e-05,
       "parameters": {},
       "value": [
         "NICHT_IN_KRAFT",
@@ -1162,24 +1164,24 @@
       ]
     },
     "restkosten_familie<2028-09>": {
-      "calculation_time": 1.192e-05,
+      "calculation_time": 1.001e-05,
       "dependencies": [
         "restkosten_kind<2028-09>"
       ],
-      "formula_time": 1.097e-05,
+      "formula_time": 9.06e-06,
       "parameters": {},
       "value": [
         639.1666259765625
       ]
     },
     "restkosten_kind<2028-09>": {
-      "calculation_time": 1.311e-05,
+      "calculation_time": 1.407e-05,
       "dependencies": [
         "ist_kind<2028-09>",
         "kosten_monat<2028-09>",
         "beitrag_total_kind<2028-09>"
       ],
-      "formula_time": 1.025e-05,
+      "formula_time": 1.097e-05,
       "parameters": {},
       "value": [
         0.0,
@@ -1188,7 +1190,7 @@
       ]
     },
     "schaetzung_beitrag_total_kind<2028-09>": {
-      "calculation_time": 1.597e-05,
+      "calculation_time": 1.621e-05,
       "dependencies": [
         "pruefstatus_kind<2028-09>",
         "beitrag_pro_stunde_total<2028-09>",
@@ -1204,9 +1206,9 @@
       ]
     },
     "schulstufe<2028-09>": {
-      "calculation_time": 2.146e-06,
+      "calculation_time": 9.537e-07,
       "dependencies": [],
-      "formula_time": 2.146e-06,
+      "formula_time": 9.537e-07,
       "parameters": {},
       "value": [
         "VORSCHULALTER",
@@ -1215,14 +1217,14 @@
       ]
     },
     "subventionierte_stunden_monat<2028-09>": {
-      "calculation_time": 2.098e-05,
+      "calculation_time": 1.788e-05,
       "dependencies": [
         "betreuungstage_pro_woche<2028-09>",
         "betreuungsstunden_pro_tag<2028-09>",
         "anteil_monat_ab_mindestalter<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 1.597e-05,
+      "formula_time": 1.478e-05,
       "parameters": {
         "anwendung.wochen_pro_monat<2028-09-01>": 4.333333333,
         "kibv.umfang.max_stunden_pro_tag<2028-09-01>": 12,
@@ -1235,13 +1237,13 @@
       ]
     },
     "verfuegung_dauer_monate<2028-09>": {
-      "calculation_time": 1.979e-05,
+      "calculation_time": 2.003e-05,
       "dependencies": [
-        "altersstufe<2028-09>",
         "jahr_schulpflicht<2028-09>",
+        "altersstufe<2028-09>",
         "ist_kind<2028-09>"
       ],
-      "formula_time": 1.669e-05,
+      "formula_time": 1.717e-05,
       "parameters": {
         "anwendung.schuljahresende_monat<2028-09-01>": 7,
         "kibg.verfahren.verfuegung_dauer_monate<2028-09-01>": 12
@@ -1253,60 +1255,60 @@
       ]
     },
     "voraussetzung_erziehungsberechtigte_erfuellt<2028-09>": {
-      "calculation_time": 0.000227,
+      "calculation_time": 0.0001862,
       "dependencies": [
-        "erwerbspensum_bekannt<2028-09>",
-        "partner_gefestigt<2028-09>",
-        "haushalt_form<2028-09>",
-        "haushalt_form<2028-09>",
+        "wohnsitz_erfuellt<2028-09>",
         "erwerbspensum_erfuellt<2028-09>",
         "ausnahme_pensum_gewaehrt<2028-09>",
-        "wohnsitz_erfuellt<2028-09>"
+        "haushalt_form<2028-09>",
+        "partner_gefestigt<2028-09>",
+        "erwerbspensum_bekannt<2028-09>",
+        "haushalt_form<2028-09>"
       ],
-      "formula_time": 8.13e-05,
+      "formula_time": 3.576e-05,
       "parameters": {},
       "value": [
         true
       ]
     },
     "wohngemeinde<2028-09>": {
-      "calculation_time": 1.192e-06,
+      "calculation_time": 9.537e-07,
       "dependencies": [],
-      "formula_time": 1.192e-06,
+      "formula_time": 9.537e-07,
       "parameters": {},
       "value": [
         "ST_GALLEN"
       ]
     },
     "wohnsitz_erfuellt<2028-09>": {
-      "calculation_time": 2.694e-05,
+      "calculation_time": 2.408e-05,
       "dependencies": [
         "wohnsitz_sg<2028-09>"
       ],
-      "formula_time": 7.153e-06,
+      "formula_time": 5.007e-06,
       "parameters": {},
       "value": [
         true
       ]
     },
     "wohnsitz_sg<2028-09>": {
-      "calculation_time": 1.979e-05,
+      "calculation_time": 1.907e-05,
       "dependencies": [
         "wohngemeinde<2028-09>"
       ],
-      "formula_time": 1.86e-05,
+      "formula_time": 1.812e-05,
       "parameters": {},
       "value": [
         "JA"
       ]
     },
     "zusatzbeitrag_kind<2028-09>": {
-      "calculation_time": 9.06e-06,
+      "calculation_time": 8.821e-06,
       "dependencies": [
         "beitrag_total_kind<2028-09>",
         "beitrag_mindest_kind<2028-09>"
       ],
-      "formula_time": 7.153e-06,
+      "formula_time": 5.96e-06,
       "parameters": {},
       "value": [
         0.0,
@@ -1315,11 +1317,11 @@
       ]
     },
     "zusatzbeitrag_z1_pro_stunde<2028-09>": {
-      "calculation_time": 0.0001552,
+      "calculation_time": 0.0001729,
       "dependencies": [
         "wohngemeinde<2028-09>"
       ],
-      "formula_time": 0.0001543,
+      "formula_time": 0.0001717,
       "parameters": {
         "gemeinden.zusatzbeitrag_z1<2028-09-01>": [
           0
@@ -1330,11 +1332,11 @@
       ]
     },
     "zusatzbeitrag_z2_pro_stunde<2028-09>": {
-      "calculation_time": 0.0001249,
+      "calculation_time": 0.0001199,
       "dependencies": [
         "wohngemeinde<2028-09>"
       ],
-      "formula_time": 0.000124,
+      "formula_time": 0.000118,
       "parameters": {
         "gemeinden.zusatzbeitrag_z2<2028-09-01>": [
           0

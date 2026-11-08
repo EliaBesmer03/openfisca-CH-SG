@@ -1,15 +1,10 @@
-description: Das Schuljahr endet am 31. Juli (Monat 7)
+description: Letzter Monat des Schuljahres (das Schuljahr beginnt am 1. August)
 values:
   2028-08-01:
     value: 7
 metadata:
-  short_label: Schuljahresende
-  label_en: Month in which the school year ends
   unit: month
-  regel_id: AN-02
-  quellentyp: ANNAHME_TEAM
-  last_value_still_valid_on: "2026-11-07"
   reference:
     2028-08-01:
-      title: Annahme AN-02 – Annahme des Teams, keine Normgrundlage
-      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html
+      title: Art. 17 Abs. 2 lit. a Volksschulgesetz St.Gallen (sGS 213.1)
+      href: https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/213.1

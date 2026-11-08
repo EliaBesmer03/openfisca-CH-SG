@@ -1,7 +1,8 @@
-"""Anwendungsschicht: Prüfstatus und Summen (A7). Nicht Teil des Rechts.
+"""Prüfstatus und Summen für die Anzeige. Nicht Teil des Rechts.
 
-Der Status pro Kind folgt der Prioritätenliste in A7: die erste zutreffende Zeile gilt.
-Vor Vollzugsbeginn gilt der Standardwert NICHT_IN_KRAFT (keine Formel vor 2028-08).
+Der Status pro Kind folgt einer festen Reihenfolge: Die erste zutreffende Stufe gilt
+(kein Anspruch → Angaben fehlen → Prüfung durch die Gemeinde → Anspruch).
+Vor dem Vollzugsbeginn gilt der Standardwert NICHT_IN_KRAFT, weil es keine frühere Formel gibt.
 """
 
 from numpy import select
@@ -15,7 +16,7 @@ from openfisca_ch_sg.variables.kibg.enums import Pruefstatus
 
 K = Familie.KIND
 
-# Wirkung der Flags (A6, Spalte „Wirkung“)
+# Welche Flags zu welchem Status führen
 KEIN_FAMILIE = [
     "flag_wohnsitz_nicht_sg",
     "flag_ausnahme_kein_grund",
@@ -54,7 +55,6 @@ class pruefstatus_kind(Variable):
     entity = Person
     definition_period = MONTH
     label = "Prüfstatus pro Kind (für Nicht-Kinder NICHT_IN_KRAFT, ignorieren)"
-    documentation = "ANWENDUNG | erklärt KiBG-3, KiBG-4 | nicht Teil des Rechts | A7"
 
     def formula_2028_08_01(person, period, parameters):
         return select(
@@ -81,7 +81,6 @@ class pruefstatus(Variable):
     entity = Familie
     definition_period = MONTH
     label = "Gesamtstatus der Familie"
-    documentation = "ANWENDUNG | erklärt KiBG-3, KiBG-4 | nicht Teil des Rechts | A7"
 
     def formula_2028_08_01(familie, period, parameters):
         status = familie.members("pruefstatus_kind", period)
@@ -104,9 +103,7 @@ class schaetzung_beitrag_total_kind(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    unit = "currency-CHF"
     label = "Geschätzter Beitrag, falls die Gemeinde die Ausnahme bewilligt (CHF)"
-    documentation = "ANWENDUNG | erklärt KiBG-4.2 | nicht Teil des Rechts | nur bei PRUEFUNG_DURCH_GEMEINDE > 0"
 
     def formula_2028_08_01(person, period, parameters):
         pruefung = (
@@ -122,9 +119,7 @@ class restkosten_kind(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    unit = "currency-CHF"
     label = "Restkosten der Eltern pro Monat für das Kind (CHF)"
-    documentation = "ANWENDUNG | erklärt KiBG-6.2, KiBG-20.3 | nicht Teil des Rechts | kosten_monat − beitrag_total_kind"
 
     def formula_2028_08_01(person, period, parameters):
         return person("ist_kind", period) * (
@@ -136,11 +131,7 @@ class beitrag_mindest_familie(Variable):
     value_type = float
     entity = Familie
     definition_period = MONTH
-    unit = "currency-CHF"
     label = "Mindestbeiträge der Familie pro Monat (CHF)"
-    documentation = (
-        "ANWENDUNG | erklärt KiBG-6.1 | nicht Teil des Rechts | Summe über Kinder"
-    )
 
     def formula_2028_08_01(familie, period, parameters):
         return familie.sum(familie.members("beitrag_mindest_kind", period), role=K)
@@ -150,11 +141,7 @@ class beitrag_total_familie(Variable):
     value_type = float
     entity = Familie
     definition_period = MONTH
-    unit = "currency-CHF"
     label = "Beiträge total der Familie pro Monat (CHF)"
-    documentation = (
-        "ANWENDUNG | erklärt KiBG-20.2 | nicht Teil des Rechts | Summe über Kinder"
-    )
 
     def formula_2028_08_01(familie, period, parameters):
         return familie.sum(familie.members("beitrag_total_kind", period), role=K)
@@ -164,11 +151,7 @@ class restkosten_familie(Variable):
     value_type = float
     entity = Familie
     definition_period = MONTH
-    unit = "currency-CHF"
     label = "Restkosten der Familie pro Monat (CHF)"
-    documentation = (
-        "ANWENDUNG | erklärt KiBG-6.2 | nicht Teil des Rechts | Summe über Kinder"
-    )
 
     def formula_2028_08_01(familie, period, parameters):
         return familie.sum(familie.members("restkosten_kind", period), role=K)

@@ -1,6 +1,6 @@
-"""Rechtsschicht: Wohnsitz und Zusatzbeiträge der Wohngemeinde (KiBG-4.1, KiBG-20.2, KiBV-2.1, KiBV-24.1).
+"""Wohnsitz und Zusatzbeiträge der Wohngemeinde (Art. 4 Abs. 1 und 20 Abs. 2 KiBG, Art. 2 und 24 KiBV).
 
-zusatzbeitrag_z1/_z2 kommen aus parameters/gemeinden/ (heute 0, AN-04). Werden sie in der
+zusatzbeitrag_z1/_z2 kommen aus parameters/gemeinden/ (heute 0, noch keine Gemeinde hat beschlossen). Werden sie in der
 Situation mitgeschickt, gilt der eingegebene Wert statt der Formel (OpenFisca-Standardverhalten).
 """
 
@@ -20,12 +20,8 @@ class wohnsitz_sg(Variable):
     default_value = JaNeinUnbekannt.UNBEKANNT
     entity = Familie
     definition_period = MONTH
-    label = "Zivilrechtlicher Wohnsitz der antragstellenden EB im Kanton St.Gallen"
+    label = "Zivilrechtlicher Wohnsitz der antragstellenden Person im Kanton St.Gallen"
     reference = GESETZ_URL
-    documentation = (
-        "KiBG-4.1 | Art. 4 Abs. 1 KiBG | aus wohngemeinde: eine der 75 Gemeinden → JA, "
-        "AUSSERKANTONAL → NEIN, UNBEKANNT → UNBEKANNT | Quellentyp: GESETZ"
-    )
 
     def formula_2028_08_01(familie, period, parameters):
         wg = familie("wohngemeinde", period)
@@ -40,13 +36,8 @@ class zusatzbeitrag_z1_pro_stunde(Variable):
     value_type = float
     entity = Familie
     definition_period = MONTH
-    unit = "currency-CHF"
     label = "Einkommensabhängiger Zusatzbeitrag der Wohngemeinde je Kind und Betreuungsstunde (Z1)"
     reference = KIBV_URL
-    documentation = (
-        "KiBG-20.2 | Art. 20 Abs. 2 KiBG, Art. 24 Abs. 1 und Anhang (Z1) KiBV | "
-        "Parameter gemeinden.zusatzbeitrag_z1 je Wohngemeinde, heute 0 (AN-04), überschreibbar; A-15 | Quellentyp: ANNAHME_TEAM"
-    )
 
     def formula_2028_08_01(familie, period, parameters):
         wg = familie("wohngemeinde", period)
@@ -57,13 +48,8 @@ class zusatzbeitrag_z2_pro_stunde(Variable):
     value_type = float
     entity = Familie
     definition_period = MONTH
-    unit = "currency-CHF"
     label = "Einkommensunabhängiger Zusatzbeitrag der Wohngemeinde je Kind und Betreuungsstunde (Z2)"
     reference = KIBV_URL
-    documentation = (
-        "KiBG-20.2 | Art. 20 Abs. 2 KiBG, Art. 24 Abs. 1 und Anhang (Z2) KiBV | "
-        "Parameter gemeinden.zusatzbeitrag_z2 je Wohngemeinde, heute 0 (AN-04), überschreibbar; A-10, A-15 | Quellentyp: ANNAHME_TEAM"
-    )
 
     def formula_2028_08_01(familie, period, parameters):
         wg = familie("wohngemeinde", period)
