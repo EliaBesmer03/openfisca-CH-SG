@@ -2,7 +2,7 @@
 
 Das Gesetz knüpft an die Erziehungsberechtigten an (Art. 2, Art. 4 KiBG),
 nicht an alle Erwachsenen eines Haushalts. Deshalb eine Gruppen-Entität
-"Familie" mit den Rollen Erziehungsberechtigte, Partner/in und Kinder.
+"Familie" mit den Rollen Erziehungsberechtigte, Partnerin oder Partner und Kinder.
 
 See https://openfisca.org/doc/coding-the-legislation/50_entities.html
 """
@@ -12,14 +12,14 @@ from openfisca_core.entities import build_entity
 Familie = build_entity(
     key="familie",
     plural="familien",
-    label="Gesuchseinheit: Erziehungsberechtigte, ggf. Partner/in und die betreuten Kinder (Art. 2 KiBG, Art. 8 KiBV)",
+    label="Gesuchseinheit: Erziehungsberechtigte, gegebenenfalls Partnerin oder Partner, und die betreuten Kinder (Art. 2 KiBG, Art. 8 KiBV)",
     doc="""
-    Eine Familie im Sinn des Modells ist eine Gesuchseinheit (Glossar A3):
+    Eine Familie im Sinn des Modells ist eine Gesuchseinheit:
     die antragstellende(n) erziehungsberechtigte(n) Person(en), ggf. eine
     Partnerin oder ein Partner nach Art. 8 Abs. 1 lit. b KiBV und die Kinder,
     für die Beiträge beantragt werden.
     Bei getrenntem Haushalt (z. B. Wechselmodell) stellt jede erziehungs-
-    berechtigte Person ihr eigenes Gesuch, also eine eigene Familie (A-14).
+    berechtigte Person ihr eigenes Gesuch, also eine eigene Familie.
     Eine Person gehört genau einer Familie an.
     """,
     roles=[
@@ -33,7 +33,7 @@ Familie = build_entity(
         {
             "key": "partner",
             "plural": "partnerinnen",
-            "label": "Partnerin oder Partner der antragstellenden EB",
+            "label": "Partnerin oder Partner der antragstellenden Person",
             "doc": "Nicht erziehungsberechtigt; zählt bei getrenntem Haushalt und gefestigter Lebensgemeinschaft zum Einkommen (Art. 8 KiBV), nie zum Erwerbspensum.",
             "max": 1,
         },
@@ -50,7 +50,7 @@ Person = build_entity(
     key="person",
     plural="persons",
     label="Eine Person",
-    doc="Einzelne Person: erziehungsberechtigte Person, Partner/in oder Kind.",
+    doc="Einzelne Person: erziehungsberechtigte Person, Partnerin oder Partner, oder Kind.",
     is_person=True,
 )
 

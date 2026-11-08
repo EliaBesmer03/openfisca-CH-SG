@@ -3,13 +3,8 @@ values:
   2028-08-01:
     value: 3
 metadata:
-  short_label: Mindestalter Kind
-  label_en: Minimum age of the child in months
   unit: month
-  regel_id: KiBG-4.3
-  quellentyp: GESETZ
-  last_value_still_valid_on: "2026-11-07"
   reference:
     2028-08-01:
-      title: Art. 4 Abs. 3 KiBG (Ergebnis 1. Lesung 16.9.2025, angenommen 14.6.2026, nicht in Kraft)
+      title: Art. 4 Abs. 3 KiBG
       href: https://www.ratsinfo.sg.ch/media/documents/published/a4a9b8e1-9c7a-4475-b41c-4dc7155e835b.pdf

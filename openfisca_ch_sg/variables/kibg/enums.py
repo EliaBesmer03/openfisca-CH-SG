@@ -1,4 +1,4 @@
-"""Alle Enums aus Teil A, A6. In JSON werden sie als Name des Werts gesendet (z. B. "JA")."""
+"""Auswahlwerte der Variablen. Über die API werden sie mit ihrem Namen übergeben (z. B. "JA")."""
 
 from openfisca_core.indexed_enums import Enum
 
@@ -13,7 +13,7 @@ class JaNeinUnbekannt(Enum):
 
 
 class HaushaltForm(Enum):
-    """KiBG-4.1.b, KiBV-8.1."""
+    """Art. 4 Abs. 1 lit. b KiBG, Art. 8 Abs. 1 KiBV."""
 
     GEMEINSAMER_HAUSHALT = "Erziehungsberechtigte im gemeinsamen Haushalt"
     GETRENNTER_HAUSHALT = (
@@ -29,7 +29,7 @@ class AuslegungKibg41(Enum):
 
 
 class Ausnahmegrund(Enum):
-    """KiBV-12.1.a–c."""
+    """Art. 12 Abs. 1 lit. a–c KiBV."""
 
     KEINER = "Kein Ausnahmegrund"
     BERUFLICHE_INTEGRATION = "Berufliche Integration (Stellensuche, Aus- und Weiterbildung, Integrationsmassnahmen)"
@@ -48,7 +48,7 @@ class Entscheid(Enum):
 
 
 class Partnerschaft(Enum):
-    """KiBV-8.2."""
+    """Art. 8 Abs. 2 KiBV."""
 
     KEINE = "Keine Partnerschaft"
     EHE_ODER_EINGETRAGENE_PARTNERSCHAFT = "Ehe oder eingetragene Partnerschaft"
@@ -63,7 +63,7 @@ class Schulstufe(Enum):
 
 
 class AngebotTyp(Enum):
-    """KiBG-3.2.a–d."""
+    """Art. 3 Abs. 2 lit. a–d KiBG."""
 
     KITA = "Kindertagesstätte"
     TAGESFAMILIE = "Tagesfamilie (über Tagesfamilienorganisation)"
@@ -75,7 +75,7 @@ class AngebotTyp(Enum):
 
 
 class Altersstufe(Enum):
-    """KiBV-14.1–14.3."""
+    """Art. 14 Abs. 1–3 KiBV."""
 
     UNTER_18_MONATE = "Unter 18 Monaten"
     AB_18_MONATE_BIS_EINSCHULUNG = "Ab 18 Monaten bis zur Einschulung"
@@ -83,7 +83,7 @@ class Altersstufe(Enum):
 
 
 class Pruefstatus(Enum):
-    """A7."""
+    """Ergebnis der Prüfung für die Anzeige (nicht Teil des Rechts)."""
 
     NICHT_IN_KRAFT = "Noch nicht in Kraft"
     KEIN_ANSPRUCH = "Kein Anspruch"

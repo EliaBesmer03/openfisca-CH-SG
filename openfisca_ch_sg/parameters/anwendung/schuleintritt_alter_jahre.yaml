@@ -1,15 +1,10 @@
-description: Ein Kind wird schulpflichtig (Eintritt in den Kindergarten), wenn es bis zum Ende des Schuljahres (31. Juli) das vierte Altersjahr vollendet hat
+description: Das Kind wird am 1. August nach Vollendung dieses Altersjahres schulpflichtig
 values:
   2028-08-01:
     value: 4
 metadata:
-  short_label: Alter beim Schuleintritt
-  label_en: Age at which a child must start kindergarten (cut-off date 31 July)
   unit: year
-  regel_id: AN-06
-  quellentyp: ANNAHME_TEAM
-  last_value_still_valid_on: "2026-11-07"
   reference:
     2028-08-01:
-      title: Annahme AN-06 – Stichtag nach Volksschulrecht, vom Rechtsteam zu bestätigen
-      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html
+      title: Art. 45 Abs. 1 Volksschulgesetz St.Gallen (sGS 213.1)
+      href: https://www.gesetzessammlung.sg.ch/app/de/texts_of_law/213.1

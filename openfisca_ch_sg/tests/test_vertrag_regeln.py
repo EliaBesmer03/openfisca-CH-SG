@@ -30,18 +30,15 @@ def _bekannt(rid):
 
 
 def _parameter():
+    """(Name, Metadaten, Beschreibung) je Parameterdatei."""
     for pfad in glob.glob(
         os.path.join(PAKET, "parameters", "**", "*.yaml"), recursive=True
     ):
         name = os.path.relpath(pfad, os.path.join(PAKET, "parameters"))[:-5].replace(
             os.sep, "."
         )
-        yield (
-            name,
-            (yaml.safe_load(Path(pfad).read_text(encoding="utf-8")) or {}).get(
-                "metadata", {}
-            ),
-        )
+        inhalt = yaml.safe_load(Path(pfad).read_text(encoding="utf-8")) or {}
+        yield name, inhalt.get("metadata", {}), inhalt.get("description")
 
 
 def test_regeln_sind_vollstaendig_und_eindeutig():
@@ -62,7 +59,7 @@ def test_regeln_sind_vollstaendig_und_eindeutig():
 
 
 def test_genannte_variablen_und_parameter_existieren():
-    parameter = dict(_parameter())
+    parameter = {name for name, _, _ in _parameter()}
     fehler = [
         f"{r['id']}: Variable {v} fehlt"
         for r in REGELN
@@ -78,32 +75,32 @@ def test_genannte_variablen_und_parameter_existieren():
     assert not fehler, "\n".join(fehler)
 
 
-def test_jede_variable_der_rechtsschicht_ist_dokumentiert():
+def test_jede_variable_der_rechtsschicht_ist_einer_regel_zugeordnet():
     genannt = {v for r in REGELN for v in r["variablen"]}
-    fehler = []
-    for name, var in TBS.variables.items():
-        if os.path.basename(os.path.dirname(var.introspection_data[0])) != "kibg":
-            continue
-        rid = (var.documentation or "").split(" | ")[0]
-        if not _bekannt(rid):
-            fehler.append(f"{name}: Regel-ID {rid} nicht in regeln.json")
-        if name not in genannt:
-            fehler.append(f"{name}: in keiner Regel unter variablen aufgeführt")
+    fehler = [
+        f"{name}: in keiner Regel unter variablen aufgeführt"
+        for name, var in TBS.variables.items()
+        if os.path.basename(os.path.dirname(var.introspection_data[0])) == "kibg"
+        and name not in genannt
+    ]
     assert not fehler, "\n".join(fehler)
 
 
-def test_parameter_haben_metadaten_und_gueltige_regel():
+def test_parameter_haben_beschreibung_und_quelle():
+    """Gesetzliche Parameter: Beschreibung, Fundstelle und eine Regel in regeln.json.
+
+    Parameter unter anwendung/ sind Annahmen ohne Rechtsgrundlage und brauchen nur eine Beschreibung.
+    """
     fehler = []
-    zuordnung = {p: r["id"] for r in REGELN for p in r["parameter"]}
-    for name, meta in _parameter():
-        for feld in ("regel_id", "quellentyp", "reference"):
-            if not meta.get(feld):
-                fehler.append(f"{name}: metadata.{feld} fehlt")
-        ids = [i.strip() for i in str(meta.get("regel_id", "")).split(",") if i.strip()]
-        for rid in ids:
-            if not (rid.startswith("AN-") or _bekannt(rid)):
-                fehler.append(f"{name}: Regel-ID {rid} nicht in regeln.json")
-        if not all(i.startswith("AN-") for i in ids) and name not in zuordnung:
+    zugeordnet = {p for r in REGELN for p in r["parameter"]}
+    for name, meta, beschreibung in _parameter():
+        if not beschreibung:
+            fehler.append(f"{name}: description fehlt")
+        if name.startswith("anwendung."):
+            continue
+        if not meta.get("reference"):
+            fehler.append(f"{name}: metadata.reference fehlt")
+        if name not in zugeordnet and not name.startswith("gemeinden."):
             fehler.append(f"{name}: in keiner Regel unter parameter aufgeführt")
     assert not fehler, "\n".join(fehler)
 

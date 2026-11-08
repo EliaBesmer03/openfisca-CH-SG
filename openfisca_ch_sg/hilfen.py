@@ -1,7 +1,8 @@
-"""Hilfsfunktionen für Formeln, die in A6 keine eigene Variable sind.
+"""Hilfsfunktionen, die mehrere Formeln gemeinsam brauchen.
 
-Liegt ausserhalb von variables/, damit der Loader die Datei nicht als Variablen-Datei liest.
-Rechts- und Anwendungsschicht nutzen dieselben Funktionen, damit Flags und Recht nie auseinanderlaufen.
+Die Datei liegt ausserhalb von variables/, damit OpenFisca sie nicht als Variablen-Datei lädt.
+Recht (variables/kibg) und Erklärung (variables/anwendung) nutzen dieselben Funktionen,
+damit beide immer dasselbe prüfen.
 """
 
 import numpy as np
@@ -9,86 +10,101 @@ import numpy as np
 from openfisca_ch_sg.entities import Familie
 from openfisca_ch_sg.variables.kibg.enums import HaushaltForm
 
-# KiBG-IV.1: Die Regierung bestimmt den Vollzugsbeginn; laut Medienmitteilung 1.8.2028 (ERLAEUTERUNG).
-# OpenFisca-Parameter sind numerisch, deshalb als Konstante (B7). Muss zu formula_2028_08_01 passen.
+# Vollzugsbeginn des Gesetzes, den die Regierung festlegt (laut Kanton 1.8.2028).
+# Muss zum Datum der Formeln (formula_2028_08_01) passen.
 VOLLZUGSBEGINN = np.datetime64("2028-08-01", "D")
 
-
-def me_aller_relevanten_personen_bekannt(familie, period):
-    """KiBG-5.3, KiBV-8.1: ME ist für alle Personen bekannt, deren Einkommen zählt.
-
-    Es zählen immer die Erziehungsberechtigten; bei getrenntem Haushalt zusätzlich
-    eine Partnerin oder ein Partner in gefestigter Lebensgemeinschaft.
-    """
-    me_bekannt = familie.members("me_bekannt", period)
-    gefestigt = familie.members("partner_gefestigt", period)
-    getrennt = familie("haushalt_form", period) == HaushaltForm.GETRENNTER_HAUSHALT
-    eb_bekannt = familie.all(me_bekannt, role=Familie.ERZIEHUNGSBERECHTIGTER)
-    partner_bekannt = familie.all(me_bekannt + ~gefestigt, role=Familie.PARTNER)
-    return eb_bekannt * (~getrennt + partner_bekannt)
-
-
-def haushalt_konsistent(familie, period):
-    """KiBG-4.1.b, A-14: gemeinsamer Haushalt = genau 2 EB; getrennt = nur die antragstellende EB."""
-    anzahl_eb = familie.nb_persons(Familie.ERZIEHUNGSBERECHTIGTER)
-    gemeinsam = familie("haushalt_form", period) == HaushaltForm.GEMEINSAMER_HAUSHALT
-    return gemeinsam * (anzahl_eb == 2) + ~gemeinsam * (anzahl_eb == 1)
-
-
-def gesuchsfristen(person, period, parameters):
-    """KiBG-9.2 für jedes Kind. Gibt zurück: (betreuungsbeginn, gesuchsdatum, tage_seit_beginn).
-
-    Die Übergangsregel von Art. 25 KiBV ist nicht modelliert (Entscheid Rechtsteam):
-    Das Modell rechnet nur den Regelbetrieb ab Inkrafttreten, es gilt immer die 30-Tage-Regel.
-    """
-    beginn = person("betreuungsbeginn", period).astype("datetime64[D]")
-    gesuch = person.familie("gesuchsdatum", period).astype("datetime64[D]")
-    tage = (gesuch - beginn).astype("int64")
-    return beginn, gesuch, tage
-
-
-# --- Datumsrechnung für Altersgrenzen (A-08: „ab dem Tag, an dem das Kind 18 Monate alt ist“) ---
-
+# Standardwert der Datums-Eingaben: „nicht angegeben“
 KEIN_DATUM = np.datetime64("1970-01-01", "D")
 
 
+# ---------- Gesuchseinheit ----------
+
+
+def zaehlende_personen(familie, period):
+    """Personen der Gesuchseinheit, deren Pensum und Einkommen zählen (je Mitglied wahr/falsch).
+
+    Das sind die Erziehungsberechtigten (Art. 4 Abs. 1 KiBG, Art. 8 Abs. 1 KiBV). Bei getrenntem
+    Haushalt zählt zusätzlich eine Partnerin oder ein Partner in gefestigter Lebensgemeinschaft:
+    beim Einkommen nach Art. 8 Abs. 1 lit. b KiBV, beim Pensum nach Auslegung A-16
+    (sie oder er gilt wie eine zweite Person im gemeinsamen Haushalt).
+    """
+    erziehungsberechtigt = familie.members.has_role(Familie.ERZIEHUNGSBERECHTIGTER)
+    getrennt = familie("haushalt_form", period) == HaushaltForm.GETRENNTER_HAUSHALT
+    partner = familie.members.has_role(Familie.PARTNER)
+    gefestigt = familie.members("partner_gefestigt", period)
+    return erziehungsberechtigt + partner * gefestigt * familie.project(getrennt)
+
+
+def haushalt_passt_zu_personen(familie, period):
+    """Gemeinsamer Haushalt heisst zwei Erziehungsberechtigte, getrennter Haushalt eine (A-14)."""
+    anzahl = familie.nb_persons(Familie.ERZIEHUNGSBERECHTIGTER)
+    gemeinsam = familie("haushalt_form", period) == HaushaltForm.GEMEINSAMER_HAUSHALT
+    return np.where(gemeinsam, anzahl == 2, anzahl == 1)
+
+
+def einkommen_bekannt(familie, period):
+    """Das massgebende Einkommen ist für alle Personen bekannt, deren Einkommen zählt."""
+    zaehlt = zaehlende_personen(familie, period)
+    bekannt = familie.members("me_bekannt", period)
+    return familie.all(bekannt + ~zaehlt)
+
+
+def pensum_bekannt(familie, period):
+    """Das Pensum ist für alle Personen bekannt, deren Pensum zählt."""
+    zaehlt = zaehlende_personen(familie, period)
+    bekannt = familie.members("erwerbspensum_bekannt", period)
+    return familie.all(bekannt + ~zaehlt)
+
+
+def tage_vom_beginn_bis_gesuch(person, period):
+    """Kalendertage vom ersten Betreuungstag bis zum Gesuch (Art. 9 Abs. 2 KiBG)."""
+    beginn = person("betreuungsbeginn", period).astype("datetime64[D]")
+    gesuch = person.familie("gesuchsdatum", period).astype("datetime64[D]")
+    return (gesuch - beginn).astype("int64")
+
+
+# ---------- Datumsrechnung für Altersgrenzen ----------
+# Altersgrenzen gelten ab dem Tag, an dem das Kind 3 bzw. 18 Monate alt ist (Auslegung A-08).
+
+
 def datum_plus_monate(datum, monate):
-    """Datum + n Monate; fehlt der Tag im Zielmonat, gilt dessen letzter Tag (wie Art. 77 OR)."""
+    """Datum plus n Monate. Fehlt der Tag im Zielmonat, gilt dessen letzter Tag (wie Art. 77 OR)."""
     datum = np.asarray(datum).astype("datetime64[D]")
     monat = datum.astype("datetime64[M]")
-    tag = (datum - monat.astype("datetime64[D]")).astype("int64")
-    ziel = monat + np.asarray(monate).astype("int64").astype("timedelta64[M]")
-    tage_im_ziel = (
-        (ziel + np.timedelta64(1, "M")).astype("datetime64[D]")
-        - ziel.astype("datetime64[D]")
+    tag_im_monat = (datum - monat.astype("datetime64[D]")).astype("int64")
+    zielmonat = monat + np.asarray(monate).astype("int64").astype("timedelta64[M]")
+    erster_tag = zielmonat.astype("datetime64[D]")
+    tage_im_zielmonat = (
+        (zielmonat + np.timedelta64(1, "M")).astype("datetime64[D]") - erster_tag
     ).astype("int64")
-    return ziel.astype("datetime64[D]") + np.minimum(tag, tage_im_ziel - 1)
+    return erster_tag + np.minimum(tag_im_monat, tage_im_zielmonat - 1)
 
 
-def monatsgrenzen(period):
-    """Erster Tag des Monats und erster Tag des Folgemonats."""
-    start = np.datetime64(str(period.start), "D")
-    ende = (start.astype("datetime64[M]") + np.timedelta64(1, "M")).astype(
-        "datetime64[D]"
-    )
-    return start, ende
+def erster_tag(period):
+    """Erster Tag des Monats."""
+    return np.datetime64(str(period.start), "D")
 
 
 def anteil_monat_ab(stichtag, period):
-    """Anteil der Kalendertage des Monats, die auf oder nach dem Stichtag liegen (0 bis 1)."""
-    start, ende = monatsgrenzen(period)
-    tage = (ende - start).astype("int64")
-    ab = np.clip(
-        (ende - np.asarray(stichtag).astype("datetime64[D]")).astype("int64"), 0, tage
+    """Anteil der Tage des Monats, die auf oder nach dem Stichtag liegen (0 bis 1)."""
+    start = erster_tag(period)
+    ende = (start.astype("datetime64[M]") + np.timedelta64(1, "M")).astype(
+        "datetime64[D]"
     )
-    return ab / tage
+    tage_im_monat = (ende - start).astype("int64")
+    tage_ab_stichtag = (ende - np.asarray(stichtag).astype("datetime64[D]")).astype(
+        "int64"
+    )
+    return np.clip(tage_ab_stichtag, 0, tage_im_monat) / tage_im_monat
 
 
 def vollendete_monate(geburtsdatum, stichtag):
-    """Vollendete Lebensmonate am Stichtag (gleiche Monatsrechnung wie datum_plus_monate)."""
-    geb = np.asarray(geburtsdatum).astype("datetime64[D]")
-    stich = np.asarray(stichtag).astype("datetime64[D]")
-    monate = (stich.astype("datetime64[M]") - geb.astype("datetime64[M]")).astype(
+    """Vollendete Lebensmonate am Stichtag."""
+    geburt = np.asarray(geburtsdatum).astype("datetime64[D]")
+    stichtag = np.asarray(stichtag).astype("datetime64[D]")
+    monate = (stichtag.astype("datetime64[M]") - geburt.astype("datetime64[M]")).astype(
         "int64"
     )
-    return monate - (datum_plus_monate(geb, monate) > stich)
+    # Ist der Monatstag der Geburt noch nicht erreicht, ist der letzte Monat nicht vollendet.
+    return monate - (datum_plus_monate(geburt, monate) > stichtag)

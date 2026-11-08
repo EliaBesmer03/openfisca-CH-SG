@@ -1,12 +1,9 @@
-description: Einkommensunabhängiger Zusatzbeitrag der politischen Gemeinde je Kind und Betreuungsstunde (Z2), je Wohngemeinde. GENERIERT aus contract/gemeinden.json.
+# Erzeugt aus contract/gemeinden.json: eine Zeile pro politische Gemeinde, heute überall 0 (noch nicht beschlossen).
+description: Einkommensunabhängiger Zusatzbeitrag der Wohngemeinde je Kind und Betreuungsstunde (Z2)
 metadata:
-  regel_id: KiBG-20.2, KiBV-24.1, KiBV-Anh
-  quellentyp: ANNAHME_TEAM
-  platzhalter: true
-  annahme: AN-04 (noch keine Gemeinde hat Zusatzbeiträge beschlossen; Wert 0)
   unit: currency-CHF
   reference:
-    - title: Art. 20 Abs. 2 KiBG, Art. 24 Abs. 1 und Anhang (Z2) KiBV (Entwurf RRB 2026/733)
+    - title: Art. 20 Abs. 2 KiBG, Art. 24 Abs. 1 KiBV und Anhang KiBV
       href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html
 HAEGGENSCHWIL:
   description: Häggenschwil (BFS 3201)

@@ -1,4 +1,4 @@
-"""Wohngemeinde (KiBV-2.1, KiBG-4.1). GENERIERT aus contract/gemeinden.json, nicht von Hand ändern."""
+"""Wohngemeinden des Kantons (Art. 2 KiBV). Erzeugt aus contract/gemeinden.json, dort ändern."""
 
 from openfisca_core.indexed_enums import Enum
 

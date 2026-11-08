@@ -1,15 +1,4 @@
-description: 1, solange die Zusatzbeiträge aller Gemeinden Platzhalter (0) sind
+description: 1, solange noch keine Gemeinde Zusatzbeiträge beschlossen hat und alle Werte unter gemeinden/ Platzhalter (0) sind
 values:
   2028-08-01:
     value: 1
-metadata:
-  short_label: Platzhalter Zusatzbeiträge
-  label_en: Municipal top-ups are placeholders
-  unit: /1
-  regel_id: AN-04
-  quellentyp: ANNAHME_TEAM
-  last_value_still_valid_on: "2026-11-07"
-  reference:
-    2028-08-01:
-      title: Annahme AN-04 – Annahme des Teams, keine Normgrundlage
-      href: https://www.sg.ch/news/sgch_allgemein/2026/10/verordnung-familien--und-schulergaenzende-kinderbetreuung.html
